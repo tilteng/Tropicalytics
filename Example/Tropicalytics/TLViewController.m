@@ -7,8 +7,12 @@
 //
 
 #import "TLViewController.h"
+#import "TLUniqueIdentifier.h"
 
 @interface TLViewController ()
+
+@property (nonatomic, strong) UILabel *deviceUUID;
+@property (nonatomic, strong) UILabel *sessionUUID;
 
 @end
 
@@ -18,11 +22,18 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    UILabel *deviceUUIDLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 100, 20)];
+    [self.view addSubview:deviceUUIDLabel];
+    deviceUUIDLabel.text = [[TLUniqueIdentifier sharedInstance] deviceBasedUUID];
+    
+    UILabel *sessionUUIDLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 40, 100, 20)];
+    [self.view addSubview:sessionUUIDLabel];
+    sessionUUIDLabel.text = [[TLUniqueIdentifier sharedInstance] sessionBasedUUID];
+    
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
