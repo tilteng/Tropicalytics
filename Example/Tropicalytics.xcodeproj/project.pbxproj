@@ -22,7 +22,7 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		BD2F6F301C4F3B5600EFF66A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD2F6F2F1C4F3B5600EFF66A /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +61,8 @@
 		6C178C02F6C4CF06FE6A4071 /* Pods_Tropicalytics_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tropicalytics_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7536E2A997C66A9FF90EFB4F /* Pods-Tropicalytics_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tropicalytics_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tropicalytics_Example/Pods-Tropicalytics_Example.release.xcconfig"; sourceTree = "<group>"; };
 		830899FB0D92A36E80C22EC9 /* Pods-Tropicalytics_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tropicalytics_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tropicalytics_Example/Pods-Tropicalytics_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B95C6BDB732735F0DFD85CDC /* Tropicalytics.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Tropicalytics.podspec; path = ../Tropicalytics.podspec; sourceTree = "<group>"; };
+		BD2F6F2F1C4F3B5600EFF66A /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		D991BB0D39020C8B20CB99F3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E490B426688630DD2AC776D8 /* Pods-Tropicalytics_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tropicalytics_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tropicalytics_Tests/Pods-Tropicalytics_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,11 +132,11 @@
 			children = (
 				6003F59C195388D20070C39A /* TLAppDelegate.h */,
 				6003F59D195388D20070C39A /* TLAppDelegate.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* TLViewController.h */,
 				6003F5A6195388D20070C39A /* TLViewController.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				BD2F6F2F1C4F3B5600EFF66A /* Launch Screen.storyboard */,
 			);
 			name = "Example for Tropicalytics";
 			path = Tropicalytics;
@@ -276,7 +276,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				BD2F6F301C4F3B5600EFF66A /* Launch Screen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
@@ -516,9 +516,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tropicalytics/Tropicalytics-Prefix.pch";
 				INFOPLIST_FILE = "Tropicalytics/Tropicalytics-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -532,9 +534,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tropicalytics/Tropicalytics-Prefix.pch";
 				INFOPLIST_FILE = "Tropicalytics/Tropicalytics-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

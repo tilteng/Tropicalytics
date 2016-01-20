@@ -7,12 +7,23 @@
 //
 
 #import "TLAppDelegate.h"
+#import "TLViewController.h"
+
+@interface TLAppDelegate ()
+
+@property (nonatomic, strong) TLViewController *viewController;
+
+@end
 
 @implementation TLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    self.viewController = [[TLViewController alloc] init];
+    self.window.rootViewController = self.viewController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
