@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = "Tropicalytics"
   s.version          = "0.1.0"
-  s.summary          = "A short description of Tropicalytics."
+  s.summary          = "Tropicalytics is a lightweight configurable analytics tool that allows you to send self describing JSON to your own server so you are in control of your data."
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -19,14 +19,14 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/Tropicalytics"
+  s.homepage         = "https://github.com/KattMingMing/Tropicalytics"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Matt King" => "mattk@tilt.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/Tropicalytics.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => "https://github.com/KattMingMing/Tropicalytics.git", :tag => s.version.to_s }
+  # s.social_media_url = 'https://twitter.com/KingTheMatt'
 
-  s.platform     = :ios, '7.0'
+  s.platform     = :ios, '8.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
