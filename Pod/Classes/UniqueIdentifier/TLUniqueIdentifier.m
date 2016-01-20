@@ -43,7 +43,7 @@ static NSString *const InstallationUUIDKey = @"InstallationUUIDKey";
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
     
-    return [[NSUserDefaults standardUserDefaults] objectForKey:InstallationUUIDKey];
+    return [[NSUserDefaults standardUserDefaults] stringForKey:InstallationUUIDKey];
 }
 
 /**
