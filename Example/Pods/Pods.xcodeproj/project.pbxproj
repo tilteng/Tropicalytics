@@ -23,12 +23,13 @@
 		167779A1B8DFCC6274E6591EBDC1FE6F /* SPTGlobalBeforeAfterEach.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F0E408A3C9EEC31731C87205A4D12F6 /* SPTGlobalBeforeAfterEach.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		174202BD6AE0E4A41F5CE66E975EAE52 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = F01FC8A461D97A871ADADA2C8C2B7F46 /* UIRefreshControl+AFNetworking.m */; };
 		17572374B2AE183C6347C41E8DF8E579 /* EXPMatchers+beFalsy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D515E5A3487DFDDEBDADE771BD0FFFD /* EXPMatchers+beFalsy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		18BEE4C85EE9CEBBB3C1849C567980A8 /* TPLUniqueIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = A69BC8A4932BAC17280C0CFC190856F6 /* TPLUniqueIdentifier.m */; };
 		1A1AB2EC52323C5EA28DAA99F1E1A90D /* EXPMatchers+endWith.h in Headers */ = {isa = PBXBuildFile; fileRef = 22CA24720D7F4729170FE8700555103E /* EXPMatchers+endWith.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1AA6D570AF8D7E1085360866B1A6B14A /* TPLConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 532DA0A6213E5A7814BF28C16DA6F9F7 /* TPLConfiguration.m */; };
 		1AB3304B6884F626BC54150AC7565E18 /* EXPMatchers+equal.m in Sources */ = {isa = PBXBuildFile; fileRef = 859A2E08EE205F21C9868C136CAE94DB /* EXPMatchers+equal.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1AECB4EB5EF15310448CA354F6FACA21 /* Pods-Tropicalytics_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF3503053D357443A7E767A8610313E /* Pods-Tropicalytics_Example-dummy.m */; };
 		1B0389CD88AA949B34DC7269030FEC6F /* EXPMatchers+beGreaterThanOrEqualTo.m in Sources */ = {isa = PBXBuildFile; fileRef = B073A1AE3D4B91C2CCA17140109F5261 /* EXPMatchers+beGreaterThanOrEqualTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1E5B8F12ED7CC40ECDB9B1F755F387E5 /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = E0CE300BCC394BF110BE14C95A8AAA36 /* UIActivityIndicatorView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1FE97180CAD27898C1ED00CE6F90A207 /* Tropicalytics-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E725CF31111C7B67D8EEFD7B95A0C4DC /* Tropicalytics-dummy.m */; };
 		201BF9C605852822CA5A65ADE282A310 /* EXPMatcherHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 6222C6AD863A5B1F7090FC76A6EF889A /* EXPMatcherHelpers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		204D694B03BFF3B244A6AB73FACFFC43 /* Expecta-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DB10ADB6B18CF25021EDC2B4991D109 /* Expecta-dummy.m */; };
 		20607BE2B1E5F31765026E5AC64DB27D /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = B9A9FA289EAD69EBBF8D2B60FC387475 /* AFSecurityPolicy.m */; };
@@ -63,7 +64,9 @@
 		4C6A290F91F37EC69FF8C4E871B76ED2 /* SPTExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 04787D855A902819F5487EA43AF65EED /* SPTExample.m */; };
 		4CADAC0688FDA51BBA99B75C8E5B1B46 /* SpectaDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 85BDB0DE01774B309B437B3856F47B90 /* SpectaDSL.m */; };
 		4FD672072DCC69733D684F741A3DFC7B /* Specta-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0153DF960D47FE04898BDB2B87B41230 /* Specta-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50D1CE23FEA71E36F65C5E94D8A840DA /* Tropicalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECFB7DB77F056BD3407371266E435EF /* Tropicalytics.m */; };
 		51DDDB0FB4899757CF6A826B531B940D /* EXPUnsupportedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A0DE3C6407CCB38D2B696F4F47FD36B /* EXPUnsupportedObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		51F499F849CA97CE288F918D6A42C1D0 /* Tropicalytics-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8271CF1EED72404E0B9D03B5C966DB88 /* Tropicalytics-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		53F537E63FD5D00E87919DCEA220B774 /* SpectaDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1092ED7AC81131D5C2C82623A54D46 /* SpectaDSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		560698A4D707DCBCC1C8F98BC9B89B23 /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A749DBC9B6D7445F207CEF45D82BD97 /* AFURLSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5808B477EFF509D810B5CDCFDC944F80 /* AFImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 0940E08667043665207A4BB9EBE76295 /* AFImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -108,11 +111,13 @@
 		8E0834D0141FC73E192F07F7F4623769 /* Pods-Tropicalytics_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 86BBDF325054136E536E454554BC48BB /* Pods-Tropicalytics_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		918E06480F28F27361B19D19432F8538 /* EXPMatchers+endWith.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CB93128B3F2AA5BB3A8E5ED1B5EBB8 /* EXPMatchers+endWith.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		931D410B9F8ACB935883DF8C59F9C93E /* EXPMatchers+postNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = B069F2FF558F4AA1748B9CF05F4D7791 /* EXPMatchers+postNotification.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		939AA689BAF6E211B6A1485E497DA730 /* TPLUniqueIdentifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BC511C57C583C48F3560DF84FE31A60 /* TPLUniqueIdentifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		94C47C87E397972CE98F75929F3B706C /* ExpectaObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 070C9A7C287629070F561BC1BE592154 /* ExpectaObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9B2E761A064459F77EA9870BEF03ACC3 /* EXPMatchers+postNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = 50D9420B9D8D6914E3FC70646C8C91CA /* EXPMatchers+postNotification.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9BB9159FBA757600D3D4C0FF645F3911 /* EXPMatchers+beInTheRangeOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 76EFDF998723B6F64DC59C291372ACF8 /* EXPMatchers+beInTheRangeOf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9E1E90DED74B73ECE53C9AD76DE53E2D /* UIImage+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 9554EE7D5A3D54267BEFDDBD1B1F2EF7 /* UIImage+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A462945883F7729B185B64B679A6BFBE /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9882E2AE52EF7EF35F96A77829B59F49 /* UIWebView+AFNetworking.m */; };
+		A4869AAF81C66AD7FA3E328EB7A6253F /* Tropicalytics-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E725CF31111C7B67D8EEFD7B95A0C4DC /* Tropicalytics-dummy.m */; };
 		A6C6019D45BE62C61210A9CC619368EF /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 473271BDCBA31BC83289D214C276E274 /* AFNetworkActivityIndicatorManager.m */; };
 		AA10527D0EEA1BEC350A31DCF16A40C9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC842987CFE33420135EC0CD990B8D8 /* Foundation.framework */; };
 		AA29912713CC7C42A9FDBFE5C6137464 /* SPTSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 6401F8328B1571186BB30A4DD86B6629 /* SPTSpec.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -122,8 +127,8 @@
 		AF03C11A1FAC8132AD3749D8F541701A /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 304AB4D37AE30F878753FFF670BC5424 /* UIButton+AFNetworking.m */; };
 		AF1F46668D4591602887998C6E9C10AD /* EXPMatchers+beCloseTo.h in Headers */ = {isa = PBXBuildFile; fileRef = A024154B81BA9A4876E7EDBF487C96E5 /* EXPMatchers+beCloseTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AFFC8900E52BBEC72059334132F3A8F3 /* ExpectaSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 67277D695E65802583C2A794227EBB0F /* ExpectaSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B0CEC24544943CC46F686235109C2E17 /* Tropicalytics-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8271CF1EED72404E0B9D03B5C966DB88 /* Tropicalytics-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5852322ADE88AAD56EE042B80BA81E4 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = F8CB742C34F7ECACB265248A60D15BFB /* AFURLResponseSerialization.m */; };
+		B6A8661A23901A7CB3BAB8BA49322E96 /* TPLUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 206DBC2EA1854583EDCFD1430AA6BE05 /* TPLUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B74DE40904EADDE81D35504AFBD79151 /* SpectaTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DCE858F212EBF0A693859FE30F75B80 /* SpectaTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B76E2E4F1CAC1D0AC9BB8B37E15412C4 /* SpectaUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = E70079489D1A2147AE0AE69D63AC4951 /* SpectaUtility.m */; };
 		B84431CF8C64F363A334AA7089F6C134 /* NSValue+Expecta.m in Sources */ = {isa = PBXBuildFile; fileRef = 637DD075D3777050E9EAFAB88BF9CABC /* NSValue+Expecta.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -134,7 +139,10 @@
 		C01AC3BAD9037A8A1E45FD17336C15F3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E517FF76F8196396A27F8A6B19202AC /* Security.framework */; };
 		C2DD28375E1F0B1D0D1D2E4E607C499F /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 657E45E0E50F9ED93036E5DC051D8232 /* AFSecurityPolicy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C6354FEC7728A4C86DAD8092509BA7D4 /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C22E9043476D6B3024AA48ECC6C9F94 /* UIRefreshControl+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C8EE3338BB97791197C09F4EAE56CECA /* TPLAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DE84E2DB15CC117ADF4404346E41C7 /* TPLAPIClient.m */; };
 		CAC483EF637FB4A2C2E2FC75BA631B87 /* AFAutoPurgingImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = C55BBFB8230C3F1C3290AC39269DF0D8 /* AFAutoPurgingImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CB1D629EA5C54E77AE2661BD6349F16E /* TPLUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA8323C5C2DC17F4A5ECC540D34E6C6 /* TPLUtilities.m */; };
+		CCD54B15E600AEDEE43D563643E34219 /* Tropicalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = A0A0300BBD6EA24F1A0CCB4D1EC4A99A /* Tropicalytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE3F4ECBB0BC095577D66AE50C8E604C /* EXPFloatTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA6D3209E2731597FCDD82E3F96D53F /* EXPFloatTuple.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CFA8D6B529A0EBFF0316F2629AB2556E /* AFImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = FFEE06CBF3FC212DB3DBBEE1C43C2F9D /* AFImageDownloader.m */; };
 		D04B84B53456B9CD8A7236126075571B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9369467C25F840B7EEDF51BD6D15EBC2 /* MobileCoreServices.framework */; };
@@ -147,10 +155,11 @@
 		E0AAF49134A0505DF00E20E7B62087E1 /* EXPMatchers+beIdenticalTo.h in Headers */ = {isa = PBXBuildFile; fileRef = B94ECDACC45BFBA99840FDAA16A9DB19 /* EXPMatchers+beIdenticalTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E0D4045AC4C1B41917FCA23A042D18B2 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 502323926FEAA23CB6279FB41E170B85 /* AFHTTPSessionManager.m */; };
 		E1EC4532663CA75DE5BD00CB0A56814D /* Expecta.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D1D439463646EA2DCD1AD52B5DE2F78 /* Expecta.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E498B08B961382C14CD6E7CEC351C9B1 /* TPLAPIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E423E05D8A3BC2906C4388CDB4162A4 /* TPLAPIClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E534D087DF82725D6188ECFBC02333AE /* TPLConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = A0D3DBC1E9AB54813E989342553DE3F2 /* TPLConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E5508E186249C6099EE36FD9BA3A68FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC842987CFE33420135EC0CD990B8D8 /* Foundation.framework */; };
 		E735386085CE344F6A01178CF4763852 /* EXPMatchers+beNil.h in Headers */ = {isa = PBXBuildFile; fileRef = A5E5C6488EDFEF7785A35253ABB3522D /* EXPMatchers+beNil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7988678C81F7CCB95D239375FC6986D /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = A1601D28E8C454DDDE7E6602566015F4 /* AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EB4FEAEBA75E30472BF9010EB6BAAB5F /* TLUniqueIdentifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 41C1153A4737C82F68C15387FB93FDEF /* TLUniqueIdentifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC7CADE416A78A1CD6936018A6695126 /* AFNetworking-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F4E8E877CE2D2A2411F2FD8DA4015252 /* AFNetworking-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ED0B1E9AE2834D39C9EB0B250999442A /* SPTExample.h in Headers */ = {isa = PBXBuildFile; fileRef = 939FFD31D61B329E9DAAD9EE53506967 /* SPTExample.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EF6497EE123F6BC0C1B09717437C5908 /* EXPUnsupportedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E64B7D4612A3F56C4C2C9A26D03DE9F /* EXPUnsupportedObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -160,7 +169,6 @@
 		F41209A94070904A00BDF24ACB6336B6 /* EXPMatchers+beFalsy.h in Headers */ = {isa = PBXBuildFile; fileRef = E717AB9535D028661FF0E6F50D927DB1 /* EXPMatchers+beFalsy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F5C8122144F9A90AC3303CE8DB7144F2 /* SPTTestSuite.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AFA87951C03F8834D8D680420EA2ADF /* SPTTestSuite.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F75CB2A727F678C9A848A3A11EA7979B /* EXPMatchers+haveCountOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 218A665D47813D90E50288A8DF252B49 /* EXPMatchers+haveCountOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FB2BF4AB5B0E0EC8FC4B42651B959C6C /* TLUniqueIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 582A7C164A1194676A6558072B927EE0 /* TLUniqueIdentifier.m */; };
 		FC20596ABFE14A61F171A29FD03275E7 /* EXPMatchers+contain.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4F3A781607A3CBF5D9BFCA2DD334F1 /* EXPMatchers+contain.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FC45858927D3B6A0F922C4B697B04A38 /* EXPMatchers+match.m in Sources */ = {isa = PBXBuildFile; fileRef = 5788341CBEEB8916021D7F08A763CC4C /* EXPMatchers+match.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FD23057A0374A8C4A456B2D6BC09B9E4 /* Pods-Tropicalytics_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DE48683247B727F0F0219645EE1F9F5 /* Pods-Tropicalytics_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -262,6 +270,7 @@
 		1EEE2C90C5996C1F017C87D64A2A4BD5 /* Pods-Tropicalytics_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tropicalytics_Tests-resources.sh"; sourceTree = "<group>"; };
 		1FC3FF0614FA3B049E596181127A6463 /* SPTCompiledExample.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTCompiledExample.h; path = Specta/Specta/SPTCompiledExample.h; sourceTree = "<group>"; };
 		1FC842987CFE33420135EC0CD990B8D8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		206DBC2EA1854583EDCFD1430AA6BE05 /* TPLUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLUtilities.h; sourceTree = "<group>"; };
 		218A665D47813D90E50288A8DF252B49 /* EXPMatchers+haveCountOf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+haveCountOf.h"; path = "Expecta/Matchers/EXPMatchers+haveCountOf.h"; sourceTree = "<group>"; };
 		22C7967C918EC63390360823FB44392D /* Pods-Tropicalytics_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Tropicalytics_Tests.modulemap"; sourceTree = "<group>"; };
 		22CA24720D7F4729170FE8700555103E /* EXPMatchers+endWith.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+endWith.h"; path = "Expecta/Matchers/EXPMatchers+endWith.h"; sourceTree = "<group>"; };
@@ -275,9 +284,9 @@
 		3AFBA29285071E17337544DDABF3205B /* EXPMatchers+beKindOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beKindOf.m"; path = "Expecta/Matchers/EXPMatchers+beKindOf.m"; sourceTree = "<group>"; };
 		3DCE858F212EBF0A693859FE30F75B80 /* SpectaTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SpectaTypes.h; path = Specta/Specta/SpectaTypes.h; sourceTree = "<group>"; };
 		3DD2041D98981BC5B9DD510D46F7DBDE /* XCTestCase+Specta.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XCTestCase+Specta.m"; path = "Specta/Specta/XCTestCase+Specta.m"; sourceTree = "<group>"; };
+		3E423E05D8A3BC2906C4388CDB4162A4 /* TPLAPIClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLAPIClient.h; sourceTree = "<group>"; };
 		401C53515C072D7BF45DC592DED63ADA /* Expecta.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Expecta.modulemap; sourceTree = "<group>"; };
 		419F70664EE5599E7899F5564A80790B /* Pods-Tropicalytics_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tropicalytics_Example-resources.sh"; sourceTree = "<group>"; };
-		41C1153A4737C82F68C15387FB93FDEF /* TLUniqueIdentifier.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TLUniqueIdentifier.h; sourceTree = "<group>"; };
 		44C7D01A6C0AF7896E1F033CF92A6A47 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		473271BDCBA31BC83289D214C276E274 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
 		47BB3C3DD058A3EFE5E6863EEE6A1B90 /* EXPDoubleTuple.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPDoubleTuple.h; path = Expecta/EXPDoubleTuple.h; sourceTree = "<group>"; };
@@ -290,16 +299,17 @@
 		50888357CD1EF17DDA64C5499715BE78 /* ExpectaSupport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ExpectaSupport.m; path = Expecta/ExpectaSupport.m; sourceTree = "<group>"; };
 		50D9420B9D8D6914E3FC70646C8C91CA /* EXPMatchers+postNotification.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+postNotification.h"; path = "Expecta/Matchers/EXPMatchers+postNotification.h"; sourceTree = "<group>"; };
 		51F2421BDB6CE6E866186D4DFE21ACBE /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
+		532DA0A6213E5A7814BF28C16DA6F9F7 /* TPLConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLConfiguration.m; sourceTree = "<group>"; };
 		544CA1AC61E2DA24C157A742AA3ADF8A /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
 		5514D78111ED068260147B808B8BEAD7 /* AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-prefix.pch"; sourceTree = "<group>"; };
 		55BE79FA4B686D752683A6E14B935BFD /* Tropicalytics-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Tropicalytics-prefix.pch"; sourceTree = "<group>"; };
 		55EA50ACDD80B5559A1BACB134F44008 /* Pods_Tropicalytics_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tropicalytics_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		574875DBC633C280CE29B4C5C92C3B2C /* Pods-Tropicalytics_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tropicalytics_Example.release.xcconfig"; sourceTree = "<group>"; };
 		5788341CBEEB8916021D7F08A763CC4C /* EXPMatchers+match.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+match.m"; path = "Expecta/Matchers/EXPMatchers+match.m"; sourceTree = "<group>"; };
-		582A7C164A1194676A6558072B927EE0 /* TLUniqueIdentifier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TLUniqueIdentifier.m; sourceTree = "<group>"; };
 		591DEDFFEA29F7629EA512E2534F63AF /* Specta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Specta.h; path = Specta/Specta/Specta.h; sourceTree = "<group>"; };
 		5B1C3C042B8447FB760661065D8D4FAE /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
 		5B80D5A149CCCCEEEF4911C7F9920FCF /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DA8323C5C2DC17F4A5ECC540D34E6C6 /* TPLUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLUtilities.m; sourceTree = "<group>"; };
 		614DB892511FBA4C485287644553EAF4 /* SPTSpec.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTSpec.m; path = Specta/Specta/SPTSpec.m; sourceTree = "<group>"; };
 		6222C6AD863A5B1F7090FC76A6EF889A /* EXPMatcherHelpers.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPMatcherHelpers.m; path = Expecta/Matchers/EXPMatcherHelpers.m; sourceTree = "<group>"; };
 		637DD075D3777050E9EAFAB88BF9CABC /* NSValue+Expecta.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSValue+Expecta.m"; path = "Expecta/NSValue+Expecta.m"; sourceTree = "<group>"; };
@@ -314,9 +324,12 @@
 		76EFDF998723B6F64DC59C291372ACF8 /* EXPMatchers+beInTheRangeOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beInTheRangeOf.m"; path = "Expecta/Matchers/EXPMatchers+beInTheRangeOf.m"; sourceTree = "<group>"; };
 		7A0E1A7B30BD4B8B0D5BCC0423FBA75B /* Pods-Tropicalytics_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tropicalytics_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		7B22F9B6DD5818B151297EF1DF875FDA /* EXPMatchers+beGreaterThanOrEqualTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beGreaterThanOrEqualTo.h"; path = "Expecta/Matchers/EXPMatchers+beGreaterThanOrEqualTo.h"; sourceTree = "<group>"; };
+		7BC511C57C583C48F3560DF84FE31A60 /* TPLUniqueIdentifier.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLUniqueIdentifier.h; sourceTree = "<group>"; };
 		7E20B0060CCE891F4AA75B5FBA7AA834 /* EXPMatchers+beLessThanOrEqualTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beLessThanOrEqualTo.h"; path = "Expecta/Matchers/EXPMatchers+beLessThanOrEqualTo.h"; sourceTree = "<group>"; };
+		7ECFB7DB77F056BD3407371266E435EF /* Tropicalytics.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Tropicalytics.m; sourceTree = "<group>"; };
 		7FEC916037A640BA11A60A280E798654 /* EXPMatchers+beLessThanOrEqualTo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beLessThanOrEqualTo.m"; path = "Expecta/Matchers/EXPMatchers+beLessThanOrEqualTo.m"; sourceTree = "<group>"; };
 		8271CF1EED72404E0B9D03B5C966DB88 /* Tropicalytics-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Tropicalytics-umbrella.h"; sourceTree = "<group>"; };
+		82DE84E2DB15CC117ADF4404346E41C7 /* TPLAPIClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLAPIClient.m; sourceTree = "<group>"; };
 		842A72C625D05943F862B5C6FC898068 /* EXPMatchers+beSubclassOf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beSubclassOf.h"; path = "Expecta/Matchers/EXPMatchers+beSubclassOf.h"; sourceTree = "<group>"; };
 		84CF0E427569F2E1E2677C6C75D1A30C /* Pods-Tropicalytics_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tropicalytics_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		859A2E08EE205F21C9868C136CAE94DB /* EXPMatchers+equal.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+equal.m"; path = "Expecta/Matchers/EXPMatchers+equal.m"; sourceTree = "<group>"; };
@@ -352,10 +365,13 @@
 		9E55B8BD77F23737858D190466E029C0 /* EXPMatchers+match.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+match.h"; path = "Expecta/Matchers/EXPMatchers+match.h"; sourceTree = "<group>"; };
 		9E96D140285095B2D8B3E4B2D07D3885 /* EXPMatchers+beInTheRangeOf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beInTheRangeOf.h"; path = "Expecta/Matchers/EXPMatchers+beInTheRangeOf.h"; sourceTree = "<group>"; };
 		A024154B81BA9A4876E7EDBF487C96E5 /* EXPMatchers+beCloseTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beCloseTo.h"; path = "Expecta/Matchers/EXPMatchers+beCloseTo.h"; sourceTree = "<group>"; };
+		A0A0300BBD6EA24F1A0CCB4D1EC4A99A /* Tropicalytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Tropicalytics.h; sourceTree = "<group>"; };
 		A0B2F90E1DF2279114F9019194E35F33 /* EXPExpect.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPExpect.h; path = Expecta/EXPExpect.h; sourceTree = "<group>"; };
+		A0D3DBC1E9AB54813E989342553DE3F2 /* TPLConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLConfiguration.h; sourceTree = "<group>"; };
 		A0DFB753D07E1CC170EC137606F968CD /* EXPExpect.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPExpect.m; path = Expecta/EXPExpect.m; sourceTree = "<group>"; };
 		A1601D28E8C454DDDE7E6602566015F4 /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
 		A5E5C6488EDFEF7785A35253ABB3522D /* EXPMatchers+beNil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beNil.h"; path = "Expecta/Matchers/EXPMatchers+beNil.h"; sourceTree = "<group>"; };
+		A69BC8A4932BAC17280C0CFC190856F6 /* TPLUniqueIdentifier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLUniqueIdentifier.m; sourceTree = "<group>"; };
 		ADA6D3209E2731597FCDD82E3F96D53F /* EXPFloatTuple.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPFloatTuple.m; path = Expecta/EXPFloatTuple.m; sourceTree = "<group>"; };
 		B0423736FFA88FE8EA2A41E79DC2E601 /* Pods-Tropicalytics_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tropicalytics_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B069F2FF558F4AA1748B9CF05F4D7791 /* EXPMatchers+postNotification.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+postNotification.m"; path = "Expecta/Matchers/EXPMatchers+postNotification.m"; sourceTree = "<group>"; };
@@ -488,14 +504,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03D36545205041FB7844E512D9B455EA /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				484ED5125A7AD4F01F09FAE03DAE4284 /* Classes */,
-			);
-			path = Pod;
-			sourceTree = "<group>";
-		};
 		10D16EAB8869277DD5B35D4F987B000A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -533,22 +541,45 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		28394EF3C42E80003FB24827C77E9AC4 /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				3E423E05D8A3BC2906C4388CDB4162A4 /* TPLAPIClient.h */,
+				82DE84E2DB15CC117ADF4404346E41C7 /* TPLAPIClient.m */,
+			);
+			path = APIClient;
+			sourceTree = "<group>";
+		};
+		2D4436AA573F33A58CD51732F90AE607 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A0A0300BBD6EA24F1A0CCB4D1EC4A99A /* Tropicalytics.h */,
+				7ECFB7DB77F056BD3407371266E435EF /* Tropicalytics.m */,
+				28394EF3C42E80003FB24827C77E9AC4 /* APIClient */,
+				8A116F0E5D9D596DF0177DC8DABB228C /* Config */,
+				64BCA66A10C3094C5D0F75E7E3AE4351 /* UniqueIdentifier */,
+				3F65EDB658D72D86C315D672BA549723 /* Utilities */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		3F65EDB658D72D86C315D672BA549723 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				206DBC2EA1854583EDCFD1430AA6BE05 /* TPLUtilities.h */,
+				5DA8323C5C2DC17F4A5ECC540D34E6C6 /* TPLUtilities.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		412CC542617E27A348629731602EA048 /* Tropicalytics */ = {
 			isa = PBXGroup;
 			children = (
-				03D36545205041FB7844E512D9B455EA /* Pod */,
+				756D4A9254336B54CF578496F51BD427 /* Pod */,
 				10D16EAB8869277DD5B35D4F987B000A /* Support Files */,
 			);
 			name = Tropicalytics;
 			path = ../..;
-			sourceTree = "<group>";
-		};
-		484ED5125A7AD4F01F09FAE03DAE4284 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				D4ADEFC31160DB3DA73F58EC5B85E708 /* UniqueIdentifier */,
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		4E0A16B63FF0582C82F3284A4080971D /* NSURLSession */ = {
@@ -587,6 +618,23 @@
 				9882E2AE52EF7EF35F96A77829B59F49 /* UIWebView+AFNetworking.m */,
 			);
 			name = UIKit;
+			sourceTree = "<group>";
+		};
+		64BCA66A10C3094C5D0F75E7E3AE4351 /* UniqueIdentifier */ = {
+			isa = PBXGroup;
+			children = (
+				7BC511C57C583C48F3560DF84FE31A60 /* TPLUniqueIdentifier.h */,
+				A69BC8A4932BAC17280C0CFC190856F6 /* TPLUniqueIdentifier.m */,
+			);
+			path = UniqueIdentifier;
+			sourceTree = "<group>";
+		};
+		756D4A9254336B54CF578496F51BD427 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				2D4436AA573F33A58CD51732F90AE607 /* Classes */,
+			);
+			path = Pod;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -630,6 +678,15 @@
 				4999341F8355765A9D342C8F83DE0C32 /* XCTest.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		8A116F0E5D9D596DF0177DC8DABB228C /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				A0D3DBC1E9AB54813E989342553DE3F2 /* TPLConfiguration.h */,
+				532DA0A6213E5A7814BF28C16DA6F9F7 /* TPLConfiguration.m */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		8F0863691E6892AD1DE163DEDD668CFA /* Reachability */ = {
@@ -768,15 +825,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Expecta";
-			sourceTree = "<group>";
-		};
-		D4ADEFC31160DB3DA73F58EC5B85E708 /* UniqueIdentifier */ = {
-			isa = PBXGroup;
-			children = (
-				41C1153A4737C82F68C15387FB93FDEF /* TLUniqueIdentifier.h */,
-				582A7C164A1194676A6558072B927EE0 /* TLUniqueIdentifier.m */,
-			);
-			path = UniqueIdentifier;
 			sourceTree = "<group>";
 		};
 		E5DE238F06DDD58F51799C2E00090376 /* Support Files */ = {
@@ -1000,12 +1048,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FA77659018319C900CCDCC0ABC9C30DC /* Headers */ = {
+		D0862FDFF65C6881D4575004BC711E77 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB4FEAEBA75E30472BF9010EB6BAAB5F /* TLUniqueIdentifier.h in Headers */,
-				B0CEC24544943CC46F686235109C2E17 /* Tropicalytics-umbrella.h in Headers */,
+				E498B08B961382C14CD6E7CEC351C9B1 /* TPLAPIClient.h in Headers */,
+				E534D087DF82725D6188ECFBC02333AE /* TPLConfiguration.h in Headers */,
+				939AA689BAF6E211B6A1485E497DA730 /* TPLUniqueIdentifier.h in Headers */,
+				B6A8661A23901A7CB3BAB8BA49322E96 /* TPLUtilities.h in Headers */,
+				51F499F849CA97CE288F918D6A42C1D0 /* Tropicalytics-umbrella.h in Headers */,
+				CCD54B15E600AEDEE43D563643E34219 /* Tropicalytics.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1050,10 +1102,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 255BE96390D2B9020F84721169C302D3 /* Build configuration list for PBXNativeTarget "Tropicalytics" */;
 			buildPhases = (
-				41F87E615DDB75770B983BEFBA6FACD8 /* Sources */,
+				E601C4930A83B14701BCF81B89B3D5BE /* Sources */,
 				F48C884850524D8F9100A5F04593147B /* Frameworks */,
 				B49187BD4942C04B72714A0B206D99E8 /* Resources */,
-				FA77659018319C900CCDCC0ABC9C30DC /* Headers */,
+				D0862FDFF65C6881D4575004BC711E77 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -1240,15 +1292,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		41F87E615DDB75770B983BEFBA6FACD8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FB2BF4AB5B0E0EC8FC4B42651B959C6C /* TLUniqueIdentifier.m in Sources */,
-				1FE97180CAD27898C1ED00CE6F90A207 /* Tropicalytics-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5250E8101A3681C2AC7F78CF865F9F88 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1303,6 +1346,19 @@
 				E0A077DFB064B79685B810CCEFB2F1EF /* EXPMatchers+respondTo.m in Sources */,
 				EF6497EE123F6BC0C1B09717437C5908 /* EXPUnsupportedObject.m in Sources */,
 				B84431CF8C64F363A334AA7089F6C134 /* NSValue+Expecta.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E601C4930A83B14701BCF81B89B3D5BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8EE3338BB97791197C09F4EAE56CECA /* TPLAPIClient.m in Sources */,
+				1AA6D570AF8D7E1085360866B1A6B14A /* TPLConfiguration.m in Sources */,
+				18BEE4C85EE9CEBBB3C1849C567980A8 /* TPLUniqueIdentifier.m in Sources */,
+				CB1D629EA5C54E77AE2661BD6349F16E /* TPLUtilities.m in Sources */,
+				A4869AAF81C66AD7FA3E328EB7A6253F /* Tropicalytics-dummy.m in Sources */,
+				50D1CE23FEA71E36F65C5E94D8A840DA /* Tropicalytics.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

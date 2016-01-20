@@ -1,5 +1,5 @@
 //
-//  TLViewController.h
+//  TLAppDelegate.h
 //  Tropicalytics
 //
 //  Created by Matt King on 01/19/2016.
@@ -8,6 +8,8 @@
 
 @import UIKit;
 
-@interface TLViewController : UIViewController
+@interface TPLAppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (strong, nonatomic) UIWindow *window;
 
 @end

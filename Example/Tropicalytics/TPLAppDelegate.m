@@ -6,22 +6,23 @@
 //  Copyright (c) 2016 Matt King. All rights reserved.
 //
 
-#import "TLAppDelegate.h"
-#import "TLViewController.h"
+#import "TPLAppDelegate.h"
+#import "TPLViewController.h"
 
-@interface TLAppDelegate ()
+@interface TPLAppDelegate ()
 
-@property (nonatomic, strong) TLViewController *viewController;
+@property (nonatomic, strong) TPLViewController *viewController;
 
 @end
 
-@implementation TLAppDelegate
+@implementation TPLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[TLViewController alloc] init];
+    self.viewController = [[TPLViewController alloc] init];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
