@@ -1,0 +1,25 @@
+{
+  "name": "Tropicalytics",
+  "version": "0.1.0",
+  "summary": "A short description of Tropicalytics.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/Tropicalytics",
+  "license": "MIT",
+  "authors": {
+    "Matt King": "mattk@tilt.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/Tropicalytics.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "Tropicalytics": [
+      "Pod/Assets/*.png"
+    ]
+  }
+}
