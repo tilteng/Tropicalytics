@@ -1,6 +1,6 @@
 ![alt tag](Logo/Tropicalytics.png)
 
-[![CI Status](http://img.shields.io/travis/Matt King/Tropicalytics.svg?style=flat)](https://travis-ci.org/Matt King/Tropicalytics)
+[![Circle CI](https://circleci.com/gh/tilteng/Tropicalytics.svg?style=svg&circle-token=dca7bd1600e74f147788ee906e73aedae47e88bf)](https://circleci.com/gh/tilteng/Tropicalytics)
 [![Version](https://img.shields.io/cocoapods/v/Tropicalytics.svg?style=flat)](http://cocoapods.org/pods/Tropicalytics)
 [![License](https://img.shields.io/cocoapods/l/Tropicalytics.svg?style=flat)](http://cocoapods.org/pods/Tropicalytics)
 [![Platform](https://img.shields.io/cocoapods/p/Tropicalytics.svg?style=flat)](http://cocoapods.org/pods/Tropicalytics)
