@@ -1,4 +1,4 @@
-# Tropicalytics
+![alt tag](Logo/Tropicalytics.png)
 
 [![CI Status](http://img.shields.io/travis/Matt King/Tropicalytics.svg?style=flat)](https://travis-ci.org/Matt King/Tropicalytics)
 [![Version](https://img.shields.io/cocoapods/v/Tropicalytics.svg?style=flat)](http://cocoapods.org/pods/Tropicalytics)
