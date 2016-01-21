@@ -7,11 +7,11 @@
 //
 
 @import UIKit;
-#import "TLAppDelegate.h"
+#import "TPLAppDelegate.h"
 
 int main(int argc, char * argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([TLAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([TPLAppDelegate class]));
     }
 }
