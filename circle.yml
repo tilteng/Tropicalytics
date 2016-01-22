@@ -8,7 +8,7 @@ machine:
         XCODE_SCHEME: "Tropicalytics-Example"
         CI_BUILD_NUMBER: $CIRCLE_BUILD_NUM
         CI_DISPLAY_NAME: "Circle CI"
-        CI_REPORT_PATH: $CIRCLE_TEST_REPORTS
+        CI_REPORT_PATH: "$CIRCLE_TEST_REPORTS/junit"
 test:
     override:
         - fastlane ios test
