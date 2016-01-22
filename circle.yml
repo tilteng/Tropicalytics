@@ -1,0 +1,18 @@
+# Configuration documentation can be found at:
+# https://circleci.com/docs/configuration
+
+machine:
+    xcode:
+        version: "7.2"
+    environment:
+        XCODE_SCHEME: "Tropicalytics-Example"
+        CI_BUILD_NUMBER: $CIRCLE_BUILD_NUM
+        CI_DISPLAY_NAME: "Circle CI"
+        CI_REPORT_PATH: $CIRCLE_TEST_REPORTS
+test:
+    override:
+        - xctool
+            - scheme "Tropicalytics-Example"
+            - workspace Example/Tropicalytics.xcworkspace
+            - sdk iphonesimulator
+            test
