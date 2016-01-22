@@ -9,6 +9,7 @@
 #import "TPLViewController.h"
 #import "Tropicalytics.h"
 #import "TPLConfiguration.h"
+#import "TPLHeader.h"
 
 static NSString *const urlBasePath = @"http://localhost:4567";
 
@@ -24,14 +25,29 @@ static NSString *const urlBasePath = @"http://localhost:4567";
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    TPLConfiguration *config = [[TPLConfiguration alloc] initWithBasePath:[NSURL URLWithString:urlBasePath]];
+    // Initialize the header payload that is sent as part of all outgoing tracking requests.
+    
+    // Use the defaults (includes things like app version, environment, etc)...
+    TPLHeader *header = [[TPLHeader alloc] initDefaultHeaderWithAppId:@"tilt_ios"];
+  
+    // ...Or skip the defaults and just do your own thing.
+    // TPLHeader *header = [[TPLHeader alloc] init];
 
+    // Adds any arbitrary key-values to the header payload.
+    [header addValues:@{
+        @"foo": @"bar",
+    }];
+    
+    // Initialize the config. Passing in the header payload is optional.
+    TPLConfiguration *config = [[TPLConfiguration alloc] initWithBasePath:[NSURL URLWithString:urlBasePath] header:header];
+
+    // Instance example:
     self.tropicalyticsInstance = [[Tropicalytics alloc] initWithConfiguration:config];
-
     [self.tropicalyticsInstance sendInitialPost];
     
-    [Tropicalytics sharedInstanceWithConfiguration:config];
-    [[Tropicalytics sharedInstance] sendInitialPost];
+    // Singleton example:
+    //    [Tropicalytics sharedInstanceWithConfiguration:config];
+    //    [[Tropicalytics sharedInstance] sendInitialPost];
 }
 
 @end

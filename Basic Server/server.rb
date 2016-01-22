@@ -1,12 +1,13 @@
 require 'sinatra'
 require 'json'
 
-get '/' do
-  'hi'
-  end
+# Listens on http://localhost:4567.
+post '/' do
+  puts "HEADERS"
+  puts headers
+  puts "RAW BODY"
+  puts request.body.read
 
-  post '/' do
-    puts request.POST.to_json
-    puts request.body.read
-      200
-      end
+  # Respond with 200
+  200
+end
