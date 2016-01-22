@@ -11,8 +11,4 @@ machine:
         CI_REPORT_PATH: $CIRCLE_TEST_REPORTS
 test:
     override:
-        - xctool
-            - scheme "Tropicalytics-Example"
-            - workspace Example/Tropicalytics.xcworkspace
-            - sdk iphonesimulator
-            test
+        - fastlane ios test
