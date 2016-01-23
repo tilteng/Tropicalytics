@@ -2,6 +2,10 @@
 
 #import "TPLAPIClient.h"
 #import "TPLConfiguration.h"
+#import "TPLDatabase.h"
+#import "TPLEvent.h"
+#import "TPLRequestManager.h"
+#import "TPLBatchDetails.h"
 #import "TPLFieldGroup.h"
 #import "TPLHeader.h"
 #import "Tropicalytics.h"

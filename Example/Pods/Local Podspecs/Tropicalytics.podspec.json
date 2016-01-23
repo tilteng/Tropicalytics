@@ -3,15 +3,16 @@
   "version": "0.1.0",
   "summary": "Tropicalytics is a lightweight configurable analytics tool that allows you to send self describing JSON to your own server so you are in control of your data.",
   "description": "",
-  "homepage": "https://github.com/KattMingMing/Tropicalytics",
+  "homepage": "https://github.com/tilteng/Tropicalytics",
   "license": "MIT",
   "authors": {
-    "Matt King": "mattk@tilt.com"
+    "Tilt.com Inc": "mattk@tilt.com"
   },
   "source": {
-    "git": "https://github.com/KattMingMing/Tropicalytics.git",
+    "git": "https://github.com/tilteng/Tropicalytics.git",
     "tag": "0.1.0"
   },
+  "social_media_url": "https://twitter.com/tilteng",
   "platforms": {
     "ios": "8.0"
   },
@@ -30,5 +31,8 @@
     "MAObjCRuntime": [
       "~> 0.0.1"
     ]
-  }
+  },
+  "resources": "Pod/Classes/Tropicalytics.xcdatamodeld",
+  "preserve_paths": "Pod/Classes/Tropicalytics.xcdatamodeld",
+  "frameworks": "CoreData"
 }

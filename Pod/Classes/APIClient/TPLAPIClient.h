@@ -23,6 +23,11 @@ typedef void (^TPLAPIClientCompletionBlock)(NSDictionary *response, NSError *err
 @interface TPLAPIClient : AFHTTPSessionManager
 
 /**
+ *  This property is used to tell our persistence layer which API Client the event was intended for so we can ensure events are sent to the correct API.
+ */
+@property (nonatomic, readonly) NSString *uniqueIdentifier;
+
+/**
  *  Performs a POST request to the supplised relative path with the supplied parameters.
  *
  *  @param params     A dictionary that contains any JSON data that you want to include in the request. This method simple calls a similar operation on the underlying HTTPClient
@@ -30,7 +35,6 @@ typedef void (^TPLAPIClientCompletionBlock)(NSDictionary *response, NSError *err
  *
  *  @return the NSURLSessionDataTask object
  */
-- (NSURLSessionDataTask *)postWithParameters:(NSDictionary *)params completion:(TPLAPIClientCompletionBlock)completion;
-
+- (NSURLSessionDataTask *) postWithParameters:(NSDictionary *)params completion:(TPLAPIClientCompletionBlock)completion;
 
 @end

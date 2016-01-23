@@ -9,6 +9,9 @@ machine:
         CI_BUILD_NUMBER: $CIRCLE_BUILD_NUM
         CI_DISPLAY_NAME: "Circle CI"
         CI_REPORT_PATH: $CIRCLE_TEST_REPORTS/junit
+dependencies:
+    pre:
+        - brew uninstall xctool && brew install --HEAD xctool
 test:
     override:
         - pod install --project-directory=Example

@@ -38,4 +38,8 @@ Pod::Spec.new do |s|
   # s.frameworks = 'UIKit', 'MapKit'
     s.dependency 'AFNetworking', '~> 3.0'
     s.dependency 'MAObjCRuntime', '~> 0.0.1'
+    s.resources = 'Pod/Classes/Tropicalytics.xcdatamodeld'
+    s.preserve_paths = 'Pod/Classes/Tropicalytics.xcdatamodeld'
+    s.framework = 'CoreData'
+    s.requires_arc = true
 end
