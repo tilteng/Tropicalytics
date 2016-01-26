@@ -10,6 +10,7 @@
 #import "TPLAPIClient.h"
 #import "TPLConfiguration.h"
 #import "TPLUtilities.h"
+#import "TPLHeader.h"
 
 static Tropicalytics *_sharedInstance = nil;
 
@@ -96,13 +97,26 @@ static Tropicalytics *_sharedInstance = nil;
  *  Tropicalyics is initalized.
  */
 - (void)sendInitialPost {
-    [self.apiClient postWithParameters:@{@"header" : @{@"session_id" : self.sessionUUID, @"device_id" : [TPLUtilities getDeviceUUID]}} completion:^(NSDictionary *response, NSError *error) {
+    [self.apiClient postWithParameters:[self buildRequest] completion:^(NSDictionary *response, NSError *error) {
         if(!error) {
             NSLog(@"Response: %@", response);
         } else {
             NSLog(@"Error: %@", error);
         }
     }];
+}
+
+// TK Pull this (request-building functionality) out into a separate class.
+- (NSDictionary *)buildRequest {
+    TPLFieldGroup *requestData = [[TPLFieldGroup alloc] init];
+    
+    if (self.configuration.header != nil) {
+        [requestData setValue:self.configuration.header forKey:@"header"];
+    }
+
+    //    TK Add the rest of the request data....
+    
+    return [requestData dictionaryRepresentationWithUnderscoreKeys];
 }
 
 //Important note: These selectors will NOT be called on the main thread.

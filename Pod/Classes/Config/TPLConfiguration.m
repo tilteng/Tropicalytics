@@ -7,10 +7,12 @@
 //
 
 #import "TPLConfiguration.h"
+#import "TPLHeader.h"
 
 @interface TPLConfiguration ()
 
 @property (nonatomic, readwrite) NSURL *urlBasePath;
+@property (nonatomic, readwrite) TPLHeader *header;
 
 @end
 
@@ -20,6 +22,15 @@
     self = [self init];
     if(self) {
         _urlBasePath = basePath;
+    }
+    
+    return self;
+}
+
+- (id)initWithBasePath:(NSURL *)basePath header:(TPLHeader *)header {
+    self = [self initWithBasePath:basePath];
+    if (self) {
+        _header = header;
     }
     
     return self;

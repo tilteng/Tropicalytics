@@ -16,14 +16,14 @@
     if(self) {
         self.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
         [self setResponseSerializer:[AFHTTPResponseSerializer serializer]];
-        [self setRequestSerializer:[AFHTTPRequestSerializer serializer]];
+        [self setRequestSerializer:[AFJSONRequestSerializer serializer]];
         [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     }
     
     return self;
 }
 
-- (NSURLSessionDataTask *)postWithParameters:(NSDictionary *)params completion:(TPLAPIClientCompletionBlock)completion {
+- (NSURLSessionDataTask *)postWithParameters:(id)params completion:(TPLAPIClientCompletionBlock)completion {
     return [self POST:@"/" parameters:params progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [self parseResponse:responseObject fromDataTask:task completion:completion];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
