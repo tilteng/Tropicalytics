@@ -3,7 +3,7 @@
 //  Tropicalytics
 //
 //  Created by Brett Bukowski on 1/25/16.
-//  Copyright © 2016 Matt King. All rights reserved.
+//  Copyright (c) 2016 Tilt.com Inc. All rights reserved.
 //
 
 #import "TPLFieldGroup.h"
