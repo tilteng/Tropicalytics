@@ -11,4 +11,5 @@ machine:
         CI_REPORT_PATH: $CIRCLE_TEST_REPORTS/junit
 test:
     override:
+        - pod install --project-directory=Example
         - fastlane ios test
