@@ -12,13 +12,6 @@
 
 @implementation TPLHeader
 
-/*!
- *  Prepares an instance with properties set to default values.
- *
- *  @param appId value to use for the header's "app_id" field
- *
- *  @return an initialized instance with defaults already prepared
- */
 - (instancetype)initDefaultHeaderWithAppId:(NSString *)appId {
     self = [self init];
     

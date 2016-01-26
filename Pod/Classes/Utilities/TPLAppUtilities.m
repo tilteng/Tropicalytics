@@ -10,12 +10,6 @@
 
 @implementation TPLAppUtilities
 
-/**
- *  Returns "staging" or "prod" depending on
- *  whether the DEBUG or ADHOC flags are present.
- *
- *  @return staging / prod
- */
 + (NSString *)getEnvironment {
 #ifdef DEBUG
     return @"staging";
@@ -26,11 +20,6 @@
     return @"prod";
 }
 
-/**
- *  Returns a string representing the app's version number.
- *
- *  @return version (e.g. "1.0")
- */
 + (NSString *)getAppVersion {
     return [NSString stringWithFormat:@"%@", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
 }

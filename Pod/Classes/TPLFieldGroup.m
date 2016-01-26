@@ -12,7 +12,7 @@
 
 @interface TPLFieldGroup ()
 
-@property (nonatomic, readwrite) NSMutableDictionary *data;
+@property (nonatomic, strong) NSMutableDictionary *data;
 
 @end
 
@@ -28,13 +28,6 @@
     return self;
 }
 
-/**
- *  Initializes with a set of key-value entries.
- *
- *  @param entries Initial set of entries
- *
- *  @return a field group instance with entries
- */
 - (instancetype)initWithEntries:(NSDictionary *)entries {
     self = [self init];
     
@@ -45,43 +38,18 @@
     return self;
 }
 
-/**
- *  Adds a key and value to the entry set.
- *
- *  @param value object to set
- *  @param key   index to reference the object
- */
 - (void)setValue:(id)value forKey:(NSString *)key {
     [_data setValue:value forKey:key];
 }
 
-/**
- *  Adds a group of key-value entries. The values
- *  specified override any previously-set values.
- *
- *  @param values group of key-value entries
- */
 - (void)addValues:(NSDictionary *)values {
     [_data addEntriesFromDictionary:values];
 }
 
-/**
- *  Returns a dictionary representation of the object that's
- *  suitable for serializing / JSON-encoding etc.
- *
- *  @return all keys of propery names and entry names are converted
- *  to underscore-case
- */
 - (NSDictionary *)dictionaryRepresentationWithUnderscoreKeys {
     return [self dictionaryRepresentation:YES];
 }
 
-/**
- *  Returns a dictionary representation of the object that's
- *  suitable for serializing / JSON-encoding etc.
- *
- *  @return all keys of property names and entry names are left alone
- */
 - (NSDictionary *)dictionaryRepresentation {
     return [self dictionaryRepresentation:NO];
 }
@@ -195,24 +163,6 @@
     }
     
     return [NSString stringWithString:output];
-}
-
-#pragma mark NSCoding protocol methods
-
-- (void)encodeWithCoder:(NSCoder *)coder {
-    [coder encodeObject:_data forKey:@"TPLDataBag"];
-}
-
-- (instancetype)initWithCoder:(NSCoder *)decoder {
-    self = [self init];
-    
-    if (!self) {
-        return nil;
-    }
-    
-    _data = [decoder decodeObjectForKey:@"TPLDataBag"];
-    
-    return self;
 }
 
 @end
