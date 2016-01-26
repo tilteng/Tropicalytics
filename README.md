@@ -200,9 +200,9 @@ Anyways... The data engineering team did us a solid and put together a nice spec
 
 
 
-## Author
+## Authors
 
-Matt King, mattk@tilt.com
+Brett Bukowski, brett@tilt.com | Matt King, mattk@tilt.com
 
 ## License
 
