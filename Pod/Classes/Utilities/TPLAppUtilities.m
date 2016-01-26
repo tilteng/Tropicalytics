@@ -8,16 +8,18 @@
 
 #import "TPLAppUtilities.h"
 
+#ifdef DEBUG
+    #define ENVIRONMENT_VALUE @"debug";
+#elif ADHOC
+    #define ENVIRONMENT_VALUE @"adhoc";
+#else
+    #define ENVIRONMENT_VALUE @"prod";
+#endif
+
 @implementation TPLAppUtilities
 
 + (NSString *)getEnvironment {
-#ifdef DEBUG
-    return @"staging";
-#endif
-#ifdef ADHOC
-    return @"staging";
-#endif
-    return @"prod";
+    return ENVIRONMENT_VALUE;
 }
 
 + (NSString *)getAppVersion {

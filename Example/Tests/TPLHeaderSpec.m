@@ -24,7 +24,7 @@ describe(@"TPLHeader", ^{
             
             expect(header.appId).to.equal(@"foo");
             expect(header.source).to.equal(@"app");
-            expect(header.env).to.equal(@"staging");
+            expect(header.env).to.equal(@"debug");
             expect(header.sessionId).to.beKindOf([NSString class]);
         });
     });
