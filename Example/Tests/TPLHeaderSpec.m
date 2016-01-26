@@ -12,22 +12,26 @@
 SpecBegin(TPLHeader)
 
 describe(@"TPLHeader", ^{
-    describe(@"initDefaultHeaderWithAppId", ^{
-        it(@"sets the app id", ^{
-            TPLHeader *header = [[TPLHeader alloc] initDefaultHeaderWithAppId:@"tilt_ios"];
-            
-            expect(header.appId).to.equal(@"tilt_ios");
-        });
-        
+    describe(@"initDefaultHeader", ^{
         it(@"sets ivars to default values", ^{
-            TPLHeader *header = [[TPLHeader alloc] initDefaultHeaderWithAppId:@"foo"];
+            TPLHeader *header = [[TPLHeader alloc] initDefaultHeader];
             
-            expect(header.appId).to.equal(@"foo");
-            expect(header.source).to.equal(@"app");
-            expect(header.env).to.equal(@"debug");
+            expect(header.appId).to.beNil();
+            expect(header.source).to.beNil();
             expect(header.sessionId).to.beKindOf([NSString class]);
+            expect(header.appVersion).to.beKindOf([NSString class]);
         });
     });
+
+    describe(@"initDefaultHeaderWithAppIdSource", ^{
+        it(@"sets the app id and source", ^{
+            TPLHeader *header = [[TPLHeader alloc] initDefaultHeaderWithAppId:@"tilt_ios" source:@"app"];
+            
+            expect(header.appId).to.equal(@"tilt_ios");
+            expect(header.source).to.equal(@"app");
+        });
+    });
+
 });
 
 SpecEnd

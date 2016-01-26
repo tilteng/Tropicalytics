@@ -21,11 +21,6 @@
 @property (nonatomic, copy) NSString * source;
 
 /**
- *  "env" field (prod/staging)
- */
-@property (nonatomic, copy) NSString * env;
-
-/**
  *  "session_id" field
  */
 @property (nonatomic, copy) NSString * sessionId;
@@ -37,11 +32,23 @@
 
 /**
  *  Prepares an instance with properties set to default values.
+ *  Use the default `init` initializer to create an instance
+ *  without any of the property values set.
  *
  *  @param appId value to use for the header's "app_id" field
+ *  @param source value to use for the header's "source" field
  *
  *  @return an initialized instance with defaults already prepared
  */
-- (instancetype)initDefaultHeaderWithAppId:(NSString *)appId;
+- (instancetype)initDefaultHeaderWithAppId:(NSString *)appId source:(NSString *)source;
+
+/**
+ *  Prepares an instance with properties (sessionId, appVersion) set to default values.
+ *  Use the default `init` initializer to create an instance
+ *  without any of the property values set.
+ *
+ *  @return an initialized instance with defaults already prepared
+ */
+- (instancetype)initDefaultHeader;
 
 @end

@@ -12,15 +12,23 @@
 
 @implementation TPLHeader
 
-- (instancetype)initDefaultHeaderWithAppId:(NSString *)appId {
+- (instancetype)initDefaultHeader {
     self = [self init];
     
     if (self) {
-        _appId = appId;
-        _source = @"app";
-        _env = [TPLAppUtilities getEnvironment];
         _sessionId = [TPLUtilities getSessionUUID];
-        _appVersion = [TPLAppUtilities getAppVersion];        
+        _appVersion = [TPLAppUtilities getAppVersion];
+    }
+    
+    return self;
+}
+
+- (instancetype)initDefaultHeaderWithAppId:(NSString *)appId source:(NSString *)source {
+    self = [self initDefaultHeader];
+    
+    if (self) {
+        _appId = appId;
+        _source = source;
     }
     
     return self;

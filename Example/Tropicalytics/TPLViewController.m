@@ -28,7 +28,7 @@ static NSString *const urlBasePath = @"http://localhost:4567";
     // Initialize the header payload that is sent as part of all outgoing tracking requests.
     
     // Use the defaults (includes things like app version, environment, etc)...
-    TPLHeader *header = [[TPLHeader alloc] initDefaultHeaderWithAppId:@"tilt_ios"];
+    TPLHeader *header = [[TPLHeader alloc] initDefaultHeaderWithAppId:@"tilt_ios" source:@"app"];
   
     // ...Or skip the defaults and just do your own thing.
     // TPLHeader *header = [[TPLHeader alloc] init];
