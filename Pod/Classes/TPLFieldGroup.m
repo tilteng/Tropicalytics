@@ -107,13 +107,9 @@
         }
         
         return dictionary;
-    } else if ([value conformsToProtocol:@protocol(NSCoding)]) {
+    } else {
         return value;
     }
-    
-    NSLog(@"TPL Warning - skipping value since it is of an unknown type that does not conform to the NSCoding protocol");
-        
-    return nil;
 }
 
 /**

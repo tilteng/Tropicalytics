@@ -127,17 +127,6 @@ describe(@"TPLFieldGroup", ^{
             expect([values objectForKey:@"some_dict"]).to.equal(@{@"right": @"thing"});
         });
         
-        it(@"skips objects that don't conform to NSCoding", ^{
-            NSObject *someObj = [[NSObject alloc] init];
-            TPLFieldGroup *bag = [[TPLFieldGroup alloc] initWithEntries:@{
-                                                                    @"foo": someObj,
-                                                                    }];
-            
-            NSDictionary *values = [bag dictionaryRepresentation];
-            
-            expect(values).to.haveCountOf(0);
-        });
-        
         it(@"handles underscored name corner cases", ^{
             NSDictionary *testCases = @{
                                         @"fooBar": @"foo_bar",
