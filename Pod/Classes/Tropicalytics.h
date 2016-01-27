@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class TPLConfiguration;
+@class TPLEvent;
 
 @interface Tropicalytics : NSObject
 
@@ -42,12 +43,40 @@
  *
  *  @param count A NSNumber representing the event number. Which is used for easy debugging.
  */
-- (void) recordEvent:(NSNumber *)count;
+- (void) recordEventWithCount:(NSNumber *)count;
+
+/**
+ *  Records an event wit the given event.
+ *
+ *  @param event TPLEvent event
+ */
+- (void) recordEvent:(TPLEvent *)event;
+
+/**
+ *  Records an event with the given label and category.
+ *
+ *  @param label    NSString event label
+ *  @param category NSString event category
+ */
+- (void) recordEventWithLabel:(NSString *)label category:(NSString *)category;
 
 /**
  *  Reset the current request manager.
+ *
+ *  @param label    NSString event label
+ *  @param category NSString category
+ *  @param context  NSDictionary context data
  */
 - (void) resetDatabase;
+
+/**
+ *  Records an event with the given label, category, and context.
+ *
+ *  @param label    NSString event label
+ *  @param category NSString category
+ *  @param context  NSDictionary context data
+ */
+- (void) recordEventWithLabel:(NSString *)label category:(NSString *)category context:(NSDictionary *)context;
 
 // Place holder to ensure core data is working.
 - (void) printCoreData;
