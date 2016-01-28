@@ -15,6 +15,23 @@
 @interface TPLConfiguration : NSObject
 
 /**
+ *  Toggles the global debug state of the
+ *  TPLConfiguration. This determines whether
+ *  debug messages are logged.
+ *
+ *  @param debugFlag BOOL whether debug messages are logged
+ */
++ (void) setDebug:(BOOL)debugFlag;
+
+/**
+ *  Returns the global debug state of the
+ *  TPLConfiguration.
+ *
+ *  @return BOOL whether debug messages are logged
+ */
++ (BOOL) debug;
+
+/**
  *  Default Initializer that will create the configuration and the underlying API client.
  *  This will not create a header.
  *
@@ -35,6 +52,7 @@
 @property (nonatomic, readonly) TPLAPIClient *apiClient;
 
 @property (nonatomic, strong) TPLRequestStructure *requestStructure;
+@property (nonatomic) BOOL debug;
 
 /**
  *  Optional: configure how requests are structured.
