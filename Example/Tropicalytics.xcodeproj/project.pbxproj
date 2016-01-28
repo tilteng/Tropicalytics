@@ -22,6 +22,7 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		8B98DCDE1C52C6D2005D2F0E /* TPLHeaderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B98DCDC1C52C6C9005D2F0E /* TPLHeaderSpec.m */; };
+		8BBEB8301C59996E006C7AD1 /* TPLDeviceUtilitiesSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BBEB82F1C59996E006C7AD1 /* TPLDeviceUtilitiesSpec.m */; };
 		8BE3E00E1C56ADEE008213E8 /* TPLFieldGroupSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE3E00D1C56ADEE008213E8 /* TPLFieldGroupSpec.m */; };
 		8BE3E0111C56B680008213E8 /* TPLFieldGroupSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE3E0101C56B680008213E8 /* TPLFieldGroupSubclass.m */; };
 		BD2F6F301C4F3B5600EFF66A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD2F6F2F1C4F3B5600EFF66A /* Launch Screen.storyboard */; };
@@ -63,6 +64,7 @@
 		7536E2A997C66A9FF90EFB4F /* Pods-Tropicalytics_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tropicalytics_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tropicalytics_Example/Pods-Tropicalytics_Example.release.xcconfig"; sourceTree = "<group>"; };
 		830899FB0D92A36E80C22EC9 /* Pods-Tropicalytics_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tropicalytics_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tropicalytics_Example/Pods-Tropicalytics_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		8B98DCDC1C52C6C9005D2F0E /* TPLHeaderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLHeaderSpec.m; sourceTree = "<group>"; };
+		8BBEB82F1C59996E006C7AD1 /* TPLDeviceUtilitiesSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLDeviceUtilitiesSpec.m; sourceTree = "<group>"; };
 		8BE3E00D1C56ADEE008213E8 /* TPLFieldGroupSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLFieldGroupSpec.m; sourceTree = "<group>"; };
 		8BE3E00F1C56B680008213E8 /* TPLFieldGroupSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPLFieldGroupSubclass.h; sourceTree = "<group>"; };
 		8BE3E0101C56B680008213E8 /* TPLFieldGroupSubclass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLFieldGroupSubclass.m; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				8BE3E00D1C56ADEE008213E8 /* TPLFieldGroupSpec.m */,
 				8BE3E00F1C56B680008213E8 /* TPLFieldGroupSubclass.h */,
 				8BE3E0101C56B680008213E8 /* TPLFieldGroupSubclass.m */,
+				8BBEB82F1C59996E006C7AD1 /* TPLDeviceUtilitiesSpec.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 			files = (
 				8BE3E00E1C56ADEE008213E8 /* TPLFieldGroupSpec.m in Sources */,
 				8B98DCDE1C52C6D2005D2F0E /* TPLHeaderSpec.m in Sources */,
+				8BBEB8301C59996E006C7AD1 /* TPLDeviceUtilitiesSpec.m in Sources */,
 				8BE3E0111C56B680008213E8 /* TPLFieldGroupSubclass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
