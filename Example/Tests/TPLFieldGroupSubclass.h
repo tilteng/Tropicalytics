@@ -10,8 +10,8 @@
 
 @interface TPLFieldGroupSubclass : TPLFieldGroup
 
-@property (nonatomic, copy) NSString * someString;
-@property (nonatomic) NSUInteger someNumber;
+@property (nonatomic, copy) NSString     * someString;
+@property (nonatomic, copy) NSNumber     *someNumber;
 @property (nonatomic, copy) NSDictionary *someDict;
 
 @end
