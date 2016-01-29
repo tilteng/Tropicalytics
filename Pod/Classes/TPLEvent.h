@@ -26,7 +26,6 @@
  */
 + (TPLEvent *) objectWithManagedObject:(NSManagedObject *)managedObject;
 
-
 /**
  *  Initializes with the given time interval timestamp.
  *
@@ -34,7 +33,7 @@
  *
  *  @return instance
  */
--(instancetype) initWithTimeInterval:(NSTimeInterval)timestamp;
+- (instancetype) initWithTimeInterval:(NSTimeInterval)timestamp;
 
 /**
  *  Initializes with the given label and category and sets timestamp.
@@ -44,7 +43,7 @@
  *
  *  @return instance
  */
--(instancetype) initWithLabel:(NSString *)label category:(NSString *)category;
+- (instancetype) initWithLabel:(NSString *)label category:(NSString *)category;
 
 /**
  *  Initializes with the given label, category, and context and sets timestamp.
@@ -55,6 +54,6 @@
  *
  *  @return instance
  */
--(instancetype) initWithLabel:(NSString *)label category:(NSString *)category context:(NSDictionary *)context;
+- (instancetype) initWithLabel:(NSString *)label category:(NSString *)category context:(NSDictionary *)context;
 
 @end

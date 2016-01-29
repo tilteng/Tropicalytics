@@ -7,6 +7,7 @@
 //
 
 #import "Tropicalytics.h"
+#import "TPLConstants.h"
 #import "TPLAPIClient.h"
 #import "TPLConfiguration.h"
 #import "TPLUtilities.h"
@@ -14,17 +15,11 @@
 #import "TPLEvent.h"
 #import "TPLRequestManager.h"
 #import "TPLDatabase.h"
-#import "TPLConstants.h"
 
 static Tropicalytics *_sharedInstance = nil;
 
 @interface Tropicalytics ()
 
-// This is going to need to be an object, but since it's not let's keep it here.
-@property (nonatomic, copy) NSString *sessionUUID;
-
-@property (nonatomic, readonly) TPLConfiguration *configuration;
-@property (nonatomic, strong)   TPLAPIClient *apiClient;
 @property (nonatomic, strong)   TPLRequestManager *requestManager;
 
 @end
@@ -51,8 +46,6 @@ static Tropicalytics *_sharedInstance = nil;
             @throw [NSException exceptionWithName:NSInvalidArgumentException reason:@"TPLConfiguration object cannot be nil." userInfo:nil];
         }
 
-        _configuration = configuration;
-
         // Add observes so we know what's going on with the application so we can send analytics at appropriate times despite
         // the current batch status.
         [[NSNotificationCenter defaultCenter] addObserver:self
@@ -68,14 +61,8 @@ static Tropicalytics *_sharedInstance = nil;
                                                      name:UIApplicationWillTerminateNotification
                                                    object:nil];
 
-        // This isn't necessarily the best place for us to define a session and we don't have a way of ending
-        // a session yet, so I'm open to any suggestions around how we want to store this session object.
-        if (!self.sessionUUID) {
-            self.sessionUUID = [TPLUtilities getSessionUUID];
-        }
 
-        self.apiClient = [[TPLAPIClient alloc] initWithBaseURL:_configuration.urlBasePath];
-        self.requestManager = [[TPLRequestManager alloc] initWithAPIClient:_apiClient];
+        self.requestManager = [[TPLRequestManager alloc] initWithConfiguration:configuration];
         self.requestManager.flushRate = configuration.flushRate;
     }
 
@@ -100,41 +87,20 @@ static Tropicalytics *_sharedInstance = nil;
 
 #pragma mark - Functions
 
-- (void)recordEventWithLabel:(NSString *)label category:(NSString *)category {
+- (void) recordEventWithLabel:(NSString *)label category:(NSString *)category {
     [self recordEvent:[[TPLEvent alloc] initWithLabel:label category:category]];
 }
 
-- (void)recordEventWithLabel:(NSString *)label category:(NSString *)category context:(NSDictionary *)context {
+- (void) recordEventWithLabel:(NSString *)label category:(NSString *)category context:(NSDictionary *)context {
     [self recordEvent:[[TPLEvent alloc] initWithLabel:label category:category context:context]];
 }
 
-- (void) recordEventWithCount:(NSNumber *)count {
-    NSString *timestamp = [NSString stringWithFormat:@"%ld", (long)[[NSDate date] timeIntervalSince1970]];
-    NSDictionary *testEvent = @{ @"type" : @"campaign_created", @"client_tstamp" : timestamp, @"ctx" : @{ @"some event data" : @"yay data", @"out_bound_count" : count } };
-
-    [self.requestManager recordEvent:testEvent];
-}
-
-- (void)recordEvent:(TPLEvent *)event {
-    [self.requestManager recordEvent:[self buildRequestForEvent:event]];
+- (void) recordEvent:(TPLEvent *)event {
+    [self.requestManager recordEvent:event];
 }
 
 - (void) resetDatabase {
     [self.requestManager resetDatabase];
-}
-
-- (NSMutableDictionary *)buildRequestForEvent:(TPLEvent *)event {
-    NSMutableDictionary *request = [[NSMutableDictionary alloc] init];
-    
-    [request addEntriesFromDictionary:self.configuration.requestStructure];
-    [request setValue:[event dictionaryRepresentationWithUnderscoreKeys] forKey:KPLEventKey];
-    
-    return request;
-}
-
-// Placeholder to check logs. Will need to remove.
-- (void) printCoreData {
-    NSLog(@"%@", [self.requestManager getEventsAsJSONArray]);
 }
 
 // Important note: These selectors will NOT be called on the main thread.
@@ -160,6 +126,5 @@ static Tropicalytics *_sharedInstance = nil;
     // We probably won't have enough time to kick off a network call so lets store
     // everything and then on the next open send everything off.
 }
-
 
 @end

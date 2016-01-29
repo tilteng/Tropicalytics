@@ -9,6 +9,7 @@
 #import "TPLDatabase.h"
 #import "TPLEvent.h"
 #import "TPLAPIClient.h"
+#import "TPLConstants.h"
 
 static NSString *const SQLiteStoreURL            = @"Tropicalytics.sqlite";
 static NSString *const ManagedObjectEntity       = @"Data";
@@ -80,10 +81,16 @@ static NSUInteger const FetchBatchSize           = 50;
 
 - (void) removeEventsFromQueue:(NSArray *)arrayOfManagedObjectIDs {
     NSError *error;
-    NSBatchDeleteRequest *request = [[NSBatchDeleteRequest alloc] initWithObjectIDs:arrayOfManagedObjectIDs];
-
-    [self.backgroundManagedObjectContext executeRequest:request error:&error];
-    if(error) {
+    if([NSBatchDeleteRequest class]) {
+        NSBatchDeleteRequest *request = [[NSBatchDeleteRequest alloc] initWithObjectIDs:arrayOfManagedObjectIDs];
+        [self.backgroundManagedObjectContext executeRequest:request error:&error];
+    } else {
+        for (NSManagedObject *object in arrayOfManagedObjectIDs) {
+            [self.backgroundManagedObjectContext deleteObject:object];
+        }
+    }
+    
+    if (error) {
         NSLog(@"Error removing events from queue");
     } else {
         [self saveContext];
@@ -103,17 +110,6 @@ static NSUInteger const FetchBatchSize           = 50;
     return result;
 }
 
-- (NSArray *) getEventsAsJSONArray {
-    NSMutableArray *events = [[NSMutableArray alloc] init];
-    NSArray *staticEvents = [self getEventsArray];
-
-    for (NSManagedObject *managedEventObject in staticEvents) {
-        [events addObject:managedEventObject.objectID];
-    }
-
-    return events;
-}
-
 - (NSArray *) getEventsAsJSONFromArray:(NSArray *)managedContextArray {
     NSMutableArray *events = [[NSMutableArray alloc] init];
     NSArray *staticEvents = [managedContextArray copy];
@@ -127,9 +123,8 @@ static NSUInteger const FetchBatchSize           = 50;
 
 - (NSUInteger) getEventsArrayCount {
     NSUInteger count;
-    
-
     NSError *error = nil;
+
     count = [self.backgroundManagedObjectContext countForFetchRequest:[self fetchRequest] error:&error];
 
     if (error) {
@@ -141,16 +136,17 @@ static NSUInteger const FetchBatchSize           = 50;
 
 #pragma mark - Persistence Fetch Request
 
-- (NSFetchRequest *)fetchRequest {
+- (NSFetchRequest *) fetchRequest {
     NSFetchRequest *fetchRequest = [NSFetchRequest new];
     NSEntityDescription *entity = [NSEntityDescription entityForName:ManagedObjectEntity inManagedObjectContext:self.backgroundManagedObjectContext];
+    [fetchRequest setIncludesPropertyValues:NO];
     [fetchRequest setFetchBatchSize:FetchBatchSize];
     [fetchRequest setEntity:entity];
-    
+
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(remoteURL == %@)",
                               self.apiClientUniqueIdentifier];
     [fetchRequest setPredicate:predicate];
-    
+
     return fetchRequest;
 }
 

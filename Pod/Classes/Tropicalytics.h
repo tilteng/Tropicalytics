@@ -38,12 +38,7 @@
  */
 - (id) initWithConfiguration:(TPLConfiguration *)configuration NS_DESIGNATED_INITIALIZER;
 
-/**
- *  Simple way to send a prestructured event to the API. This will change as we start to support real events. Just a placeholder.
- *
- *  @param count A NSNumber representing the event number. Which is used for easy debugging.
- */
-- (void) recordEventWithCount:(NSNumber *)count;
+#pragma mark - Record Event
 
 /**
  *  Records an event wit the given event.
@@ -61,11 +56,6 @@
 - (void) recordEventWithLabel:(NSString *)label category:(NSString *)category;
 
 /**
- *  Reset the current request manager.
- */
-- (void) resetDatabase;
-
-/**
  *  Records an event with the given label, category, and context.
  *
  *  @param label    NSString event label
@@ -74,7 +64,11 @@
  */
 - (void) recordEventWithLabel:(NSString *)label category:(NSString *)category context:(NSDictionary *)context;
 
-// Place holder to ensure core data is working.
-- (void) printCoreData;
+#pragma mark - Database Helper
+
+/**
+ *  Reset the current request manager.
+ */
+- (void) resetDatabase;
 
 @end
