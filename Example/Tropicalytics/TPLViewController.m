@@ -8,8 +8,9 @@
 
 #import "TPLViewController.h"
 #import "Tropicalytics.h"
-#import "TPLConfiguration.h"
-#import "TPLHeader.h"
+#import <Tropicalytics/TPLConfiguration.h>
+#import <Tropicalytics/TPLHeader.h>
+#import <Tropicalytics/TPLEvent.h>
 
 static NSString *const urlBasePath = @"http://localhost:4567";
 static NSString *const otherBasePath = @"http://localhost:4555";
@@ -44,9 +45,36 @@ static NSString *const otherBasePath = @"http://localhost:4555";
     
     // Initialize the config. Passing in the header payload is optional.
     TPLConfiguration *config = [[TPLConfiguration alloc] initWithBasePath:[NSURL URLWithString:urlBasePath] header:header];
+    // Optional: configure how requests are structured.
+    // Uses the default structure:
+    // All requests have "header", "device_info", "user_info" field groupings
+    // in addition to the "event" structure:
+    // {
+    //    "header": {...},
+    //    "device_info": {...},
+    //    "user_info": {...},
+    //    "event": {...}
+    // }
+    config.requestStructure = [config dictionaryRepresentation];
 
+    // The request can also be configured however you desire:
+    // config.requeststructure = @{
+    //    // All requests will then consist of:
+    //    // {
+    //    //    "environment": {},
+    //    //    "event": {...}
+    //    // }
+    //   @"environment": @{},
+    // };
+    
     // Instance example:
     self.tropicalyticsInstance = [[Tropicalytics alloc] initWithConfiguration:config];
+    [self.tropicalyticsInstance recordEvent:[[TPLEvent alloc] initWithLabel:@"app" category:@"view" context:@{
+                                                                                                              @"foo": @"bar",
+                                                                                                              }]];
+    [self.tropicalyticsInstance recordEvent:[[TPLEvent alloc] initWithEntries:@{
+                                                                                 @"foo": @"bar",
+                                                                                }]];
     
     TPLConfiguration *otherConfig = [[TPLConfiguration alloc] initWithBasePath:[NSURL URLWithString:otherBasePath]];
     [Tropicalytics sharedInstanceWithConfiguration:otherConfig];
@@ -81,14 +109,14 @@ static NSString *const otherBasePath = @"http://localhost:4555";
 //Essential a unit test for now... Will make these actual tests after Brett's TPLEvent stuff is in. This instance and the shared can run at the same time without issues.
 - (void)instanceButtonTapped {
     for(int i = 0; i < 1000; i++) {
-         [self.tropicalyticsInstance recordEvent:@(i)];
+         [self.tropicalyticsInstance recordEventWithCount:@(i)];
     }
 }
 
 //Essential a unit test for now... Will make these actual tests after Brett's TPLEvent stuff is in. This instance and the shared can run at the same time without issues.
 - (void)sharedInstanceButtonTapped {
     for(int i = 0; i < 1000; i++) {
-        [[Tropicalytics sharedInstance] recordEvent:@(i)];
+        [[Tropicalytics sharedInstance] recordEventWithCount:@(i)];
     }
 }
 

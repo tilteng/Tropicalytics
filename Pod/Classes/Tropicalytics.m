@@ -11,8 +11,10 @@
 #import "TPLConfiguration.h"
 #import "TPLUtilities.h"
 #import "TPLHeader.h"
+#import "TPLEvent.h"
 #import "TPLRequestManager.h"
 #import "TPLDatabase.h"
+#import "TPLConstants.h"
 
 static Tropicalytics *_sharedInstance = nil;
 
@@ -98,28 +100,36 @@ static Tropicalytics *_sharedInstance = nil;
 
 #pragma mark - Functions
 
-- (void) recordEvent:(NSNumber *)count {
+- (void)recordEventWithLabel:(NSString *)label category:(NSString *)category {
+    [self recordEvent:[[TPLEvent alloc] initWithLabel:label category:category]];
+}
+
+- (void)recordEventWithLabel:(NSString *)label category:(NSString *)category context:(NSDictionary *)context {
+    [self recordEvent:[[TPLEvent alloc] initWithLabel:label category:category context:context]];
+}
+
+- (void) recordEventWithCount:(NSNumber *)count {
     NSString *timestamp = [NSString stringWithFormat:@"%ld", (long)[[NSDate date] timeIntervalSince1970]];
     NSDictionary *testEvent = @{ @"type" : @"campaign_created", @"client_tstamp" : timestamp, @"ctx" : @{ @"some event data" : @"yay data", @"out_bound_count" : count } };
 
     [self.requestManager recordEvent:testEvent];
 }
 
+- (void)recordEvent:(TPLEvent *)event {
+    [self.requestManager recordEvent:[self buildRequestForEvent:event]];
+}
+
 - (void) resetDatabase {
     [self.requestManager resetDatabase];
 }
 
-// TK Pull this (request-building functionality) out into a separate class.
-- (NSDictionary *) buildRequest {
-    TPLFieldGroup *requestData = [[TPLFieldGroup alloc] init];
-
-    if (self.configuration.header != nil) {
-        [requestData setValue:self.configuration.header forKey:@"header"];
-    }
-
-    //    TK Add the rest of the request data....
-
-    return [requestData dictionaryRepresentationWithUnderscoreKeys];
+- (NSMutableDictionary *)buildRequestForEvent:(TPLEvent *)event {
+    NSMutableDictionary *request = [[NSMutableDictionary alloc] init];
+    
+    [request addEntriesFromDictionary:self.configuration.requestStructure];
+    [request setValue:[event dictionaryRepresentationWithUnderscoreKeys] forKey:KPLEventKey];
+    
+    return request;
 }
 
 // Placeholder to check logs. Will need to remove.
