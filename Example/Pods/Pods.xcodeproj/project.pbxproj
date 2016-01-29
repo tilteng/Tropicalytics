@@ -118,6 +118,7 @@
 		8712716F65C7E6FA1BBA5456 /* Tropicalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 487B9DF1F7659F3DA0F4373B /* Tropicalytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		88CBCF20D64B60780E529366 /* EXPMatchers+beSubclassOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 525E1FDB7BCEED3C3E19C4A5 /* EXPMatchers+beSubclassOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8AE22680CE8E4DFEFB0F55B2 /* ExpectaSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 3189D712631A6E84025EDC22 /* ExpectaSupport.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		8BCF01FB1C5B205600ED876E /* TPLConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BCF01FA1C5B205600ED876E /* TPLConstants.h */; };
 		8C56E3C71D3B56CA0A9E6AE8 /* EXPMatchers+beTruthy.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3F8083872F8DDB4A326CF3 /* EXPMatchers+beTruthy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8D623417321B2243EABED62D /* TPLAPIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 76F494A81E03B23A95B192C5 /* TPLAPIClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		934A1938E158486A4D8DA0AC /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = FF89B40E1C81C216876BFD4F /* AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -431,6 +432,7 @@
 		8A2B330871B8E867D239E4E8 /* EXPMatchers+beFalsy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beFalsy.m"; path = "Expecta/Matchers/EXPMatchers+beFalsy.m"; sourceTree = "<group>"; };
 		8A3B73FFFA0625FA531FA599 /* SPTTestSuite.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTTestSuite.m; path = Specta/Specta/SPTTestSuite.m; sourceTree = "<group>"; };
 		8A44D442A8C29880368CE3CA /* EXPMatchers+endWith.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+endWith.h"; path = "Expecta/Matchers/EXPMatchers+endWith.h"; sourceTree = "<group>"; };
+		8BCF01FA1C5B205600ED876E /* TPLConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPLConstants.h; sourceTree = "<group>"; };
 		8DBF6687B23A6937124E289B /* EXPMatchers+beInstanceOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beInstanceOf.m"; path = "Expecta/Matchers/EXPMatchers+beInstanceOf.m"; sourceTree = "<group>"; };
 		8F6ACD9C60B05C27481AD288 /* TPLDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLDatabase.m; sourceTree = "<group>"; };
 		909F47FCF0AEB50D97E3334A /* TPLRequestManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLRequestManager.m; sourceTree = "<group>"; };
@@ -999,6 +1001,7 @@
 				B50081ED6B5FDA149959D6FB /* Tropicalytics.xcdatamodeld */,
 				E5864D8019D9D92B78D6BE8D /* UniqueIdentifier */,
 				14D17A19A74CC11C8062E891 /* Utilities */,
+				8BCF01FA1C5B205600ED876E /* TPLConstants.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1302,6 +1305,7 @@
 				02EE5D844540CEBAF8673966 /* TPLUniqueIdentifier.h in Headers */,
 				058A61443BDD2224E8EAD706 /* TPLUtilities.h in Headers */,
 				960E6A7C800214C17FC3E16C /* Tropicalytics-umbrella.h in Headers */,
+				8BCF01FB1C5B205600ED876E /* TPLConstants.h in Headers */,
 				8712716F65C7E6FA1BBA5456 /* Tropicalytics.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

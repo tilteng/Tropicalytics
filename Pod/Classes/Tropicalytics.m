@@ -14,6 +14,7 @@
 #import "TPLEvent.h"
 #import "TPLRequestManager.h"
 #import "TPLDatabase.h"
+#import "TPLConstants.h"
 
 static Tropicalytics *_sharedInstance = nil;
 
@@ -126,7 +127,7 @@ static Tropicalytics *_sharedInstance = nil;
     NSMutableDictionary *request = [[NSMutableDictionary alloc] init];
     
     [request addEntriesFromDictionary:self.configuration.requestStructure];
-    [request setValue:[event dictionaryRepresentationWithUnderscoreKeys] forKey:@"event"];
+    [request setValue:[event dictionaryRepresentationWithUnderscoreKeys] forKey:KPLEventKey];
     
     return request;
 }

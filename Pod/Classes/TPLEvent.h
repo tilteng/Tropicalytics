@@ -12,10 +12,10 @@
 
 @interface TPLEvent : TPLFieldGroup
 
-@property (nonatomic) NSString *label;
-@property (nonatomic) NSString *category;
-@property (nonatomic) NSDictionary *context;
-@property (nonatomic) NSNumber *timestamp;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic, copy) NSString *category;
+@property (nonatomic, copy) NSDictionary *context;
+@property (nonatomic, copy) NSNumber *timestamp;
 
 /**
  *  Convert a NSManagedObject into a TPLEvent

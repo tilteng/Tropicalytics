@@ -21,7 +21,7 @@
     self = [self init];
     
     if (self) {
-        _timestamp = @((long)timestamp);
+        _timestamp = @(timestamp);
     }
     
     return self;

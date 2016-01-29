@@ -62,10 +62,6 @@
 
 /**
  *  Reset the current request manager.
- *
- *  @param label    NSString event label
- *  @param category NSString category
- *  @param context  NSDictionary context data
  */
 - (void) resetDatabase;
 
