@@ -14,51 +14,6 @@
  */
 @interface TPLUtilities : NSObject
 
-#pragma mark - Device Utilities
-
-/**
- *  A string representing the timezone region
- *
- *  @return A NSString object of the timezone.
- */
-+ (NSString *)getDeviceTimezone;
-
-/**
- *  A string representing the device's current language
- *
- *  @return A NSString object of the device's language
- */
-+ (NSString *)getDeviceLanguage;
-
-/**
- *  Gets the carrer from the SIM card
- *
- *  @return A NSString object containing the name of the carrier.
- */
-+ (NSString *)getDeviceCarrierName;
-
-/**
- *  Gets the network type that the device is connectred to - (eg. WiFi, Cellular)
- *
- *  @return A NSString object of the network type
- */
-+ (NSString *)getDeviceNetwork;
-
-/**
- *  Gets the devices OS version
- *
- *  @return A NSString object of the device OS version
- */
-+ (NSString *)getDeviceOSVersion;
-
-/**
- *  Gets the devices UUID
- *
- *  @return A NSString of the devices UUID
- */
-+ (NSString *)getDeviceUUID;
-
-
 #pragma mark - Event Utilities
 
 /**
