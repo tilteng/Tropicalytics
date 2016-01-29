@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "TPLFieldGroup.h"
 #import "TPLFieldGroupSubclass.h"
+#import <Specta/Specta.h>
 
 SpecBegin(TPLFieldGroup)
 

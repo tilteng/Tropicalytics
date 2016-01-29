@@ -74,7 +74,7 @@ static Tropicalytics *_sharedInstance = nil;
 
         self.apiClient = [[TPLAPIClient alloc] initWithBaseURL:_configuration.urlBasePath];
         self.requestManager = [[TPLRequestManager alloc] initWithAPIClient:_apiClient];
-        self.requestManager.flushRate = 5;
+        self.requestManager.flushRate = configuration.flushRate;
     }
 
     return self;

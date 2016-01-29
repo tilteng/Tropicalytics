@@ -11,7 +11,7 @@
 #import "TPLConfiguration.h"
 #import "TPLHeader.h"
 
-static NSString *const urlBasePath = @"http://localhost:4567";
+static NSString *const urlBasePath = @"http://tropicalyticsresponseserver.herokuapp.com";
 static NSString *const otherBasePath = @"http://localhost:4555";
 
 @interface TPLViewController ()
@@ -44,11 +44,13 @@ static NSString *const otherBasePath = @"http://localhost:4555";
     
     // Initialize the config. Passing in the header payload is optional.
     TPLConfiguration *config = [[TPLConfiguration alloc] initWithBasePath:[NSURL URLWithString:urlBasePath] header:header];
+    config.flushRate = 5;
 
     // Instance example:
     self.tropicalyticsInstance = [[Tropicalytics alloc] initWithConfiguration:config];
     
     TPLConfiguration *otherConfig = [[TPLConfiguration alloc] initWithBasePath:[NSURL URLWithString:otherBasePath]];
+    otherConfig.flushRate = 5;
     [Tropicalytics sharedInstanceWithConfiguration:otherConfig];
     
     self.sendEventInstanceButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 100, 100)];
@@ -80,7 +82,7 @@ static NSString *const otherBasePath = @"http://localhost:4555";
 
 //Essential a unit test for now... Will make these actual tests after Brett's TPLEvent stuff is in. This instance and the shared can run at the same time without issues.
 - (void)instanceButtonTapped {
-    for(int i = 0; i < 1000; i++) {
+    for(int i = 0; i < 6; i++) {
          [self.tropicalyticsInstance recordEvent:@(i)];
     }
 }

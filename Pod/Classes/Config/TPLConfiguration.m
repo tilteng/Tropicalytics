@@ -9,6 +9,8 @@
 #import "TPLConfiguration.h"
 #import "TPLHeader.h"
 
+static NSUInteger const DefaultFlushRate = 20;
+
 @interface TPLConfiguration ()
 
 @property (nonatomic, readwrite) NSURL *urlBasePath;
@@ -34,6 +36,14 @@
     }
     
     return self;
+}
+
+- (NSUInteger)flushRate {
+    if(!_flushRate) {
+        _flushRate = DefaultFlushRate;
+    }
+    
+    return _flushRate;
 }
 
 @end

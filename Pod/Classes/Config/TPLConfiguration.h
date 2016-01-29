@@ -15,7 +15,8 @@
 - (id)initWithBasePath:(NSURL *)basePath;
 - (id)initWithBasePath:(NSURL *)basePath header:(TPLHeader *)header;
 
-@property (nonatomic, readonly) NSURL *urlBasePath;
-@property (nonatomic, readonly) TPLHeader *header;
+@property (nonatomic, assign)   NSUInteger flushRate;
+@property (nonatomic, readonly) NSURL      *urlBasePath;
+@property (nonatomic, readonly) TPLHeader  *header;
 
 @end

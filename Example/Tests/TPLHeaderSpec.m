@@ -6,6 +6,7 @@
 //  Copyright (c) 2016 Tilt.com Inc. All rights reserved.
 //
 
+#import <Specta/Specta.h>
 #import <Foundation/Foundation.h>
 #import "TPLHeader.h"
 

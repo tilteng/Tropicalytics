@@ -88,14 +88,6 @@
     return _maxBatchSize;
 }
 
-- (NSUInteger) flushRate {
-    if (!_flushRate) {
-        _flushRate = 20;
-    }
-
-    return _flushRate;
-}
-
 - (void) resetDatabase {
     [self.database resetDatabase];
 }

@@ -25,6 +25,7 @@
 		8BE3E00E1C56ADEE008213E8 /* TPLFieldGroupSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE3E00D1C56ADEE008213E8 /* TPLFieldGroupSpec.m */; };
 		8BE3E0111C56B680008213E8 /* TPLFieldGroupSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE3E0101C56B680008213E8 /* TPLFieldGroupSubclass.m */; };
 		BD2F6F301C4F3B5600EFF66A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD2F6F2F1C4F3B5600EFF66A /* Launch Screen.storyboard */; };
+		BD46CE2F1C5AF397006E3CEB /* TPLRecordEventSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = BD46CE2E1C5AF397006E3CEB /* TPLRecordEventSpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		8BE3E0101C56B680008213E8 /* TPLFieldGroupSubclass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLFieldGroupSubclass.m; sourceTree = "<group>"; };
 		B95C6BDB732735F0DFD85CDC /* Tropicalytics.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Tropicalytics.podspec; path = ../Tropicalytics.podspec; sourceTree = "<group>"; };
 		BD2F6F2F1C4F3B5600EFF66A /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		BD46CE2E1C5AF397006E3CEB /* TPLRecordEventSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLRecordEventSpec.m; sourceTree = "<group>"; };
 		D991BB0D39020C8B20CB99F3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E490B426688630DD2AC776D8 /* Pods-Tropicalytics_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tropicalytics_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tropicalytics_Tests/Pods-Tropicalytics_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,6 +168,7 @@
 				8BE3E00D1C56ADEE008213E8 /* TPLFieldGroupSpec.m */,
 				8BE3E00F1C56B680008213E8 /* TPLFieldGroupSubclass.h */,
 				8BE3E0101C56B680008213E8 /* TPLFieldGroupSubclass.m */,
+				BD46CE2E1C5AF397006E3CEB /* TPLRecordEventSpec.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD46CE2F1C5AF397006E3CEB /* TPLRecordEventSpec.m in Sources */,
 				8BE3E00E1C56ADEE008213E8 /* TPLFieldGroupSpec.m in Sources */,
 				8B98DCDE1C52C6D2005D2F0E /* TPLHeaderSpec.m in Sources */,
 				8BE3E0111C56B680008213E8 /* TPLFieldGroupSubclass.m in Sources */,
