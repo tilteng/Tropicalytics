@@ -8,52 +8,11 @@
 
 #import "TPLUtilities.h"
 #import "TPLUniqueIdentifier.h"
-#import <CoreTelephony/CTCarrier.h>
-#import <CoreTelephony/CTTelephonyNetworkInfo.h>
-#import "AFNetworkReachabilityManager.h"
-
 
 @implementation TPLUtilities
 
 #pragma mark - Device Utilities
 
-+ (NSString *)getDeviceTimezone {
-    return [[NSTimeZone systemTimeZone] name];
-}
-
-+ (NSString *)getDeviceLanguage {
-    return [[NSLocale preferredLanguages] firstObject];
-}
-
-+ (NSString *)getDeviceCarrierName {
-    CTTelephonyNetworkInfo *networkInfo = [[CTTelephonyNetworkInfo alloc] init];
-    CTCarrier *carrier = [networkInfo subscriberCellularProvider];
-    return  [carrier carrierName];
-}
-
-+ (NSString *)getDeviceNetwork {
-    switch ([AFNetworkReachabilityManager sharedManager].networkReachabilityStatus) {
-        case AFNetworkReachabilityStatusReachableViaWiFi:
-            return @"WiFi";
-            break;
-        case AFNetworkReachabilityStatusReachableViaWWAN:
-            return @"Cellular";
-        case AFNetworkReachabilityStatusNotReachable:
-            return @"Not Reachable";
-            break;
-        default:
-            return @"Unknown";
-            break;
-    }
-}
-
-+ (NSString *)getDeviceOSVersion {
-    return [UIDevice currentDevice].systemVersion;
-}
-
-+ (NSString *)getDeviceUUID {
-    return [TPLUniqueIdentifier deviceBasedUUID];
-}
 
 #pragma mark - Event Utilities
 
@@ -78,6 +37,5 @@
 + (NSString *)getSessionUUID {
     return [TPLUniqueIdentifier sessionBasedUUID];
 }
-
 
 @end

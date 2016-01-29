@@ -46,4 +46,16 @@ static NSUInteger const DefaultFlushRate = 20;
     return _flushRate;
 }
 
+- (NSDictionary *)dictionaryRepresentation {
+    TPLFieldGroup *requestData = [[TPLFieldGroup alloc] init];
+    
+    if (_header != nil) {
+        [requestData setValue:_header forKey:@"header"];
+    }
+    
+    //    TK Add the rest of the request data....
+    
+    return [requestData dictionaryRepresentationWithUnderscoreKeys];
+}
+
 @end
