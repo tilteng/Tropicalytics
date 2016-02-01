@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@class TPLAPIClient;
+@class TPLConfiguration;
+@class TPLEvent;
 
 @interface TPLRequestManager : NSObject
 
@@ -25,18 +26,18 @@
 /**
  *  Default initializer that will set the appropriate API client with the request.
  *
- *  @param apiClient an instance of TPLApiClient
+ *  @param configuration an instance of TPLConfiguration
  *
  *  @return instance of TPLRequestManager
  */
-- (instancetype) initWithAPIClient:(TPLAPIClient *)apiClient;
+- (instancetype) initWithConfiguration:(TPLConfiguration *)configuration;
 
 /**
  *  Sample way to record an event. This will change as we build out the structure of this.
  *
  *  @param eventData NSDictionary containing the event data.
  */
-- (void) recordEvent:(NSDictionary *)eventData;
+- (void) recordEvent:(TPLEvent *)event;
 
 /**
  *  Send events in queue to server
@@ -47,8 +48,5 @@
  *  Remove all events from local storage to start fresh for this instance of the request manager. If more than one instance has been created, they will remain.
  */
 - (void) resetDatabase;
-
-// Debugging placeholder.
-- (NSArray *) getEventsAsJSONArray;
 
 @end

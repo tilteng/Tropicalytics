@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TPLFieldGroup.h"
+#import <Tropicalytics/TPLFieldGroup.h>
 #import "TPLFieldGroupSubclass.h"
+#import <Specta/Specta.h>
+#import <Expecta/Expecta.h>
 
 SpecBegin(TPLFieldGroup)
 

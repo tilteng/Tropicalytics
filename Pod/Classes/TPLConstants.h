@@ -6,6 +6,20 @@
 //
 //
 
-#define KPLEventKey @"events"
-#define KPLDeviceKey @"device_info"
-#define KPLHeaderKey @"header"
+/**
+ *  The key for a TPLEvent object
+ */
+static NSString *const TPLEventKey  = @"events";
+/**
+ *  The key for the default device_info fields
+ */
+static NSString *const TPLDeviceKey = @"device_info";
+/**
+ *  The key for the default TPLHeader
+ */
+static NSString *const TPLHeaderKey = @"header";
+
+/**
+ *  The key for the NSManagedObject attribute in core data.
+ */
+static NSString *const ManagedObjectEventKey = @"event";

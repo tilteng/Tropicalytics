@@ -12,8 +12,11 @@
 #import <Tropicalytics/TPLHeader.h>
 #import <Tropicalytics/TPLEvent.h>
 
-static NSString *const urlBasePath = @"http://localhost:4567";
-static NSString *const otherBasePath = @"http://localhost:4555";
+//Leaving this for now because it will help us test things. We will update the ReadMe to explain how to use the Basic Server checked into this project and this
+//will be removed once we are nearly finished with this project.
+static NSString *const urlBasePath = @"http://tropicalyticsresponseserver.herokuapp.com";
+
+static NSString *const otherBasePath = @"http://localhost:4567";
 
 @interface TPLViewController ()
 
@@ -26,25 +29,26 @@ static NSString *const otherBasePath = @"http://localhost:4555";
 
 @implementation TPLViewController
 
-- (void)viewDidLoad {
+- (void) viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    
+
     // Initialize the header payload that is sent as part of all outgoing tracking requests.
-    
+
     // Use the defaults (includes things like app version, environment, etc)...
     TPLHeader *header = [[TPLHeader alloc] initDefaultHeaderWithAppId:@"tilt_ios" source:@"app"];
-  
+
     // ...Or skip the defaults and just do your own thing.
     // TPLHeader *header = [[TPLHeader alloc] init];
 
     // Adds any arbitrary key-values to the header payload.
     [header addValues:@{
-        @"foo": @"bar",
-    }];
-    
+         @"foo": @"bar",
+     }];
+
     // Initialize the config. Passing in the header payload is optional.
     TPLConfiguration *config = [[TPLConfiguration alloc] initWithBasePath:[NSURL URLWithString:urlBasePath] header:header];
+    config.flushRate = 2;
     // Optional: configure how requests are structured.
     // Uses the default structure:
     // All requests have "header", "device_info", "user_info" field groupings
@@ -66,68 +70,49 @@ static NSString *const otherBasePath = @"http://localhost:4555";
     //    // }
     //   @"environment": @{},
     // };
-    
+
     // Instance example:
     self.tropicalyticsInstance = [[Tropicalytics alloc] initWithConfiguration:config];
-    [self.tropicalyticsInstance recordEvent:[[TPLEvent alloc] initWithLabel:@"app" category:@"view" context:@{
-                                                                                                              @"foo": @"bar",
-                                                                                                              }]];
-    [self.tropicalyticsInstance recordEvent:[[TPLEvent alloc] initWithEntries:@{
-                                                                                 @"foo": @"bar",
-                                                                                }]];
-    
-    TPLConfiguration *otherConfig = [[TPLConfiguration alloc] initWithBasePath:[NSURL URLWithString:otherBasePath]];
+
+    TPLConfiguration *otherConfig = [[TPLConfiguration alloc] initWithBasePath:[NSURL URLWithString:urlBasePath]];
+    otherConfig.flushRate = 2;
     [Tropicalytics sharedInstanceWithConfiguration:otherConfig];
-    
+
     self.sendEventInstanceButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 100, 100)];
     [self.sendEventInstanceButton setBackgroundColor:[UIColor redColor]];
     [self.view addSubview:self.sendEventInstanceButton];
     [self.sendEventInstanceButton setTitle:@"INSTANCE EVENT" forState:UIControlStateNormal];
     [self.sendEventInstanceButton addTarget:self action:@selector(instanceButtonTapped) forControlEvents:UIControlEventTouchUpInside];
-    
+
     self.sendEventSingletonButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 120, 100, 100)];
     [self.sendEventSingletonButton setBackgroundColor:[UIColor redColor]];
     [self.view addSubview:self.sendEventSingletonButton];
     [self.sendEventSingletonButton setTitle:@"EVENT SINGLETON" forState:UIControlStateNormal];
     [self.sendEventSingletonButton addTarget:self action:@selector(sharedInstanceButtonTapped) forControlEvents:UIControlEventTouchUpInside];
-    
+
     UIButton *resetButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 240, 100, 100)];
     [resetButton setBackgroundColor:[UIColor blueColor]];
     [self.view addSubview:resetButton];
-    
+
     [resetButton setTitle:@"RESET" forState:UIControlStateNormal];
     [resetButton addTarget:self action:@selector(resetEverything) forControlEvents:UIControlEventTouchUpInside];
-    
-    UIButton *printOutCoreDataObjects = [[UIButton alloc] initWithFrame:CGRectMake(120, 240, 100, 100)];
-    [printOutCoreDataObjects setBackgroundColor:[UIColor yellowColor]];
-    [self.view addSubview:printOutCoreDataObjects];
-    
-    [printOutCoreDataObjects setTitle:@"PRINT OBJECTS" forState:UIControlStateNormal];
-    [printOutCoreDataObjects addTarget:self action:@selector(printCoreData) forControlEvents:UIControlEventTouchUpInside];
 }
 
-//Essential a unit test for now... Will make these actual tests after Brett's TPLEvent stuff is in. This instance and the shared can run at the same time without issues.
-- (void)instanceButtonTapped {
-    for(int i = 0; i < 1000; i++) {
-         [self.tropicalyticsInstance recordEventWithCount:@(i)];
-    }
+- (void) instanceButtonTapped {
+    [self.tropicalyticsInstance recordEvent:[[TPLEvent alloc] initWithLabel:@"app" category:@"view" context:@{
+                                                 @"foo": @"bar",
+                                             }]];
 }
 
-//Essential a unit test for now... Will make these actual tests after Brett's TPLEvent stuff is in. This instance and the shared can run at the same time without issues.
-- (void)sharedInstanceButtonTapped {
-    for(int i = 0; i < 1000; i++) {
-        [[Tropicalytics sharedInstance] recordEventWithCount:@(i)];
-    }
+- (void) sharedInstanceButtonTapped {
+    [[Tropicalytics sharedInstance] recordEvent:[[TPLEvent alloc] initWithEntries:@{
+                                                     @"foo": @"bar",
+                                                 }]];
 }
 
-- (void)resetEverything {
+- (void) resetEverything {
     [[Tropicalytics sharedInstance] resetDatabase];
     [self.tropicalyticsInstance resetDatabase];
-}
-
-- (void)printCoreData {
-    [[Tropicalytics sharedInstance] printCoreData];
-    [self.tropicalyticsInstance printCoreData];
 }
 
 @end

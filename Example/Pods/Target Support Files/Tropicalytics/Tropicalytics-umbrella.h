@@ -5,6 +5,7 @@
 #import "TPLDatabase.h"
 #import "TPLRequestManager.h"
 #import "TPLBatchDetails.h"
+#import "TPLConstants.h"
 #import "TPLDeviceInfo.h"
 #import "TPLEvent.h"
 #import "TPLFieldGroup.h"

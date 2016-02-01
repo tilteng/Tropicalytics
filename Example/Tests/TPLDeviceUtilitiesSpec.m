@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "TPLDeviceUtilities.h"
+#import <Specta/Specta.h>
+#import <Expecta/Expecta.h>
 
 SpecBegin(TPLDeviceUtilities)
 

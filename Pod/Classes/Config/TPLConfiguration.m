@@ -8,43 +8,55 @@
 
 #import "TPLConfiguration.h"
 #import "TPLHeader.h"
+#import "TPLAPIClient.h"
+
+static NSUInteger const DefaultFlushRate = 20;
 
 @interface TPLConfiguration ()
 
-@property (nonatomic, readwrite) NSURL *urlBasePath;
 @property (nonatomic, readwrite) TPLHeader *header;
 
 @end
 
 @implementation TPLConfiguration
 
-- (id)initWithBasePath:(NSURL *)basePath {
+- (id) initWithBasePath:(NSURL *)basePath {
+    NSParameterAssert(basePath);
     self = [self init];
-    if(self) {
-        _urlBasePath = basePath;
+    if (self) {
+        _apiClient = [[TPLAPIClient alloc] initWithBaseURL:basePath];
     }
-    
+
     return self;
 }
 
-- (id)initWithBasePath:(NSURL *)basePath header:(TPLHeader *)header {
+- (id) initWithBasePath:(NSURL *)basePath header:(TPLHeader *)header {
+    NSParameterAssert(header);
     self = [self initWithBasePath:basePath];
     if (self) {
         _header = header;
     }
-    
+
     return self;
 }
 
-- (NSDictionary *)dictionaryRepresentation {
+- (NSUInteger) flushRate {
+    if (!_flushRate) {
+        _flushRate = DefaultFlushRate;
+    }
+
+    return _flushRate;
+}
+
+- (NSDictionary *) dictionaryRepresentation {
     TPLFieldGroup *requestData = [[TPLFieldGroup alloc] init];
-    
+
     if (_header != nil) {
         [requestData setValue:_header forKey:@"header"];
     }
-    
+
     //    TK Add the rest of the request data....
-    
+
     return [requestData dictionaryRepresentationWithUnderscoreKeys];
 }
 

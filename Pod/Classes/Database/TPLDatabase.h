@@ -9,11 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-/**
- *  The key for the NSManagedObject attribute in core data.
- */
-static NSString *const ManagedObjectEventKey = @"event";
-
 @class TPLAPIClient;
 
 @interface TPLDatabase : NSObject
@@ -44,16 +39,12 @@ static NSString *const ManagedObjectEventKey = @"event";
  */
 - (NSArray *) getEventsArray;
 
-// Returns the count for the events array.
-- (NSUInteger) getEventsArrayCount;
-
 /**
- *  This is just used for debugging to pretty print before we write tests
+ *  Gets the number of events in the core data array for the current API client
  *
- *  @return Returns a JSON representation of what is stored in CoreData.
+ *  @return The number of events in the array as a NSUInteger.
  */
-- (NSArray *) getEventsAsJSONArray;
-
+- (NSUInteger) getEventsArrayCount;
 
 /**
  *  Gets the event array for the current batch to be sent to the API.
