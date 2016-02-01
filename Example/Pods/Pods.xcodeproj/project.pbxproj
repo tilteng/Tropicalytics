@@ -9,16 +9,19 @@
 /* Begin PBXBuildFile section */
 		01FDB9509628825F65A36D617903EA60 /* RTUnregisteredClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 480CFE354137A41FA155677A165D6F81 /* RTUnregisteredClass.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		021186FE99D6975FAE757AC8E46558D1 /* RTProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E41157E661E63C9548727BBE60EE4A1 /* RTProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		06071F3814A1707B85A8D74D95B96683 /* TPLDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E7256A26D59AE3CAC26C8D4C479883C /* TPLDeviceInfo.m */; };
-		0A86BDD666FEB55E3276435C816F8B1F /* TPLDeviceUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = EBC8529A48A40CE22A3849E786B4DC2E /* TPLDeviceUtilities.m */; };
+		06426D5F1959BC83B4546AFF3589C285 /* TPLUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D030EA986C2753EE63FC9ECB0524CB7 /* TPLUtilities.m */; };
+		0A73609846EB7600275D5A28D54880CA /* TPLDeviceUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 576A4DF39549B36014CADFF3EF76075D /* TPLDeviceUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0C6FF91EB1F0391ED75DC72D31D159EF /* EXPMatchers+beTruthy.m in Sources */ = {isa = PBXBuildFile; fileRef = 673E0F3028CF6C1C26CF58F579A2096E /* EXPMatchers+beTruthy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0D16B556212D317A0D4FEB71E102E207 /* EXPMatchers+beLessThan.h in Headers */ = {isa = PBXBuildFile; fileRef = 40D00DFC6A32F78AB78B589250AE2967 /* EXPMatchers+beLessThan.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0DCDA6049704B2AF1DA42EC6D1CFE236 /* Tropicalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BF5605466A9EC4C5FFBA9B24630B73 /* Tropicalytics.m */; };
 		0EBFA5FBE4953A83B677CE2A75746761 /* EXPMatchers+beLessThan.m in Sources */ = {isa = PBXBuildFile; fileRef = B91DEF511AAE5AB047AC6233D7FA1AC5 /* EXPMatchers+beLessThan.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0F94F5B0ABB3252B9275B7C129EC7A26 /* EXPMatchers+equal.h in Headers */ = {isa = PBXBuildFile; fileRef = EEC75ACA62ADAEFB0A5D1F782A08BFC4 /* EXPMatchers+equal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		11C1AEB289C1EB80089349B71F09D04B /* EXPMatchers+raiseWithReason.h in Headers */ = {isa = PBXBuildFile; fileRef = 43D8F3D174DE77DE4B86232693B09BD0 /* EXPMatchers+raiseWithReason.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		12F95AEFF8EB3F9ED139C6D26B9C8264 /* SpectaTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 6ED102F8589E200C5F73DC52E42CFF9F /* SpectaTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1312A7D381C51428CF481E33E3D37901 /* EXPMatchers+beGreaterThan.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AA48A433ECB2BBF26BC7A11505F014 /* EXPMatchers+beGreaterThan.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		131532787AD40BE1F35DF288D2E6FFD7 /* EXPMatchers+beInTheRangeOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 91058F81BD0433273EC4438A9174CED0 /* EXPMatchers+beInTheRangeOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		141D68FA80C9DC5B2224318BF1862811 /* TPLUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 58311F9E386D1351EC2156550E15D577 /* TPLUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		142B53747754027E796F8A767A9A5823 /* TPLUniqueIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B9B3D632038AA99FCE3742E1AE455D /* TPLUniqueIdentifier.m */; };
 		1480F4923DBBF217F60572EEECB4027C /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = EE3FAF391B2C5938158F8CCC8BA698BD /* AFNetworkActivityIndicatorManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		160FDA46EE919AAF97E0E4EC04C9E232 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635520C58D87AD79CE28204C04ABADFC /* Foundation.framework */; };
 		164B2A363F9B0096A792A69320A30D42 /* SPTExample.h in Headers */ = {isa = PBXBuildFile; fileRef = DDCE0EBDBFD893D8A128BD9507A95CC6 /* SPTExample.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,14 +31,15 @@
 		1A1AB2EC52323C5EA28DAA99F1E1A90D /* EXPMatchers+endWith.h in Headers */ = {isa = PBXBuildFile; fileRef = 885C7DBB171E6DEEAA643351A6772262 /* EXPMatchers+endWith.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1AB3304B6884F626BC54150AC7565E18 /* EXPMatchers+equal.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A5D5E394CB2E1B19ED3577784F31F85 /* EXPMatchers+equal.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1B0389CD88AA949B34DC7269030FEC6F /* EXPMatchers+beGreaterThanOrEqualTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4C8968A88660F583FC622128E2ED22 /* EXPMatchers+beGreaterThanOrEqualTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1B261CF95B938F1D0008605B106CF1B3 /* TPLBatchDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = 6ADC98DE8770735CA0A60367EBDEDD57 /* TPLBatchDetails.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1B4583D6E68B3C76C754D57835707F89 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20FF7AC81EFEBB6E722B793E7EE47F8F /* XCTest.framework */; };
 		1E5B8F12ED7CC40ECDB9B1F755F387E5 /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CBED299A0FBDE512F7165485EF5EE88 /* UIActivityIndicatorView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		201BF9C605852822CA5A65ADE282A310 /* EXPMatcherHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5EDF0B03235EAC81199D4B695802CD /* EXPMatcherHelpers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		204D694B03BFF3B244A6AB73FACFFC43 /* Expecta-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E46DD46C9B83578FA4AB3E4E99AA6060 /* Expecta-dummy.m */; };
 		20607BE2B1E5F31765026E5AC64DB27D /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = C7AEFEFED9284ADC51610E077D769673 /* AFSecurityPolicy.m */; };
 		20EE8030FCF2402DAC7F1C9B9DDAEF79 /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 093B510C608944D5C2F42932F5BA6070 /* AFURLRequestSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2343A10BA5F34DBCEAF0C4D7AA6CA951 /* TPLAppUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 66CFDC007CF7F0BC40864E603BB4A6F2 /* TPLAppUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		23500E6D25DA1901837F20BB447C21A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635520C58D87AD79CE28204C04ABADFC /* Foundation.framework */; };
+		235C61898C33FA8CE7181EB8086EAB52 /* TPLRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E23A667DB8C23D87B3D5E5BDD4343FD0 /* TPLRequestManager.m */; };
 		23DC772ACCF5806AE9CFDA1604FC400C /* SPTCompiledExample.m in Sources */ = {isa = PBXBuildFile; fileRef = AA07502408A9CA91389B8D50F3018B7A /* SPTCompiledExample.m */; };
 		260BC7EED9289AF321A6F791964CE472 /* EXPMatchers+respondTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 202FF15792933080E43DF6C3BCDFFAFC /* EXPMatchers+respondTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2810F816A41B60EC24C3D882D83AF212 /* RTUnregisteredClass.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F4E141AC4C5452BDF7C20C57881C711 /* RTUnregisteredClass.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -44,21 +48,21 @@
 		2CFE2898496C1C7096DB8DA43AF19103 /* EXPMatchers+raise.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F1435AF8F9F903D34031C41619D1D8 /* EXPMatchers+raise.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2D092F28EA53CA81B80CB84636B25931 /* Pods-Tropicalytics_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DE48683247B727F0F0219645EE1F9F5 /* Pods-Tropicalytics_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2E14619153A453BB8DF389FB6EA147BE /* ExpectaObject.h in Headers */ = {isa = PBXBuildFile; fileRef = F709232E06B813FEE808885A22496F5A /* ExpectaObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2E58192A60F2DC4F7B426B6DAA8F6689 /* TPLEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D914C8F02F68FE6FDED7AC68199CC64 /* TPLEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2E7F13CBDDBD5D1E32FD42D6A99F6EFD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635520C58D87AD79CE28204C04ABADFC /* Foundation.framework */; };
 		2E8A32ED46194EDBE22146271F6D26DE /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = E89085B4B3B8B3F1F6AFABC95047B569 /* UIImageView+AFNetworking.m */; };
 		2F427490ACABC4408D57CC0592276678 /* EXPDoubleTuple.h in Headers */ = {isa = PBXBuildFile; fileRef = CAAF695DDD22B3FB18EFDFE29859B1F6 /* EXPDoubleTuple.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		31DE08E2C2F98427FB92272F0888C9C4 /* TPLDeviceInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F9920388BF7E9BA120AB890585385BD /* TPLDeviceInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3335B1AFA6CE35BCE9EA402F68C18A1B /* TPLDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C5C1888711FD6E2DF19960C63234BF /* TPLDatabase.m */; };
+		30FDA563476F43403FDD7DFF7C8D7FD4 /* TPLDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CAE84B93735472042028094A2703C28 /* TPLDeviceInfo.m */; };
 		33BC013B3C8F98E74D039CB62CBBFBC6 /* SPTCallSite.h in Headers */ = {isa = PBXBuildFile; fileRef = D00B1214FB2249B17D63477FC575F1BE /* SPTCallSite.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		341F8F1652A7DE6AADAA3331CA6320CB /* SPTSharedExampleGroups.h in Headers */ = {isa = PBXBuildFile; fileRef = 56861037EA61E8AC037C859257B60195 /* SPTSharedExampleGroups.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34B6E9A30603BEBBD87BA535B7D384CA /* EXPMatchers+beInstanceOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 32B76F9E3E7B6D0A432ECFFEAE9E2641 /* EXPMatchers+beInstanceOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		361FEF17E7327A9901B6F06BA40EB7AC /* TPLRequestStructure.m in Sources */ = {isa = PBXBuildFile; fileRef = FC00653319BE88CF47CCD1D46F01737C /* TPLRequestStructure.m */; };
 		372F7A9CCE59CE86316CF436F832A3FC /* EXPMatchers+beGreaterThanOrEqualTo.h in Headers */ = {isa = PBXBuildFile; fileRef = EEE020DA7F324BBDC31D5B9A482D6582 /* EXPMatchers+beGreaterThanOrEqualTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		37A2D0F8493469EF2495FC689440F079 /* EXPMatchers+beLessThanOrEqualTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 42962234757A0B0C5FB571FFFCE674FB /* EXPMatchers+beLessThanOrEqualTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		397B320B7C59C168CC5B62E18ED8DEA0 /* EXPMatchers+beSubclassOf.h in Headers */ = {isa = PBXBuildFile; fileRef = DED59F076B9E088A6E5F98EB8C00BC86 /* EXPMatchers+beSubclassOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A10EF6ABF51D1D00B06AC5EF3A8C28C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41EA7EE51CA28000254601EFA38F3774 /* SystemConfiguration.framework */; };
 		3A31EDB6BCFB40F2DE1A3A68A6071960 /* XCTestCase+Specta.m in Sources */ = {isa = PBXBuildFile; fileRef = 729EE2B07BC4CE1C4963B64E42594C3B /* XCTestCase+Specta.m */; };
 		3A36886057E5A931014ACC66023B8431 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093B78EA86E54DC4F3A1B2F947989BD8 /* CoreData.framework */; };
+		3A640CF561D23145D1452C819704662E /* TPLFieldGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = DFCE673A37F9BAFA03DB68C1D11B50EA /* TPLFieldGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B57335169177F4A558D98236BD8D38A /* Tropicalytics.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 736825C14AB0DC5059B2304F01FCE599 /* Tropicalytics.bundle */; };
 		3B5B7495707BF7133B9FB3F834045611 /* EXPBlockDefinedMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = C1D32078D598BC895DA140F206554C45 /* EXPBlockDefinedMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3C2700C7DAA15C6AF84A595865C42F4D /* EXPMatchers+contain.h in Headers */ = {isa = PBXBuildFile; fileRef = B905271BF44822792EA48DF27A4B6416 /* EXPMatchers+contain.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -66,13 +70,16 @@
 		3F1BC9BAFFEEABB1ABC7614DF0FC97D5 /* AFAutoPurgingImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8797EDA66E9459C5155CC5750A8543 /* AFAutoPurgingImageCache.m */; };
 		403292D82DA62291204BF59524BC4EDB /* EXPMatchers+haveCountOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 24978C0D139A516F137BABEAEB5E98A7 /* EXPMatchers+haveCountOf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		40583F11C8BEB933BFC82864F7C2869C /* SPTExampleGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = FCD3A2AA836ECFC16788AD4653B3C797 /* SPTExampleGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		42483EECCC29200E3295EAFD4E1738E8 /* TPLRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 474AF8A86F5D81BFBA1AAC0698EA3A5E /* TPLRequestManager.m */; };
+		45CA647C8D95428293EFEFA28E32F051 /* TPLBatchDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = FF42A4A7268F96C32CA12AC558FB3F28 /* TPLBatchDetails.m */; };
 		46137F5CC368BF38BAF0D0AF81DD8FFE /* EXPMatchers+raise.h in Headers */ = {isa = PBXBuildFile; fileRef = 72D165B527C6B04FA62635FA695DF34C /* EXPMatchers+raise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		471FD4F68E27AB26FA2AEBB8B245CEE4 /* NSValue+Expecta.h in Headers */ = {isa = PBXBuildFile; fileRef = 41C3C6F32FCB975511D64FED50808F68 /* NSValue+Expecta.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		494767D9F1B586F1F97BF993498F002F /* Specta-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D5C62B64A0A67B6535BE66A210B01F3D /* Specta-dummy.m */; };
-		4ACEDCD4909C909CD15AACCC43A7B089 /* TPLConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA05AB0CAD50D3EF236ACBE26B429DD /* TPLConfiguration.m */; };
 		4BBCBB9D8EF0B241A4A4FE4982985481 /* ExpectaSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C43973FE9B62E95CB3E3926B978E49 /* ExpectaSupport.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4D48F6B0E27B943FB08C4B239DCC8ADE /* TPLDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = EFF921E21ED93627AEB75F0A09E30F9C /* TPLDatabase.m */; };
+		503755BC95009E1959B466127718DA50 /* TPLAPIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FEB7F31DDC5FD6CB74C1CEA3597B455 /* TPLAPIClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		51DDDB0FB4899757CF6A826B531B940D /* EXPUnsupportedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 867D9AF4FF470DA68D363C120DB72FA6 /* EXPUnsupportedObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		51FCCD21A3089CCA665996F22547ED83 /* Tropicalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BB3B9454DCB371FA3386BDCE789AEF0 /* Tropicalytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		527EBD9ACF98B1D5DB32C4AB2CBA84EA /* TPLAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F362A60E0B5E9843ECA5FD436385F51D /* TPLAPIClient.m */; };
 		536293D7AF840017A21EC63E1B811A2E /* MARTNSObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BCC7698FC5E579C04A61927C14ABB1C /* MARTNSObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		553B6989768B187B16B1E127D813AE20 /* RTIvar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C374A2B748E32B91C4451F28EC52A41 /* RTIvar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		560698A4D707DCBCC1C8F98BC9B89B23 /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = BD8DA0F7C54949412A8BA81A6DCDDF99 /* AFURLSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -80,25 +87,24 @@
 		5808B477EFF509D810B5CDCFDC944F80 /* AFImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 4747BD40B00A4C264B2D57BB66B42BD0 /* AFImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		59876AFB4A82B77A0FCC8CDB2A7FEBF4 /* SpectaUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AD7EB4E8714E288666876EFBC00C62 /* SpectaUtility.m */; };
 		599298371E33787177EF97722CF48412 /* SpectaDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = B240313F1B213A37D8975DAC2B614D78 /* SpectaDSL.m */; };
-		59F17B09B955685C482CCFEA106D81B1 /* TPLHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 56153DFCF729A0275377DD7B9F669E07 /* TPLHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5B2D4A621D3DA971A474776AF36BB073 /* EXPBlockDefinedMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 74134635D078692BF3F5DEFB39EC00DD /* EXPBlockDefinedMatcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5BAD8306315E116F6E8E76552EC5B665 /* SPTGlobalBeforeAfterEach.h in Headers */ = {isa = PBXBuildFile; fileRef = ED5A9AB9707480312760E8FCD2DB7786 /* SPTGlobalBeforeAfterEach.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5BFF41C4949CA8CB6BAA45B2754D96A6 /* TPLUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0CB761C4BB4E20B22FF6E4DC06F449 /* TPLUtilities.m */; };
-		5CD5F64603D7BAC8072AB6F4936C30F9 /* TPLDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = D8E869FEDAEF2E552F5461B57AFD21B1 /* TPLDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E9CA582E721C549637005F30C784AE9 /* TPLDeviceInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 13A7E9A10DFB5D87FEFDDB08259CFF83 /* TPLDeviceInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5EA7043FE10E75D02F3C3052AF8B8318 /* EXPDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = A51AFA314793A1C7F3DF89A27FD7CAF6 /* EXPDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F9C09A207929B44F9387B3DCF2F8A77 /* TPLDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 13488CCDD5B88F0AEA69EB00932D8D5F /* TPLDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FF6453E55785669885F626B853FD2AA /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA47031DF3A795E8CB1AFB6336BDFF1 /* UIProgressView+AFNetworking.m */; };
-		6095B07F1C2B84B967C0A5CE012C0EBA /* TPLConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = BD208BA9B66F9E1B71802D78A04F7A54 /* TPLConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		60E3009342BEE96D32C546BE2DB60052 /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 07F895A256F1D4DA24CC9DF911735063 /* UIImageView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63CEFA7B13F25A41BC8D464D50093C78 /* TPLRequestStructure.h in Headers */ = {isa = PBXBuildFile; fileRef = C1387C8F2BF159F1425D5CF27EFCB83C /* TPLRequestStructure.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		659960F7E28E993E08CCC1E8A383E710 /* UIKit+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 5173BEA05027A0482238C295B668F172 /* UIKit+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65BC31095CCDFC80CBF6BBA843751F23 /* EXPMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 237E461836957B621999D3DE5C0FE73C /* EXPMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66A27898E989A3FA5C15AA671C4536F0 /* EXPMatchers+beIdenticalTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 307BBB64F62EB5941021C1482CF822B7 /* EXPMatchers+beIdenticalTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		6712C24A9D9DFFDCEAB6BAF3D5B0EB8A /* TPLConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = AFD1A4872CB7470298D32DC943DB40CC /* TPLConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		67459AD239EF669A365519E06B45DCFE /* EXPExpect.h in Headers */ = {isa = PBXBuildFile; fileRef = 82DAA1EFED847C2CDE1357092F1FA251 /* EXPExpect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		68152D921ABF6A423C192C04FDF94F0F /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = BAE57C33490B0B1AF6088B01E11F886A /* AFNetworkReachabilityManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		689D42AF6D9D42F36E2E31CDC25978B7 /* RTMethod.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E8E503534AB88BE13BAE3C1E9D9577B /* RTMethod.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		68A38977EBAE334DC3C22386D00D2622 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B05FDD26E59490F648E62593C27DAB /* AFNetworkReachabilityManager.m */; };
 		6C3940612920F2F97069AF6AAF4BDAFD /* SPTExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 519AED277A8B6E3B62C824D9845B4BDC /* SPTExample.m */; };
 		6E1D978790705E137FDE439AA68DD3AA /* EXPFloatTuple.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DF866059F140F5989F0BD8B787F534B /* EXPFloatTuple.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6EC22B550ECF7AC97B97845FA6D64F76 /* TPLConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D3BD0BE3B6F01ED6B6EFEA7FB20ED7F /* TPLConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6ED4ABEE8A5F51F5ECB59FA1781D29C6 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 890B11D7D6F4BFBEECD999A94E27A786 /* UIActivityIndicatorView+AFNetworking.m */; };
 		6EFC63A5CED45BB39FC79D87F2C47D6B /* EXPMatchers+beGreaterThan.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F73FBFCCE22E56C194C05BE1638EB59 /* EXPMatchers+beGreaterThan.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6F278423C8AE1DA47F35E374BB5B91EC /* EXPMatchers+beSupersetOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CD2665763950A3C776E1B07609F9766 /* EXPMatchers+beSupersetOf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -107,13 +113,11 @@
 		74EF67DE380915006A15DD206DBB3A6E /* Specta.h in Headers */ = {isa = PBXBuildFile; fileRef = 82B8E00C315300EDBFDE07086D5F8812 /* Specta.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		76CCABE79C04444450153424D7CE1DC1 /* EXPMatchers+beSupersetOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 861A1063371F50AE8F228277743A826F /* EXPMatchers+beSupersetOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		76D337327C10A7555447B69AA1562647 /* EXPMatchers+beInstanceOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C99CB0B08DF4FA1AC08D1FE3A2940D /* EXPMatchers+beInstanceOf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		770CAD284D566918F2623C2E034000B3 /* Tropicalytics-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BECD7A1B03527A00FDC7416D15C3DFAD /* Tropicalytics-dummy.m */; };
 		78A09642B8D3048606BCE3CDC2019071 /* RTProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = AC3EC58E73C4FD397442C88C140EA6B9 /* RTProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		79558B1F97ABE4AB8942DC18BEBD4B82 /* EXPMatchers+beKindOf.h in Headers */ = {isa = PBXBuildFile; fileRef = B2E2AA3BD43F0531C251D67BB29CD3D9 /* EXPMatchers+beKindOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7A211860F672261C1522DCDF1FFC9ED0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20FF7AC81EFEBB6E722B793E7EE47F8F /* XCTest.framework */; };
+		7AF2D65C39AAD532A5C685B09146F5C7 /* TPLConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D006D7BFBEB28BA7914E657DDFEB52 /* TPLConfiguration.m */; };
 		7B223B4E6EF14BA12DA113F7EE10B96C /* NSObject+Expecta.h in Headers */ = {isa = PBXBuildFile; fileRef = 5908EB1D8C9A560497B037792FCA3E12 /* NSObject+Expecta.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7C2D978E5E9C044BADB8BAFA2E30A3E6 /* Tropicalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 72030FC356763407445C4C16E26E804B /* Tropicalytics.m */; };
-		7E3542B8B4D6B017C763EA83D1FA9293 /* TPLAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 70EFBB03414DEA461DE88C7569E67966 /* TPLAPIClient.m */; };
 		7E6A4EFA32969CDB9F9C57903152BA54 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A33BF6D48242005A5EE8B489B416344 /* CoreGraphics.framework */; };
 		7F17EA5E2787B6F2BBB359854B42A0E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635520C58D87AD79CE28204C04ABADFC /* Foundation.framework */; };
 		805E425BBEF7A6133E32E1D30A073010 /* EXPExpect.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FD828DDF23CB2D5927E7ADAD3B0FF8 /* EXPExpect.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -123,55 +127,57 @@
 		85E31076D5530AEEB45ACF16B2B8A983 /* EXPMatchers.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A4D8B739AB877CAEE4AF331A3D61112 /* EXPMatchers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		85EB2F216487CB2E8F3FCCFBC4D69912 /* EXPMatchers+beTruthy.h in Headers */ = {isa = PBXBuildFile; fileRef = E6C6D7BC17B35FF9C88A48F86720F247 /* EXPMatchers+beTruthy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8633BE2B6F523A83EDCAFAB77EBC4AD3 /* RTProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BB5BC09F3C0D17A752244A07F34C15 /* RTProperty.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		87E76C70F7F2EE1EE2AAE992DD63B9F1 /* Tropicalytics-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AC49A5BFE891F8DB5C468C22951E853 /* Tropicalytics-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		878D7F4E75179B2E9800E12DECE0C166 /* TPLFieldGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498621F79A2955C9783E161A45BF094 /* TPLFieldGroup.m */; };
 		87FD5F0F682CDEB6A348CA448889E3EA /* EXPMatchers+beKindOf.m in Sources */ = {isa = PBXBuildFile; fileRef = F9EB460416B1C4938820DC263FB509EC /* EXPMatchers+beKindOf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		884E62C59DCFD8F1FBF4B3F3324BE069 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635520C58D87AD79CE28204C04ABADFC /* Foundation.framework */; };
 		8C8C1B0D83FE6A4352F15154DB16372C /* EXPMatcherHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 4663392B2E73D349D33F16F83710E55A /* EXPMatcherHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8DC751D799A71AA97FD7F5DE1A171210 /* SPTCallSite.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD57EDC7684E72652BEFB94BCBBB0F3 /* SPTCallSite.m */; };
 		8F3C7283335959E7FBFD25BDC7B376CD /* XCTestCase+Specta.h in Headers */ = {isa = PBXBuildFile; fileRef = CE56C189D1436871EA1BEF1E230581CB /* XCTestCase+Specta.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		90648186E4DCE8FBC35EF12467573D2A /* TPLHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 95BA1215E0586C731647CD503549C688 /* TPLHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		918E06480F28F27361B19D19432F8538 /* EXPMatchers+endWith.m in Sources */ = {isa = PBXBuildFile; fileRef = 9924A1DA480804CCE203BFF7F4938D30 /* EXPMatchers+endWith.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		931D410B9F8ACB935883DF8C59F9C93E /* EXPMatchers+postNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C92071F7B076D2F78266367E35DA299 /* EXPMatchers+postNotification.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9436299B947A7E6B7474EEB264505FE3 /* SPTExampleGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 40F2ED78511D7AE9C2C461E14BA0FEDE /* SPTExampleGroup.m */; };
 		94C47C87E397972CE98F75929F3B706C /* ExpectaObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C93B27BBA2E2D35A1F21DB63014370 /* ExpectaObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		950B9F547AD949C32ABE5F20C8FDDD2F /* contents in Sources */ = {isa = PBXBuildFile; fileRef = A8C8BD49A285284CD8ACC1CC30EA3D08 /* contents */; };
-		995A898987821ED94ACC9FB6BE68293D /* TPLDeviceUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 051F7B71A3B263FB817CEEA3E2DB351F /* TPLDeviceUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9B2E761A064459F77EA9870BEF03ACC3 /* EXPMatchers+postNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = 01E16264C985F34BC3E5C6833CCAE1C2 /* EXPMatchers+postNotification.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9B913DE1C355BCE97D2EDA90D3AA5FC1 /* TPLUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E8FC18849F34F6ECC95656E05CE29D0 /* TPLUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9BB9159FBA757600D3D4C0FF645F3911 /* EXPMatchers+beInTheRangeOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 408A7AF14F4CCE770A8EF0288E3B0F4E /* EXPMatchers+beInTheRangeOf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		9D70C9E416B6F71AE612A42465CB6D39 /* TPLFieldGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B4272766A9E7112FE2C1938F60E1E4 /* TPLFieldGroup.m */; };
+		9C718EF9D4A9B42767423E4D767BCF68 /* Tropicalytics-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AC49A5BFE891F8DB5C468C22951E853 /* Tropicalytics-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9E1E90DED74B73ECE53C9AD76DE53E2D /* UIImage+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F4C09D5ABB3852A4B6BB308211FB888 /* UIImage+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A09327D92920BB0EDF8F2B97249FC997 /* TPLEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = C67017CE1BD11A06E84EA27AB3D291F3 /* TPLEvent.m */; };
-		A1D998E7B4EF6598D2163CC1BF72BF97 /* TPLUniqueIdentifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC29AF9978E2F882A5D65EB11ABDA9C /* TPLUniqueIdentifier.m */; };
 		A462945883F7729B185B64B679A6BFBE /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCD624B009530E994DF7F1F347DBF70 /* UIWebView+AFNetworking.m */; };
 		A55368BBDD7417464F40151C5F9B6A09 /* MAObjCRuntime-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 824A89C3ED13835DC40D6AF7EC2093E8 /* MAObjCRuntime-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5A0FA36ED5B6A70AA00971C7EB17D0D /* TPLUniqueIdentifier.h in Headers */ = {isa = PBXBuildFile; fileRef = DE020FB523FB2ED465D9A801433C25C4 /* TPLUniqueIdentifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A6C6019D45BE62C61210A9CC619368EF /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 415E5DB48EDB900698A89CAA7404A890 /* AFNetworkActivityIndicatorManager.m */; };
 		AB39AC9746E7575D7449700475E41B0B /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C4DF160A02BC4D99EB5BF20C1B9E1C37 /* AFHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AC9BA05FC3672457AD6AC317D2A819F9 /* SPTSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C28D7A068FD5494806D45CF62CAAE12 /* SPTSpec.m */; };
 		AE2A07407FB50BA249984DC0620E84C0 /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = D4C1115012E054B7D6FCC123E9978886 /* UIWebView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AF03C11A1FAC8132AD3749D8F541701A /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 1758E125466BAD91C4772A1EE949ADDF /* UIButton+AFNetworking.m */; };
 		AF1F46668D4591602887998C6E9C10AD /* EXPMatchers+beCloseTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BC27F5BB3011BCD928586C46E44B88A /* EXPMatchers+beCloseTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AFCD2F24E460A91646724C530026C6B6 /* TPLEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 41AD34E12BBFA99A6B57082122F6016B /* TPLEvent.m */; };
 		AFFC8900E52BBEC72059334132F3A8F3 /* ExpectaSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 81A4C6359BEA818EE50CE3AFF5CBF3F8 /* ExpectaSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B05DD383D9D1887FD8F83A8D7415A095 /* SpectaDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = AECB9DB0D789BA63A4E2DB48E9F911FD /* SpectaDSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5852322ADE88AAD56EE042B80BA81E4 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 320E4F1C0A54C8EDCDB43A020085444E /* AFURLResponseSerialization.m */; };
 		B84431CF8C64F363A334AA7089F6C134 /* NSValue+Expecta.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A8A444600147CF4FD261431427F59F /* NSValue+Expecta.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BA12B131F10BCE3BE6E9A02FC908FE9D /* EXPMatchers+beCloseTo.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C25F11412715116910791D675543C9 /* EXPMatchers+beCloseTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BAB2AA805CA5BC4066BD3E50BE971FC9 /* TPLDeviceUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = ED92165F8B9C879DB4610C81E38058A6 /* TPLDeviceUtilities.m */; };
 		BC55C8365AEFF8217F6A567607754854 /* EXPDoubleTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB73A2F8759492AB49BBF7D89AF63B5 /* EXPDoubleTuple.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BEFFE9FFE52E9A0833A7D2D8FB67EB4D /* EXPMatchers+beSubclassOf.m in Sources */ = {isa = PBXBuildFile; fileRef = E67D9EF3FAE85219A5649B6A3F23E794 /* EXPMatchers+beSubclassOf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C00782B6CD46D9EB56C5F8DBD892DC93 /* SPTExcludeGlobalBeforeAfterEach.h in Headers */ = {isa = PBXBuildFile; fileRef = 161E2A5870AA71357EFB5D3A08330839 /* SPTExcludeGlobalBeforeAfterEach.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C01AC3BAD9037A8A1E45FD17336C15F3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B24FD7D9D711C287927C6E7642219553 /* Security.framework */; };
 		C2CF0EB220F8F42DF5398D53B0AE5A0C /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2315E4A1E1EA4063E89ABC988B323712 /* AFNetworking.framework */; };
 		C2DD28375E1F0B1D0D1D2E4E607C499F /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B83BAEE37ED9AFFCB71B34E701449EB /* AFSecurityPolicy.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C453B6E83975F6663D3F1C33CB3B5E03 /* TPLUniqueIdentifier.h in Headers */ = {isa = PBXBuildFile; fileRef = F3FB804742793E24AB40997E3EBB8ED9 /* TPLUniqueIdentifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C486094162F0CE60103DECF13ACB4856 /* TPLRequestManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C94407A625C4216447458F88047D40F /* TPLRequestManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C6354FEC7728A4C86DAD8092509BA7D4 /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = BD0820FED0B34F7C4C4F85F5A9093331 /* UIRefreshControl+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C782AC36CFE36AA4324D41C0B4EB0310 /* RTMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = BC298EF491113D68B9F125ED633F3073 /* RTMethod.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C834C57C115A6D9667B7296B80C019E2 /* Tropicalytics.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = B7D3CE739FD62D60A1A6C12A25AD624E /* Tropicalytics.xcdatamodeld */; };
+		CA9E224E570347EAF99DCE6362875EFD /* contents in Sources */ = {isa = PBXBuildFile; fileRef = 17BF2D4F6A1BB77020E36C934D3C7E40 /* contents */; };
 		CAC483EF637FB4A2C2E2FC75BA631B87 /* AFAutoPurgingImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 19EAFD051A6357D7CE67EF4289B99565 /* AFAutoPurgingImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CBB5E3ADE44538D569D63A9FF7003BB4 /* Pods-Tropicalytics_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF3503053D357443A7E767A8610313E /* Pods-Tropicalytics_Example-dummy.m */; };
+		CCF834C2EFA77D681712D7E80D023FBC /* TPLConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A4CF28A5A94F30094CE80FB91936AC6 /* TPLConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE3F4ECBB0BC095577D66AE50C8E604C /* EXPFloatTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = 964C5C701CA5BE5F3E809764EED57730 /* EXPFloatTuple.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CE7416A504B2D1121091BEED0F07EA75 /* MAObjCRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860E8360D18B7E55222AD02C6FA6866C /* MAObjCRuntime.framework */; };
+		CEC63042960076B25C3479EA25B3283B /* TPLEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = D262B00A268E742F2278EA07BA8E8A44 /* TPLEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF9B2FFFB9BD02A2AAC06922AF0038C5 /* TPLHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3935E1D96EFA691C166637702D92FF1A /* TPLHeader.m */; };
 		CFA8D6B529A0EBFF0316F2629AB2556E /* AFImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = EF466BAED148A632F0D86B94710EE5C7 /* AFImageDownloader.m */; };
 		D04B84B53456B9CD8A7236126075571B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC238BFEC74E3A52A65122EF10679100 /* MobileCoreServices.framework */; };
-		D095DAFFC0228BEB9473245C48AC2C86 /* TPLBatchDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = D52DB94783212DD28C11307030370DFE /* TPLBatchDetails.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D2A4247F3B0B92D1D67C1C18F4E05371 /* Specta-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C6C1BEBCFF500D96751BACC7B72955B /* Specta-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D3E1977B4A831F8D6E7FAA5A90E26720 /* SPTSharedExampleGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A45D52E036332B840FDDEE65FD2187 /* SPTSharedExampleGroups.m */; };
 		D754C2C15B62D7473C4A6EDC64C66DBF /* RTIvar.m in Sources */ = {isa = PBXBuildFile; fileRef = 75935C78F1DA4FD81E06F4E3928E514B /* RTIvar.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -180,37 +186,33 @@
 		D9F4E833E37B611B432F6B5D7072DDA2 /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 17B8B664D44662993E917EB65B9FA97F /* UIProgressView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB30F82FB1BE083D9471B965FB500CA2 /* EXPMatchers+conformTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD46F4E92C064ED5D0ADBA027F0BCB9 /* EXPMatchers+conformTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DC10E3D4436CBE4952C670687B2216B2 /* Pods-Tropicalytics_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 86BBDF325054136E536E454554BC48BB /* Pods-Tropicalytics_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DC702B3EA680EFEBC472A1E0AC8C07DD /* TPLAppUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D525080DB3346BD6FCE77CE9789155 /* TPLAppUtilities.m */; };
 		DC730614A2CBBF9F5A07B39021AD0407 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635520C58D87AD79CE28204C04ABADFC /* Foundation.framework */; };
 		DFFA215EEAA8DDBD540076927535275C /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = D3501FFC901C55619F1B7B16AFC662AC /* AFURLRequestSerialization.m */; };
 		E07FA68FB88EE2F43F6AC94E3F82A248 /* MAObjCRuntime-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 03DA11B266BF5D359C253F9B37068B8A /* MAObjCRuntime-dummy.m */; };
 		E0A077DFB064B79685B810CCEFB2F1EF /* EXPMatchers+respondTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A238074057C3C1262FFB1042283E274 /* EXPMatchers+respondTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E0AAF49134A0505DF00E20E7B62087E1 /* EXPMatchers+beIdenticalTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 24520BAFEECCF3BE67C78D5F333FCFFB /* EXPMatchers+beIdenticalTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E0B6A9C0D66D2EB745DC11B08236C1B1 /* Tropicalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = D9D475117EC54B7ECA993740AFB82D17 /* Tropicalytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E0D4045AC4C1B41917FCA23A042D18B2 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E102577061A6A34DE8A16029664F04 /* AFHTTPSessionManager.m */; };
 		E1EC4532663CA75DE5BD00CB0A56814D /* Expecta.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DA0DAA45428E3F33D8D501BC58BB542 /* Expecta.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E69E67C39F4340EE7690A1110217B7AA /* TPLAPIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 10FDE9573171D7AC8BBF2C7DD9DEF907 /* TPLAPIClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E735386085CE344F6A01178CF4763852 /* EXPMatchers+beNil.h in Headers */ = {isa = PBXBuildFile; fileRef = C2D075CB92702C3A3ED3494231C01B30 /* EXPMatchers+beNil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7988678C81F7CCB95D239375FC6986D /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = C83E0E9D4E7A0B0813E910959CD27676 /* AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC7CADE416A78A1CD6936018A6695126 /* AFNetworking-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 43CF91364B7C2BE28963AAD6111E0343 /* AFNetworking-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ECDD35402F533B394ABB08A516155DE5 /* TPLAppUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EDBAF67F6DB06C1E7E554DE0691885F /* TPLAppUtilities.m */; };
 		EE4493053DB8B45C30681D9199FE9E2A /* SPTCompiledExample.h in Headers */ = {isa = PBXBuildFile; fileRef = 894C61FD5422603B33778B9F4DCC2BFE /* SPTCompiledExample.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EF6497EE123F6BC0C1B09717437C5908 /* EXPUnsupportedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C4583AEB3FEB2574EC241C6DFB1A7E7 /* EXPUnsupportedObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F09FCC00653002D3E8C1CA1642AAE20F /* SpectaUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 8082CF3EC0D52A8F6187E6DEA1921154 /* SpectaUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F0DDF02A078B917997FF025BB33BB842 /* EXPMatchers+conformTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 7426C29FF85B6E36B03DACAE7EEC492A /* EXPMatchers+conformTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F12A0C603FDA2FDECB63BE324E043ED7 /* TPLRequestManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 129291D583AF85C58E9D5336C8110C60 /* TPLRequestManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F12D57414A73406831CC032A7170DBFF /* EXPMatchers+beginWith.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FF36FE6578030BCCA059AFF12F84F33 /* EXPMatchers+beginWith.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F37470070FB9192B6923FB2ADCF5C6D7 /* SPTSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 7161B7AF2FB9133556E8B9235C639372 /* SPTSpec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F41209A94070904A00BDF24ACB6336B6 /* EXPMatchers+beFalsy.h in Headers */ = {isa = PBXBuildFile; fileRef = 494EDEFD85B07BAD114515FD56A8E4BF /* EXPMatchers+beFalsy.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F6F9E850AF0799AEC46391604D5254E0 /* TPLBatchDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE5230B87A0E4745AF4A6106015F45A /* TPLBatchDetails.m */; };
 		F75CB2A727F678C9A848A3A11EA7979B /* EXPMatchers+haveCountOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CF3B31D6EB40D222FA08270D03DA2BE /* EXPMatchers+haveCountOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F845FE027C41B7FF67C2BACDC16CC23E /* SPTTestSuite.h in Headers */ = {isa = PBXBuildFile; fileRef = 75F1ED3E9BFB58DC6A7AA8AD520C3182 /* SPTTestSuite.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FACA3A4407CD9E34C76640F7D1601003 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635520C58D87AD79CE28204C04ABADFC /* Foundation.framework */; };
 		FC20596ABFE14A61F171A29FD03275E7 /* EXPMatchers+contain.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F45C340BFE6407CDFCE29A2D7D04DF /* EXPMatchers+contain.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FC45858927D3B6A0F922C4B697B04A38 /* EXPMatchers+match.m in Sources */ = {isa = PBXBuildFile; fileRef = 1563BDBE9E4EFC68E33D92D0540B58C7 /* EXPMatchers+match.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FD09294B7074D7B52228F6438A07AD09 /* TPLAppUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = CA82626EDA6B9D71108871E9D7399C4E /* TPLAppUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD161E822D17AB0D171266EFE41F7833 /* Tropicalytics-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BECD7A1B03527A00FDC7416D15C3DFAD /* Tropicalytics-dummy.m */; };
 		FD2D4497BC41412128C2D87C1BDE7398 /* EXPMatchers+beginWith.h in Headers */ = {isa = PBXBuildFile; fileRef = A5F065665741190D3660CF916B33C4F0 /* EXPMatchers+beginWith.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FD9C6838BA7084DACC934D868AA0D388 /* TPLHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC9C6CA0D0BB185FA3F0CDF859C823F /* TPLHeader.m */; };
 		FE062E2D92883A1DBD397A9CBC0F60D4 /* SPTTestSuite.m in Sources */ = {isa = PBXBuildFile; fileRef = 30A5BE22737083E2E2C0BBE3AE47944C /* SPTTestSuite.m */; };
-		FE635A989AD51FDD5A957911BE281527 /* TPLFieldGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F782B9DEA7183C5D0ACF08414A92205 /* TPLFieldGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE8E34356D24F6759A8B010ED2F5707B /* EXPMatchers+raiseWithReason.m in Sources */ = {isa = PBXBuildFile; fileRef = C4273C160F01D8F128DEF6AD5469CF7E /* EXPMatchers+raiseWithReason.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
@@ -298,33 +300,32 @@
 		01E16264C985F34BC3E5C6833CCAE1C2 /* EXPMatchers+postNotification.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+postNotification.h"; path = "Expecta/Matchers/EXPMatchers+postNotification.h"; sourceTree = "<group>"; };
 		03DA11B266BF5D359C253F9B37068B8A /* MAObjCRuntime-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MAObjCRuntime-dummy.m"; sourceTree = "<group>"; };
 		044A233B0617BF0B3397B312CD619F02 /* Pods-Tropicalytics_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Tropicalytics_Example.modulemap"; sourceTree = "<group>"; };
-		051F7B71A3B263FB817CEEA3E2DB351F /* TPLDeviceUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLDeviceUtilities.h; sourceTree = "<group>"; };
 		07F895A256F1D4DA24CC9DF911735063 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		093B510C608944D5C2F42932F5BA6070 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
 		093B78EA86E54DC4F3A1B2F947989BD8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
 		0A0D6D89A0D6F0ACB4B6E9D469F72CB9 /* Pods-Tropicalytics_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tropicalytics_Example-frameworks.sh"; sourceTree = "<group>"; };
 		0C002BF73CF9ED768EC47A919CD0B7B8 /* MARTNSObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MARTNSObject.m; sourceTree = "<group>"; };
 		0C92071F7B076D2F78266367E35DA299 /* EXPMatchers+postNotification.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+postNotification.m"; path = "Expecta/Matchers/EXPMatchers+postNotification.m"; sourceTree = "<group>"; };
+		0EDBAF67F6DB06C1E7E554DE0691885F /* TPLAppUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLAppUtilities.m; sourceTree = "<group>"; };
 		0F4E141AC4C5452BDF7C20C57881C711 /* RTUnregisteredClass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RTUnregisteredClass.h; sourceTree = "<group>"; };
 		0F8FD7DFC5C51A6A1598E1A5289BE5CA /* AFNetworking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AFNetworking.modulemap; sourceTree = "<group>"; };
-		0FC29AF9978E2F882A5D65EB11ABDA9C /* TPLUniqueIdentifier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLUniqueIdentifier.m; sourceTree = "<group>"; };
-		10FDE9573171D7AC8BBF2C7DD9DEF907 /* TPLAPIClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLAPIClient.h; sourceTree = "<group>"; };
-		129291D583AF85C58E9D5336C8110C60 /* TPLRequestManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLRequestManager.h; sourceTree = "<group>"; };
+		13488CCDD5B88F0AEA69EB00932D8D5F /* TPLDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLDatabase.h; sourceTree = "<group>"; };
+		13A7E9A10DFB5D87FEFDDB08259CFF83 /* TPLDeviceInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLDeviceInfo.h; sourceTree = "<group>"; };
 		1415E6307EB1C9AADFD0EE7FAC3B3076 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1498621F79A2955C9783E161A45BF094 /* TPLFieldGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLFieldGroup.m; sourceTree = "<group>"; };
 		1563BDBE9E4EFC68E33D92D0540B58C7 /* EXPMatchers+match.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+match.m"; path = "Expecta/Matchers/EXPMatchers+match.m"; sourceTree = "<group>"; };
 		161E2A5870AA71357EFB5D3A08330839 /* SPTExcludeGlobalBeforeAfterEach.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTExcludeGlobalBeforeAfterEach.h; path = Specta/Specta/SPTExcludeGlobalBeforeAfterEach.h; sourceTree = "<group>"; };
 		1758E125466BAD91C4772A1EE949ADDF /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
 		17B8B664D44662993E917EB65B9FA97F /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
+		17BF2D4F6A1BB77020E36C934D3C7E40 /* contents */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; path = contents; sourceTree = "<group>"; };
 		1858124E2B51C0A1B46A86524BCBC335 /* Specta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Specta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		19EAFD051A6357D7CE67EF4289B99565 /* AFAutoPurgingImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFAutoPurgingImageCache.h; path = "UIKit+AFNetworking/AFAutoPurgingImageCache.h"; sourceTree = "<group>"; };
 		1A238074057C3C1262FFB1042283E274 /* EXPMatchers+respondTo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+respondTo.m"; path = "Expecta/Matchers/EXPMatchers+respondTo.m"; sourceTree = "<group>"; };
 		1C374A2B748E32B91C4451F28EC52A41 /* RTIvar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RTIvar.h; sourceTree = "<group>"; };
 		1C4583AEB3FEB2574EC241C6DFB1A7E7 /* EXPUnsupportedObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPUnsupportedObject.m; path = Expecta/EXPUnsupportedObject.m; sourceTree = "<group>"; };
-		1DC9C6CA0D0BB185FA3F0CDF859C823F /* TPLHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLHeader.m; sourceTree = "<group>"; };
+		1C94407A625C4216447458F88047D40F /* TPLRequestManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLRequestManager.h; sourceTree = "<group>"; };
 		1E052C84528CA562DE6AD1FAFB1483E3 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
-		1E7256A26D59AE3CAC26C8D4C479883C /* TPLDeviceInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLDeviceInfo.m; sourceTree = "<group>"; };
 		1E8797EDA66E9459C5155CC5750A8543 /* AFAutoPurgingImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFAutoPurgingImageCache.m; path = "UIKit+AFNetworking/AFAutoPurgingImageCache.m"; sourceTree = "<group>"; };
-		1E8FC18849F34F6ECC95656E05CE29D0 /* TPLUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLUtilities.h; sourceTree = "<group>"; };
 		1EEE2C90C5996C1F017C87D64A2A4BD5 /* Pods-Tropicalytics_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tropicalytics_Tests-resources.sh"; sourceTree = "<group>"; };
 		1F73FBFCCE22E56C194C05BE1638EB59 /* EXPMatchers+beGreaterThan.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beGreaterThan.h"; path = "Expecta/Matchers/EXPMatchers+beGreaterThan.h"; sourceTree = "<group>"; };
 		202FF15792933080E43DF6C3BCDFFAFC /* EXPMatchers+respondTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+respondTo.h"; path = "Expecta/Matchers/EXPMatchers+respondTo.h"; sourceTree = "<group>"; };
@@ -337,11 +338,10 @@
 		27272C738519D352C4586A55F5030CEC /* Pods-Tropicalytics_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tropicalytics_Tests-dummy.m"; sourceTree = "<group>"; };
 		2A4D8B739AB877CAEE4AF331A3D61112 /* EXPMatchers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPMatchers.h; path = Expecta/Matchers/EXPMatchers.h; sourceTree = "<group>"; };
 		2B83BAEE37ED9AFFCB71B34E701449EB /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
-		2D914C8F02F68FE6FDED7AC68199CC64 /* TPLEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLEvent.h; sourceTree = "<group>"; };
-		2EA05AB0CAD50D3EF236ACBE26B429DD /* TPLConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLConfiguration.m; sourceTree = "<group>"; };
 		2FA47031DF3A795E8CB1AFB6336BDFF1 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
 		307BBB64F62EB5941021C1482CF822B7 /* EXPMatchers+beIdenticalTo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beIdenticalTo.m"; path = "Expecta/Matchers/EXPMatchers+beIdenticalTo.m"; sourceTree = "<group>"; };
 		30A5BE22737083E2E2C0BBE3AE47944C /* SPTTestSuite.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTTestSuite.m; path = Specta/Specta/SPTTestSuite.m; sourceTree = "<group>"; };
+		30D006D7BFBEB28BA7914E657DDFEB52 /* TPLConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLConfiguration.m; sourceTree = "<group>"; };
 		30F45C340BFE6407CDFCE29A2D7D04DF /* EXPMatchers+contain.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+contain.m"; path = "Expecta/Matchers/EXPMatchers+contain.m"; sourceTree = "<group>"; };
 		320E4F1C0A54C8EDCDB43A020085444E /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		32B76F9E3E7B6D0A432ECFFEAE9E2641 /* EXPMatchers+beInstanceOf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beInstanceOf.h"; path = "Expecta/Matchers/EXPMatchers+beInstanceOf.h"; sourceTree = "<group>"; };
@@ -351,6 +351,7 @@
 		35C99CB0B08DF4FA1AC08D1FE3A2940D /* EXPMatchers+beInstanceOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beInstanceOf.m"; path = "Expecta/Matchers/EXPMatchers+beInstanceOf.m"; sourceTree = "<group>"; };
 		361EAC416B05CB41CB814FDEE8483B46 /* EXPMatchers+beLessThanOrEqualTo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beLessThanOrEqualTo.m"; path = "Expecta/Matchers/EXPMatchers+beLessThanOrEqualTo.m"; sourceTree = "<group>"; };
 		36D802DFF57F88AC97E275EEC3C7C8C4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3935E1D96EFA691C166637702D92FF1A /* TPLHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLHeader.m; sourceTree = "<group>"; };
 		39A8A444600147CF4FD261431427F59F /* NSValue+Expecta.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSValue+Expecta.m"; path = "Expecta/NSValue+Expecta.m"; sourceTree = "<group>"; };
 		3A97EB4033E95E3C23ABCDA4A9BBB023 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
 		3B539990DF3D9D6F061F705BD1AB97CB /* XCTest+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "XCTest+Private.h"; path = "Specta/Specta/XCTest+Private.h"; sourceTree = "<group>"; };
@@ -363,14 +364,15 @@
 		41531956376460ADF9969380716F0F4F /* AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-prefix.pch"; sourceTree = "<group>"; };
 		415E5DB48EDB900698A89CAA7404A890 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
 		419F70664EE5599E7899F5564A80790B /* Pods-Tropicalytics_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tropicalytics_Example-resources.sh"; sourceTree = "<group>"; };
+		41AD34E12BBFA99A6B57082122F6016B /* TPLEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLEvent.m; sourceTree = "<group>"; };
 		41C3C6F32FCB975511D64FED50808F68 /* NSValue+Expecta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSValue+Expecta.h"; path = "Expecta/NSValue+Expecta.h"; sourceTree = "<group>"; };
 		41EA7EE51CA28000254601EFA38F3774 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		42962234757A0B0C5FB571FFFCE674FB /* EXPMatchers+beLessThanOrEqualTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beLessThanOrEqualTo.h"; path = "Expecta/Matchers/EXPMatchers+beLessThanOrEqualTo.h"; sourceTree = "<group>"; };
 		43CF91364B7C2BE28963AAD6111E0343 /* AFNetworking-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-umbrella.h"; sourceTree = "<group>"; };
 		43D8F3D174DE77DE4B86232693B09BD0 /* EXPMatchers+raiseWithReason.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+raiseWithReason.h"; path = "Expecta/Matchers/EXPMatchers+raiseWithReason.h"; sourceTree = "<group>"; };
+		45BF5605466A9EC4C5FFBA9B24630B73 /* Tropicalytics.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Tropicalytics.m; sourceTree = "<group>"; };
 		4663392B2E73D349D33F16F83710E55A /* EXPMatcherHelpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPMatcherHelpers.h; path = Expecta/Matchers/EXPMatcherHelpers.h; sourceTree = "<group>"; };
 		4747BD40B00A4C264B2D57BB66B42BD0 /* AFImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFImageDownloader.h; path = "UIKit+AFNetworking/AFImageDownloader.h"; sourceTree = "<group>"; };
-		474AF8A86F5D81BFBA1AAC0698EA3A5E /* TPLRequestManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLRequestManager.m; sourceTree = "<group>"; };
 		480CFE354137A41FA155677A165D6F81 /* RTUnregisteredClass.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RTUnregisteredClass.m; sourceTree = "<group>"; };
 		491A615DBBEEF3B99DDDE4765484534D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		494EDEFD85B07BAD114515FD56A8E4BF /* EXPMatchers+beFalsy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beFalsy.h"; path = "Expecta/Matchers/EXPMatchers+beFalsy.h"; sourceTree = "<group>"; };
@@ -382,20 +384,23 @@
 		519AED277A8B6E3B62C824D9845B4BDC /* SPTExample.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTExample.m; path = Specta/Specta/SPTExample.m; sourceTree = "<group>"; };
 		51CD26F32E89ACC67514C52D073B184F /* MAObjCRuntime-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MAObjCRuntime-prefix.pch"; sourceTree = "<group>"; };
 		522503F048F86DB8B3FC6EF36BEBE6BB /* Expecta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Expecta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		56153DFCF729A0275377DD7B9F669E07 /* TPLHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLHeader.h; sourceTree = "<group>"; };
 		56861037EA61E8AC037C859257B60195 /* SPTSharedExampleGroups.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTSharedExampleGroups.h; path = Specta/Specta/SPTSharedExampleGroups.h; sourceTree = "<group>"; };
 		574875DBC633C280CE29B4C5C92C3B2C /* Pods-Tropicalytics_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tropicalytics_Example.release.xcconfig"; sourceTree = "<group>"; };
+		576A4DF39549B36014CADFF3EF76075D /* TPLDeviceUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLDeviceUtilities.h; sourceTree = "<group>"; };
+		58311F9E386D1351EC2156550E15D577 /* TPLUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLUtilities.h; sourceTree = "<group>"; };
 		5908EB1D8C9A560497B037792FCA3E12 /* NSObject+Expecta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+Expecta.h"; path = "Expecta/NSObject+Expecta.h"; sourceTree = "<group>"; };
 		5ACE0D0F4A8B882E5F2B903D657E81AE /* MAObjCRuntime.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MAObjCRuntime.modulemap; sourceTree = "<group>"; };
 		5CD2665763950A3C776E1B07609F9766 /* EXPMatchers+beSupersetOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beSupersetOf.m"; path = "Expecta/Matchers/EXPMatchers+beSupersetOf.m"; sourceTree = "<group>"; };
-		5F9920388BF7E9BA120AB890585385BD /* TPLDeviceInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLDeviceInfo.h; sourceTree = "<group>"; };
+		5D030EA986C2753EE63FC9ECB0524CB7 /* TPLUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLUtilities.m; sourceTree = "<group>"; };
 		62B05FDD26E59490F648E62593C27DAB /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
 		635520C58D87AD79CE28204C04ABADFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		65C93B27BBA2E2D35A1F21DB63014370 /* ExpectaObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ExpectaObject.m; path = Expecta/ExpectaObject.m; sourceTree = "<group>"; };
 		66C43973FE9B62E95CB3E3926B978E49 /* ExpectaSupport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ExpectaSupport.m; path = Expecta/ExpectaSupport.m; sourceTree = "<group>"; };
 		66C686FBFB1C276659C7CCC3E6055D1B /* Pods-Tropicalytics_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tropicalytics_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		66CFDC007CF7F0BC40864E603BB4A6F2 /* TPLAppUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLAppUtilities.h; sourceTree = "<group>"; };
 		673E0F3028CF6C1C26CF58F579A2096E /* EXPMatchers+beTruthy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beTruthy.m"; path = "Expecta/Matchers/EXPMatchers+beTruthy.m"; sourceTree = "<group>"; };
+		6A4CF28A5A94F30094CE80FB91936AC6 /* TPLConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLConstants.h; sourceTree = "<group>"; };
+		6ADC98DE8770735CA0A60367EBDEDD57 /* TPLBatchDetails.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLBatchDetails.h; sourceTree = "<group>"; };
+		6BB3B9454DCB371FA3386BDCE789AEF0 /* Tropicalytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Tropicalytics.h; sourceTree = "<group>"; };
 		6BCC7698FC5E579C04A61927C14ABB1C /* MARTNSObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MARTNSObject.h; sourceTree = "<group>"; };
 		6C28D7A068FD5494806D45CF62CAAE12 /* SPTSpec.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTSpec.m; path = Specta/Specta/SPTSpec.m; sourceTree = "<group>"; };
 		6C6C1BEBCFF500D96751BACC7B72955B /* Specta-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Specta-umbrella.h"; sourceTree = "<group>"; };
@@ -405,9 +410,7 @@
 		6E8E503534AB88BE13BAE3C1E9D9577B /* RTMethod.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RTMethod.h; sourceTree = "<group>"; };
 		6ED102F8589E200C5F73DC52E42CFF9F /* SpectaTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SpectaTypes.h; path = Specta/Specta/SpectaTypes.h; sourceTree = "<group>"; };
 		6FF36FE6578030BCCA059AFF12F84F33 /* EXPMatchers+beginWith.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beginWith.m"; path = "Expecta/Matchers/EXPMatchers+beginWith.m"; sourceTree = "<group>"; };
-		70EFBB03414DEA461DE88C7569E67966 /* TPLAPIClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLAPIClient.m; sourceTree = "<group>"; };
 		7161B7AF2FB9133556E8B9235C639372 /* SPTSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTSpec.h; path = Specta/Specta/SPTSpec.h; sourceTree = "<group>"; };
-		72030FC356763407445C4C16E26E804B /* Tropicalytics.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Tropicalytics.m; sourceTree = "<group>"; };
 		729EE2B07BC4CE1C4963B64E42594C3B /* XCTestCase+Specta.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XCTestCase+Specta.m"; path = "Specta/Specta/XCTestCase+Specta.m"; sourceTree = "<group>"; };
 		72D165B527C6B04FA62635FA695DF34C /* EXPMatchers+raise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+raise.h"; path = "Expecta/Matchers/EXPMatchers+raise.h"; sourceTree = "<group>"; };
 		736825C14AB0DC5059B2304F01FCE599 /* Tropicalytics.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tropicalytics.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -418,6 +421,7 @@
 		760BE70119445BF8B9C8C842A50BEFB6 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
 		7A0E1A7B30BD4B8B0D5BCC0423FBA75B /* Pods-Tropicalytics_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tropicalytics_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		7AD57EDC7684E72652BEFB94BCBBB0F3 /* SPTCallSite.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTCallSite.m; path = Specta/Specta/SPTCallSite.m; sourceTree = "<group>"; };
+		7CAE84B93735472042028094A2703C28 /* TPLDeviceInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLDeviceInfo.m; sourceTree = "<group>"; };
 		7DD46F4E92C064ED5D0ADBA027F0BCB9 /* EXPMatchers+conformTo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+conformTo.m"; path = "Expecta/Matchers/EXPMatchers+conformTo.m"; sourceTree = "<group>"; };
 		7EFDAEE9BC9F9FD933F7E554804748B0 /* Expecta.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Expecta.modulemap; sourceTree = "<group>"; };
 		7FEB382CED9092B586EF9D2FCC6CE2D6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -438,8 +442,10 @@
 		894C61FD5422603B33778B9F4DCC2BFE /* SPTCompiledExample.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTCompiledExample.h; path = Specta/Specta/SPTCompiledExample.h; sourceTree = "<group>"; };
 		8BC27F5BB3011BCD928586C46E44B88A /* EXPMatchers+beCloseTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beCloseTo.h"; path = "Expecta/Matchers/EXPMatchers+beCloseTo.h"; sourceTree = "<group>"; };
 		8DE48683247B727F0F0219645EE1F9F5 /* Pods-Tropicalytics_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tropicalytics_Tests-umbrella.h"; sourceTree = "<group>"; };
+		8FEB7F31DDC5FD6CB74C1CEA3597B455 /* TPLAPIClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLAPIClient.h; sourceTree = "<group>"; };
 		91058F81BD0433273EC4438A9174CED0 /* EXPMatchers+beInTheRangeOf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beInTheRangeOf.h"; path = "Expecta/Matchers/EXPMatchers+beInTheRangeOf.h"; sourceTree = "<group>"; };
 		92E102577061A6A34DE8A16029664F04 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		95BA1215E0586C731647CD503549C688 /* TPLHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLHeader.h; sourceTree = "<group>"; };
 		964C5C701CA5BE5F3E809764EED57730 /* EXPFloatTuple.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPFloatTuple.m; path = Expecta/EXPFloatTuple.m; sourceTree = "<group>"; };
 		98FFF4E23EBAA35E9CD3C73F34C574A1 /* Pods-Tropicalytics_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tropicalytics_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		9924A1DA480804CCE203BFF7F4938D30 /* EXPMatchers+endWith.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+endWith.m"; path = "Expecta/Matchers/EXPMatchers+endWith.m"; sourceTree = "<group>"; };
@@ -449,24 +455,21 @@
 		9CBED299A0FBDE512F7165485EF5EE88 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
 		9CF3B31D6EB40D222FA08270D03DA2BE /* EXPMatchers+haveCountOf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+haveCountOf.h"; path = "Expecta/Matchers/EXPMatchers+haveCountOf.h"; sourceTree = "<group>"; };
 		9D12B83609131AA8AB7378C863397150 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D3BD0BE3B6F01ED6B6EFEA7FB20ED7F /* TPLConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLConfiguration.h; sourceTree = "<group>"; };
 		9DF866059F140F5989F0BD8B787F534B /* EXPFloatTuple.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPFloatTuple.h; path = Expecta/EXPFloatTuple.h; sourceTree = "<group>"; };
 		9E7EC431E31C96FE95D4C77B14BA468E /* AFNetworking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AFNetworking.xcconfig; sourceTree = "<group>"; };
 		9F4C09D5ABB3852A4B6BB308211FB888 /* UIImage+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+AFNetworking.h"; path = "UIKit+AFNetworking/UIImage+AFNetworking.h"; sourceTree = "<group>"; };
-		9F782B9DEA7183C5D0ACF08414A92205 /* TPLFieldGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLFieldGroup.h; sourceTree = "<group>"; };
 		A2698707ECE89224BC884265E7F119A9 /* Specta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Specta.xcconfig; sourceTree = "<group>"; };
 		A2AD7EB4E8714E288666876EFBC00C62 /* SpectaUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SpectaUtility.m; path = Specta/Specta/SpectaUtility.m; sourceTree = "<group>"; };
-		A4B4272766A9E7112FE2C1938F60E1E4 /* TPLFieldGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLFieldGroup.m; sourceTree = "<group>"; };
 		A4E58C232854B6285AEF18F572A5C7E2 /* Pods_Tropicalytics_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tropicalytics_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A51AFA314793A1C7F3DF89A27FD7CAF6 /* EXPDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPDefines.h; path = Expecta/EXPDefines.h; sourceTree = "<group>"; };
 		A5F065665741190D3660CF916B33C4F0 /* EXPMatchers+beginWith.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beginWith.h"; path = "Expecta/Matchers/EXPMatchers+beginWith.h"; sourceTree = "<group>"; };
-		A8C8BD49A285284CD8ACC1CC30EA3D08 /* contents */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; path = contents; sourceTree = "<group>"; };
 		A9F1435AF8F9F903D34031C41619D1D8 /* EXPMatchers+raise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+raise.m"; path = "Expecta/Matchers/EXPMatchers+raise.m"; sourceTree = "<group>"; };
 		AA07502408A9CA91389B8D50F3018B7A /* SPTCompiledExample.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTCompiledExample.m; path = Specta/Specta/SPTCompiledExample.m; sourceTree = "<group>"; };
 		AB7AE0EE9DE6B46FF27123DD36EE7656 /* AFURLSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
 		AC3EC58E73C4FD397442C88C140EA6B9 /* RTProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RTProperty.h; sourceTree = "<group>"; };
 		AECB9DB0D789BA63A4E2DB48E9F911FD /* SpectaDSL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SpectaDSL.h; path = Specta/Specta/SpectaDSL.h; sourceTree = "<group>"; };
 		AF517D87C43C257FAFED6A2201585887 /* MAObjCRuntime.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MAObjCRuntime.xcconfig; sourceTree = "<group>"; };
-		AFD1A4872CB7470298D32DC943DB40CC /* TPLConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLConstants.h; sourceTree = "<group>"; };
 		B0423736FFA88FE8EA2A41E79DC2E601 /* Pods-Tropicalytics_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tropicalytics_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B0FC275883179BBF9A4E8547B8C41319 /* Pods-Tropicalytics_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tropicalytics_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B240313F1B213A37D8975DAC2B614D78 /* SpectaDSL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SpectaDSL.m; path = Specta/Specta/SpectaDSL.m; sourceTree = "<group>"; };
@@ -477,66 +480,67 @@
 		B9398525D563222C3D2BEAF9AF2F8A1B /* Specta.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Specta.modulemap; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BAE57C33490B0B1AF6088B01E11F886A /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
-		BC0CB761C4BB4E20B22FF6E4DC06F449 /* TPLUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLUtilities.m; sourceTree = "<group>"; };
 		BC298EF491113D68B9F125ED633F3073 /* RTMethod.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RTMethod.m; sourceTree = "<group>"; };
 		BD0820FED0B34F7C4C4F85F5A9093331 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
-		BD208BA9B66F9E1B71802D78A04F7A54 /* TPLConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLConfiguration.h; sourceTree = "<group>"; };
 		BD8DA0F7C54949412A8BA81A6DCDDF99 /* AFURLSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
 		BE21A7FBF8302A2512C06A938AF92D38 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BECD7A1B03527A00FDC7416D15C3DFAD /* Tropicalytics-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Tropicalytics-dummy.m"; sourceTree = "<group>"; };
 		BF8A5D5FD78116FFAE774939DB19CE7D /* Tropicalytics.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Tropicalytics.modulemap; sourceTree = "<group>"; };
 		C0E2D7FB534E463EF3F0180767F9BF2E /* EXPMatchers+beNil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beNil.m"; path = "Expecta/Matchers/EXPMatchers+beNil.m"; sourceTree = "<group>"; };
+		C1387C8F2BF159F1425D5CF27EFCB83C /* TPLRequestStructure.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLRequestStructure.h; sourceTree = "<group>"; };
 		C1D32078D598BC895DA140F206554C45 /* EXPBlockDefinedMatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPBlockDefinedMatcher.h; path = Expecta/EXPBlockDefinedMatcher.h; sourceTree = "<group>"; };
 		C2251CFFE0AEB3F7789BCC2FA0429033 /* Tropicalytics.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Tropicalytics.xcconfig; sourceTree = "<group>"; };
 		C2D075CB92702C3A3ED3494231C01B30 /* EXPMatchers+beNil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beNil.h"; path = "Expecta/Matchers/EXPMatchers+beNil.h"; sourceTree = "<group>"; };
 		C4273C160F01D8F128DEF6AD5469CF7E /* EXPMatchers+raiseWithReason.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+raiseWithReason.m"; path = "Expecta/Matchers/EXPMatchers+raiseWithReason.m"; sourceTree = "<group>"; };
 		C4DF160A02BC4D99EB5BF20C1B9E1C37 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
-		C67017CE1BD11A06E84EA27AB3D291F3 /* TPLEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLEvent.m; sourceTree = "<group>"; };
 		C6A45D52E036332B840FDDEE65FD2187 /* SPTSharedExampleGroups.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTSharedExampleGroups.m; path = Specta/Specta/SPTSharedExampleGroups.m; sourceTree = "<group>"; };
 		C7AEFEFED9284ADC51610E077D769673 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
 		C83E0E9D4E7A0B0813E910959CD27676 /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
-		C8D525080DB3346BD6FCE77CE9789155 /* TPLAppUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLAppUtilities.m; sourceTree = "<group>"; };
-		C9C5C1888711FD6E2DF19960C63234BF /* TPLDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLDatabase.m; sourceTree = "<group>"; };
+		CA82626EDA6B9D71108871E9D7399C4E /* TPLAppUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLAppUtilities.h; sourceTree = "<group>"; };
 		CAAF695DDD22B3FB18EFDFE29859B1F6 /* EXPDoubleTuple.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPDoubleTuple.h; path = Expecta/EXPDoubleTuple.h; sourceTree = "<group>"; };
 		CB786BCEFF819325F842A6F68A078C71 /* Tropicalytics.xcdatamodel */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcdatamodel; path = Tropicalytics.xcdatamodel; sourceTree = "<group>"; };
 		CD5EDF0B03235EAC81199D4B695802CD /* EXPMatcherHelpers.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPMatcherHelpers.m; path = Expecta/Matchers/EXPMatcherHelpers.m; sourceTree = "<group>"; };
 		CE56C189D1436871EA1BEF1E230581CB /* XCTestCase+Specta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "XCTestCase+Specta.h"; path = "Specta/Specta/XCTestCase+Specta.h"; sourceTree = "<group>"; };
 		CEE427098396C593D40404C4677072AB /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00B1214FB2249B17D63477FC575F1BE /* SPTCallSite.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTCallSite.h; path = Specta/Specta/SPTCallSite.h; sourceTree = "<group>"; };
+		D262B00A268E742F2278EA07BA8E8A44 /* TPLEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLEvent.h; sourceTree = "<group>"; };
 		D3501FFC901C55619F1B7B16AFC662AC /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		D3B9B3D632038AA99FCE3742E1AE455D /* TPLUniqueIdentifier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLUniqueIdentifier.m; sourceTree = "<group>"; };
 		D3FD828DDF23CB2D5927E7ADAD3B0FF8 /* EXPExpect.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPExpect.m; path = Expecta/EXPExpect.m; sourceTree = "<group>"; };
 		D4AA48A433ECB2BBF26BC7A11505F014 /* EXPMatchers+beGreaterThan.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beGreaterThan.m"; path = "Expecta/Matchers/EXPMatchers+beGreaterThan.m"; sourceTree = "<group>"; };
 		D4C1115012E054B7D6FCC123E9978886 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
-		D52DB94783212DD28C11307030370DFE /* TPLBatchDetails.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLBatchDetails.h; sourceTree = "<group>"; };
 		D5C62B64A0A67B6535BE66A210B01F3D /* Specta-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Specta-dummy.m"; sourceTree = "<group>"; };
-		D8E869FEDAEF2E552F5461B57AFD21B1 /* TPLDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLDatabase.h; sourceTree = "<group>"; };
-		D9D475117EC54B7ECA993740AFB82D17 /* Tropicalytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Tropicalytics.h; sourceTree = "<group>"; };
 		DCA8D189A7F64A2E1EFEB1D492E5C9B0 /* Pods-Tropicalytics_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tropicalytics_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		DDCE0EBDBFD893D8A128BD9507A95CC6 /* SPTExample.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTExample.h; path = Specta/Specta/SPTExample.h; sourceTree = "<group>"; };
+		DE020FB523FB2ED465D9A801433C25C4 /* TPLUniqueIdentifier.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLUniqueIdentifier.h; sourceTree = "<group>"; };
 		DE3064393EAFA98ADCBB0F51F9928D61 /* Expecta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Expecta.xcconfig; sourceTree = "<group>"; };
 		DED59F076B9E088A6E5F98EB8C00BC86 /* EXPMatchers+beSubclassOf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beSubclassOf.h"; path = "Expecta/Matchers/EXPMatchers+beSubclassOf.h"; sourceTree = "<group>"; };
+		DFCE673A37F9BAFA03DB68C1D11B50EA /* TPLFieldGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLFieldGroup.h; sourceTree = "<group>"; };
 		E0311F0CA5EBFD85E51FC577126C74ED /* EXPMatchers+match.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+match.h"; path = "Expecta/Matchers/EXPMatchers+match.h"; sourceTree = "<group>"; };
+		E23A667DB8C23D87B3D5E5BDD4343FD0 /* TPLRequestManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLRequestManager.m; sourceTree = "<group>"; };
 		E46DD46C9B83578FA4AB3E4E99AA6060 /* Expecta-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Expecta-dummy.m"; sourceTree = "<group>"; };
 		E5F1387418F145763DA282A84C8085F8 /* Pods-Tropicalytics_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tropicalytics_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E67D9EF3FAE85219A5649B6A3F23E794 /* EXPMatchers+beSubclassOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beSubclassOf.m"; path = "Expecta/Matchers/EXPMatchers+beSubclassOf.m"; sourceTree = "<group>"; };
 		E6C6D7BC17B35FF9C88A48F86720F247 /* EXPMatchers+beTruthy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beTruthy.h"; path = "Expecta/Matchers/EXPMatchers+beTruthy.h"; sourceTree = "<group>"; };
 		E8883EB79D821E17A15157143B3ABAFF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E89085B4B3B8B3F1F6AFABC95047B569 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
-		EBC8529A48A40CE22A3849E786B4DC2E /* TPLDeviceUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLDeviceUtilities.m; sourceTree = "<group>"; };
 		ED5A9AB9707480312760E8FCD2DB7786 /* SPTGlobalBeforeAfterEach.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTGlobalBeforeAfterEach.h; path = Specta/Specta/SPTGlobalBeforeAfterEach.h; sourceTree = "<group>"; };
+		ED92165F8B9C879DB4610C81E38058A6 /* TPLDeviceUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLDeviceUtilities.m; sourceTree = "<group>"; };
 		EE3FAF391B2C5938158F8CCC8BA698BD /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h"; sourceTree = "<group>"; };
 		EEC75ACA62ADAEFB0A5D1F782A08BFC4 /* EXPMatchers+equal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+equal.h"; path = "Expecta/Matchers/EXPMatchers+equal.h"; sourceTree = "<group>"; };
 		EEE020DA7F324BBDC31D5B9A482D6582 /* EXPMatchers+beGreaterThanOrEqualTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beGreaterThanOrEqualTo.h"; path = "Expecta/Matchers/EXPMatchers+beGreaterThanOrEqualTo.h"; sourceTree = "<group>"; };
 		EF466BAED148A632F0D86B94710EE5C7 /* AFImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFImageDownloader.m; path = "UIKit+AFNetworking/AFImageDownloader.m"; sourceTree = "<group>"; };
-		F3FB804742793E24AB40997E3EBB8ED9 /* TPLUniqueIdentifier.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLUniqueIdentifier.h; sourceTree = "<group>"; };
+		EFF921E21ED93627AEB75F0A09E30F9C /* TPLDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLDatabase.m; sourceTree = "<group>"; };
+		F362A60E0B5E9843ECA5FD436385F51D /* TPLAPIClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLAPIClient.m; sourceTree = "<group>"; };
 		F66A3AD5F3C42945C074B85D70D879CB /* Tropicalytics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Tropicalytics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F709232E06B813FEE808885A22496F5A /* ExpectaObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ExpectaObject.h; path = Expecta/ExpectaObject.h; sourceTree = "<group>"; };
 		F7C25F11412715116910791D675543C9 /* EXPMatchers+beCloseTo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beCloseTo.m"; path = "Expecta/Matchers/EXPMatchers+beCloseTo.m"; sourceTree = "<group>"; };
 		F9EB460416B1C4938820DC263FB509EC /* EXPMatchers+beKindOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beKindOf.m"; path = "Expecta/Matchers/EXPMatchers+beKindOf.m"; sourceTree = "<group>"; };
+		FC00653319BE88CF47CCD1D46F01737C /* TPLRequestStructure.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLRequestStructure.m; sourceTree = "<group>"; };
 		FC238BFEC74E3A52A65122EF10679100 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		FCD3A2AA836ECFC16788AD4653B3C797 /* SPTExampleGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTExampleGroup.h; path = Specta/Specta/SPTExampleGroup.h; sourceTree = "<group>"; };
-		FCE5230B87A0E4745AF4A6106015F45A /* TPLBatchDetails.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLBatchDetails.m; sourceTree = "<group>"; };
 		FDD6FD00CC0E9A86AD839FFB2434F08D /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
+		FF42A4A7268F96C32CA12AC558FB3F28 /* TPLBatchDetails.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLBatchDetails.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -642,6 +646,15 @@
 			name = UIKit;
 			sourceTree = "<group>";
 		};
+		0313FAC961819EC66389D4C6DF0E6866 /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				8FEB7F31DDC5FD6CB74C1CEA3597B455 /* TPLAPIClient.h */,
+				F362A60E0B5E9843ECA5FD436385F51D /* TPLAPIClient.m */,
+			);
+			path = APIClient;
+			sourceTree = "<group>";
+		};
 		0576066EFB738D9918051A5CBF34A045 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
@@ -659,54 +672,15 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		3096E8A9BF15B8AD1F2C70946F70CACB /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				66CFDC007CF7F0BC40864E603BB4A6F2 /* TPLAppUtilities.h */,
-				C8D525080DB3346BD6FCE77CE9789155 /* TPLAppUtilities.m */,
-				051F7B71A3B263FB817CEEA3E2DB351F /* TPLDeviceUtilities.h */,
-				EBC8529A48A40CE22A3849E786B4DC2E /* TPLDeviceUtilities.m */,
-				1E8FC18849F34F6ECC95656E05CE29D0 /* TPLUtilities.h */,
-				BC0CB761C4BB4E20B22FF6E4DC06F449 /* TPLUtilities.m */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		3142513D12EDAA0EC41878878677D97B /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				6BC038CE2E4121A9F1DF50B55B8C0307 /* Classes */,
-			);
-			path = Pod;
-			sourceTree = "<group>";
-		};
 		3C305BB271A82340690BE7BF474FCE73 /* Tropicalytics */ = {
 			isa = PBXGroup;
 			children = (
-				3142513D12EDAA0EC41878878677D97B /* Pod */,
+				E708DE9E605258A4CAF7C6962010B570 /* Pod */,
 				B7B1290F18011342C080DB0770CAE702 /* Resources */,
 				B502CD19B79E529A2E5D393D2195D846 /* Support Files */,
 			);
 			name = Tropicalytics;
 			path = ../..;
-			sourceTree = "<group>";
-		};
-		3DBAE87581DC41D1B2286B47D8B52781 /* Config */ = {
-			isa = PBXGroup;
-			children = (
-				BD208BA9B66F9E1B71802D78A04F7A54 /* TPLConfiguration.h */,
-				2EA05AB0CAD50D3EF236ACBE26B429DD /* TPLConfiguration.m */,
-			);
-			path = Config;
-			sourceTree = "<group>";
-		};
-		44B8A9DD36DDE9C4AA7E8DE4AB743AE9 /* APIClient */ = {
-			isa = PBXGroup;
-			children = (
-				10FDE9573171D7AC8BBF2C7DD9DEF907 /* TPLAPIClient.h */,
-				70EFBB03414DEA461DE88C7569E67966 /* TPLAPIClient.m */,
-			);
-			path = APIClient;
 			sourceTree = "<group>";
 		};
 		4ADBBB723AA07BFD2A74C0BFFDABDF27 /* Specta */ = {
@@ -740,6 +714,35 @@
 				B56D21217C6463199D9F7C479AE03D19 /* Support Files */,
 			);
 			path = Specta;
+			sourceTree = "<group>";
+		};
+		4CE131600B007C4C3C954FA67E85103E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6ADC98DE8770735CA0A60367EBDEDD57 /* TPLBatchDetails.h */,
+				FF42A4A7268F96C32CA12AC558FB3F28 /* TPLBatchDetails.m */,
+				6A4CF28A5A94F30094CE80FB91936AC6 /* TPLConstants.h */,
+				13A7E9A10DFB5D87FEFDDB08259CFF83 /* TPLDeviceInfo.h */,
+				7CAE84B93735472042028094A2703C28 /* TPLDeviceInfo.m */,
+				D262B00A268E742F2278EA07BA8E8A44 /* TPLEvent.h */,
+				41AD34E12BBFA99A6B57082122F6016B /* TPLEvent.m */,
+				DFCE673A37F9BAFA03DB68C1D11B50EA /* TPLFieldGroup.h */,
+				1498621F79A2955C9783E161A45BF094 /* TPLFieldGroup.m */,
+				95BA1215E0586C731647CD503549C688 /* TPLHeader.h */,
+				3935E1D96EFA691C166637702D92FF1A /* TPLHeader.m */,
+				C1387C8F2BF159F1425D5CF27EFCB83C /* TPLRequestStructure.h */,
+				FC00653319BE88CF47CCD1D46F01737C /* TPLRequestStructure.m */,
+				6BB3B9454DCB371FA3386BDCE789AEF0 /* Tropicalytics.h */,
+				45BF5605466A9EC4C5FFBA9B24630B73 /* Tropicalytics.m */,
+				0313FAC961819EC66389D4C6DF0E6866 /* APIClient */,
+				A28AC4771B014E30EFEFF6B38EAC98A1 /* Config */,
+				9AB64DC0BB762A4083EB7642FC6B0186 /* Database */,
+				C837F4F35E94ACF97D0494E6E9FDC486 /* Request Manager */,
+				B70F57C1CB3FD3F5825AE56BF7777D01 /* Tropicalytics.xcdatamodeld */,
+				AC51FCAEB60B5D301723EFB092AB7EB0 /* UniqueIdentifier */,
+				6644480307332CCEE1A56D22F9FDF16D /* Utilities */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		4EF2BE21F5418278F7ACF4FCEEE50C24 /* Development Pods */ = {
@@ -860,31 +863,17 @@
 			path = MAObjCRuntime;
 			sourceTree = "<group>";
 		};
-		6BC038CE2E4121A9F1DF50B55B8C0307 /* Classes */ = {
+		6644480307332CCEE1A56D22F9FDF16D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				D52DB94783212DD28C11307030370DFE /* TPLBatchDetails.h */,
-				FCE5230B87A0E4745AF4A6106015F45A /* TPLBatchDetails.m */,
-				AFD1A4872CB7470298D32DC943DB40CC /* TPLConstants.h */,
-				5F9920388BF7E9BA120AB890585385BD /* TPLDeviceInfo.h */,
-				1E7256A26D59AE3CAC26C8D4C479883C /* TPLDeviceInfo.m */,
-				2D914C8F02F68FE6FDED7AC68199CC64 /* TPLEvent.h */,
-				C67017CE1BD11A06E84EA27AB3D291F3 /* TPLEvent.m */,
-				9F782B9DEA7183C5D0ACF08414A92205 /* TPLFieldGroup.h */,
-				A4B4272766A9E7112FE2C1938F60E1E4 /* TPLFieldGroup.m */,
-				56153DFCF729A0275377DD7B9F669E07 /* TPLHeader.h */,
-				1DC9C6CA0D0BB185FA3F0CDF859C823F /* TPLHeader.m */,
-				D9D475117EC54B7ECA993740AFB82D17 /* Tropicalytics.h */,
-				72030FC356763407445C4C16E26E804B /* Tropicalytics.m */,
-				44B8A9DD36DDE9C4AA7E8DE4AB743AE9 /* APIClient */,
-				3DBAE87581DC41D1B2286B47D8B52781 /* Config */,
-				D0FF025BB5F3BC173C259810A454F89A /* Database */,
-				FD551644E5279975A28D14B24A29A77C /* Request Manager */,
-				D531701B81045A28E19BD738F956B8C2 /* Tropicalytics.xcdatamodeld */,
-				8DAFC339CF15A5E165AFE577284178C5 /* UniqueIdentifier */,
-				3096E8A9BF15B8AD1F2C70946F70CACB /* Utilities */,
+				CA82626EDA6B9D71108871E9D7399C4E /* TPLAppUtilities.h */,
+				0EDBAF67F6DB06C1E7E554DE0691885F /* TPLAppUtilities.m */,
+				576A4DF39549B36014CADFF3EF76075D /* TPLDeviceUtilities.h */,
+				ED92165F8B9C879DB4610C81E38058A6 /* TPLDeviceUtilities.m */,
+				58311F9E386D1351EC2156550E15D577 /* TPLUtilities.h */,
+				5D030EA986C2753EE63FC9ECB0524CB7 /* TPLUtilities.m */,
 			);
-			path = Classes;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		745A9E0954268DB21A3B89D66E70F042 /* Products */ = {
@@ -932,15 +921,6 @@
 			path = "Target Support Files/Pods-Tropicalytics_Tests";
 			sourceTree = "<group>";
 		};
-		8DAFC339CF15A5E165AFE577284178C5 /* UniqueIdentifier */ = {
-			isa = PBXGroup;
-			children = (
-				F3FB804742793E24AB40997E3EBB8ED9 /* TPLUniqueIdentifier.h */,
-				0FC29AF9978E2F882A5D65EB11ABDA9C /* TPLUniqueIdentifier.m */,
-			);
-			path = UniqueIdentifier;
-			sourceTree = "<group>";
-		};
 		94DEC4A81978FD7E8F10F4B0BB80C9A2 /* NSURLSession */ = {
 			isa = PBXGroup;
 			children = (
@@ -963,6 +943,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9946B3E678E4AADB5677C9C9ECC966B5 /* Tropicalytics.xcdatamodel */ = {
+			isa = PBXGroup;
+			children = (
+				17BF2D4F6A1BB77020E36C934D3C7E40 /* contents */,
+			);
+			path = Tropicalytics.xcdatamodel;
+			sourceTree = "<group>";
+		};
 		9A478F3954470896B1F7B1DFEA20EFCC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -971,6 +959,15 @@
 				A0628AC04EC576D1C13F1A0079C57A13 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9AB64DC0BB762A4083EB7642FC6B0186 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				13488CCDD5B88F0AEA69EB00932D8D5F /* TPLDatabase.h */,
+				EFF921E21ED93627AEB75F0A09E30F9C /* TPLDatabase.m */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 		A0628AC04EC576D1C13F1A0079C57A13 /* iOS */ = {
@@ -987,12 +984,30 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		A28AC4771B014E30EFEFF6B38EAC98A1 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				9D3BD0BE3B6F01ED6B6EFEA7FB20ED7F /* TPLConfiguration.h */,
+				30D006D7BFBEB28BA7914E657DDFEB52 /* TPLConfiguration.m */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		AC38E9A2EAC639FF8F4021DA6969D24F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				B7D3CE739FD62D60A1A6C12A25AD624E /* Tropicalytics.xcdatamodeld */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		AC51FCAEB60B5D301723EFB092AB7EB0 /* UniqueIdentifier */ = {
+			isa = PBXGroup;
+			children = (
+				DE020FB523FB2ED465D9A801433C25C4 /* TPLUniqueIdentifier.h */,
+				D3B9B3D632038AA99FCE3742E1AE455D /* TPLUniqueIdentifier.m */,
+			);
+			path = UniqueIdentifier;
 			sourceTree = "<group>";
 		};
 		ADB3D01E7DD2748E858DCEC3BC68E7BB /* AFNetworking */ = {
@@ -1035,6 +1050,14 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Specta";
+			sourceTree = "<group>";
+		};
+		B70F57C1CB3FD3F5825AE56BF7777D01 /* Tropicalytics.xcdatamodeld */ = {
+			isa = PBXGroup;
+			children = (
+				9946B3E678E4AADB5677C9C9ECC966B5 /* Tropicalytics.xcdatamodel */,
+			);
+			path = Tropicalytics.xcdatamodeld;
 			sourceTree = "<group>";
 		};
 		B7B1290F18011342C080DB0770CAE702 /* Resources */ = {
@@ -1105,6 +1128,15 @@
 			path = "Target Support Files/Pods-Tropicalytics_Example";
 			sourceTree = "<group>";
 		};
+		C837F4F35E94ACF97D0494E6E9FDC486 /* Request Manager */ = {
+			isa = PBXGroup;
+			children = (
+				1C94407A625C4216447458F88047D40F /* TPLRequestManager.h */,
+				E23A667DB8C23D87B3D5E5BDD4343FD0 /* TPLRequestManager.m */,
+			);
+			path = "Request Manager";
+			sourceTree = "<group>";
+		};
 		CE320695A5A2DB58042CCA548D298ED2 /* Serialization */ = {
 			isa = PBXGroup;
 			children = (
@@ -1125,38 +1157,12 @@
 			name = Reachability;
 			sourceTree = "<group>";
 		};
-		D0FF025BB5F3BC173C259810A454F89A /* Database */ = {
+		E708DE9E605258A4CAF7C6962010B570 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				D8E869FEDAEF2E552F5461B57AFD21B1 /* TPLDatabase.h */,
-				C9C5C1888711FD6E2DF19960C63234BF /* TPLDatabase.m */,
+				4CE131600B007C4C3C954FA67E85103E /* Classes */,
 			);
-			path = Database;
-			sourceTree = "<group>";
-		};
-		D531701B81045A28E19BD738F956B8C2 /* Tropicalytics.xcdatamodeld */ = {
-			isa = PBXGroup;
-			children = (
-				F85058AEE36647CC0D6A5DE2DD6F8B07 /* Tropicalytics.xcdatamodel */,
-			);
-			path = Tropicalytics.xcdatamodeld;
-			sourceTree = "<group>";
-		};
-		F85058AEE36647CC0D6A5DE2DD6F8B07 /* Tropicalytics.xcdatamodel */ = {
-			isa = PBXGroup;
-			children = (
-				A8C8BD49A285284CD8ACC1CC30EA3D08 /* contents */,
-			);
-			path = Tropicalytics.xcdatamodel;
-			sourceTree = "<group>";
-		};
-		FD551644E5279975A28D14B24A29A77C /* Request Manager */ = {
-			isa = PBXGroup;
-			children = (
-				129291D583AF85C58E9D5336C8110C60 /* TPLRequestManager.h */,
-				474AF8A86F5D81BFBA1AAC0698EA3A5E /* TPLRequestManager.m */,
-			);
-			path = "Request Manager";
+			path = Pod;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1173,29 +1179,6 @@
 				78A09642B8D3048606BCE3CDC2019071 /* RTProperty.h in Headers */,
 				021186FE99D6975FAE757AC8E46558D1 /* RTProtocol.h in Headers */,
 				2810F816A41B60EC24C3D882D83AF212 /* RTUnregisteredClass.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4F27CB4D76B9A86E0ECEC60C3BBE2666 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E69E67C39F4340EE7690A1110217B7AA /* TPLAPIClient.h in Headers */,
-				2343A10BA5F34DBCEAF0C4D7AA6CA951 /* TPLAppUtilities.h in Headers */,
-				D095DAFFC0228BEB9473245C48AC2C86 /* TPLBatchDetails.h in Headers */,
-				6095B07F1C2B84B967C0A5CE012C0EBA /* TPLConfiguration.h in Headers */,
-				6712C24A9D9DFFDCEAB6BAF3D5B0EB8A /* TPLConstants.h in Headers */,
-				5CD5F64603D7BAC8072AB6F4936C30F9 /* TPLDatabase.h in Headers */,
-				31DE08E2C2F98427FB92272F0888C9C4 /* TPLDeviceInfo.h in Headers */,
-				995A898987821ED94ACC9FB6BE68293D /* TPLDeviceUtilities.h in Headers */,
-				2E58192A60F2DC4F7B426B6DAA8F6689 /* TPLEvent.h in Headers */,
-				FE635A989AD51FDD5A957911BE281527 /* TPLFieldGroup.h in Headers */,
-				59F17B09B955685C482CCFEA106D81B1 /* TPLHeader.h in Headers */,
-				F12A0C603FDA2FDECB63BE324E043ED7 /* TPLRequestManager.h in Headers */,
-				C453B6E83975F6663D3F1C33CB3B5E03 /* TPLUniqueIdentifier.h in Headers */,
-				9B913DE1C355BCE97D2EDA90D3AA5FC1 /* TPLUtilities.h in Headers */,
-				87E76C70F7F2EE1EE2AAE992DD63B9F1 /* Tropicalytics-umbrella.h in Headers */,
-				E0B6A9C0D66D2EB745DC11B08236C1B1 /* Tropicalytics.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1235,6 +1218,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D092F28EA53CA81B80CB84636B25931 /* Pods-Tropicalytics_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63677DE1B6F7CCED25951C07976AFCFE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				503755BC95009E1959B466127718DA50 /* TPLAPIClient.h in Headers */,
+				FD09294B7074D7B52228F6438A07AD09 /* TPLAppUtilities.h in Headers */,
+				1B261CF95B938F1D0008605B106CF1B3 /* TPLBatchDetails.h in Headers */,
+				6EC22B550ECF7AC97B97845FA6D64F76 /* TPLConfiguration.h in Headers */,
+				CCF834C2EFA77D681712D7E80D023FBC /* TPLConstants.h in Headers */,
+				5F9C09A207929B44F9387B3DCF2F8A77 /* TPLDatabase.h in Headers */,
+				5E9CA582E721C549637005F30C784AE9 /* TPLDeviceInfo.h in Headers */,
+				0A73609846EB7600275D5A28D54880CA /* TPLDeviceUtilities.h in Headers */,
+				CEC63042960076B25C3479EA25B3283B /* TPLEvent.h in Headers */,
+				3A640CF561D23145D1452C819704662E /* TPLFieldGroup.h in Headers */,
+				90648186E4DCE8FBC35EF12467573D2A /* TPLHeader.h in Headers */,
+				C486094162F0CE60103DECF13ACB4856 /* TPLRequestManager.h in Headers */,
+				63CEFA7B13F25A41BC8D464D50093C78 /* TPLRequestStructure.h in Headers */,
+				A5A0FA36ED5B6A70AA00971C7EB17D0D /* TPLUniqueIdentifier.h in Headers */,
+				141D68FA80C9DC5B2224318BF1862811 /* TPLUtilities.h in Headers */,
+				9C718EF9D4A9B42767423E4D767BCF68 /* Tropicalytics-umbrella.h in Headers */,
+				51FCCD21A3089CCA665996F22547ED83 /* Tropicalytics.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1352,10 +1359,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 95C0E83C4364C98EA972AAFC120419B3 /* Build configuration list for PBXNativeTarget "Tropicalytics" */;
 			buildPhases = (
-				BFAA8C7F4D04651847AEB37B750C163B /* Sources */,
+				7C510507152E03F26AA311C05D613037 /* Sources */,
 				95182BB079148AFF271DF4753F745FB8 /* Frameworks */,
 				2CD1F995B882FA8E9DEA0BF06E2E4DD4 /* Resources */,
-				4F27CB4D76B9A86E0ECEC60C3BBE2666 /* Headers */,
+				63677DE1B6F7CCED25951C07976AFCFE /* Headers */,
 			);
 			buildRules = (
 			);
@@ -1546,6 +1553,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7C510507152E03F26AA311C05D613037 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA9E224E570347EAF99DCE6362875EFD /* contents in Sources */,
+				527EBD9ACF98B1D5DB32C4AB2CBA84EA /* TPLAPIClient.m in Sources */,
+				ECDD35402F533B394ABB08A516155DE5 /* TPLAppUtilities.m in Sources */,
+				45CA647C8D95428293EFEFA28E32F051 /* TPLBatchDetails.m in Sources */,
+				7AF2D65C39AAD532A5C685B09146F5C7 /* TPLConfiguration.m in Sources */,
+				4D48F6B0E27B943FB08C4B239DCC8ADE /* TPLDatabase.m in Sources */,
+				30FDA563476F43403FDD7DFF7C8D7FD4 /* TPLDeviceInfo.m in Sources */,
+				BAB2AA805CA5BC4066BD3E50BE971FC9 /* TPLDeviceUtilities.m in Sources */,
+				AFCD2F24E460A91646724C530026C6B6 /* TPLEvent.m in Sources */,
+				878D7F4E75179B2E9800E12DECE0C166 /* TPLFieldGroup.m in Sources */,
+				CF9B2FFFB9BD02A2AAC06922AF0038C5 /* TPLHeader.m in Sources */,
+				235C61898C33FA8CE7181EB8086EAB52 /* TPLRequestManager.m in Sources */,
+				361FEF17E7327A9901B6F06BA40EB7AC /* TPLRequestStructure.m in Sources */,
+				142B53747754027E796F8A767A9A5823 /* TPLUniqueIdentifier.m in Sources */,
+				06426D5F1959BC83B4546AFF3589C285 /* TPLUtilities.m in Sources */,
+				FD161E822D17AB0D171266EFE41F7833 /* Tropicalytics-dummy.m in Sources */,
+				0DCDA6049704B2AF1DA42EC6D1CFE236 /* Tropicalytics.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		89DF67287224A4FBA422149D8376C1C6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1625,29 +1656,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBB5E3ADE44538D569D63A9FF7003BB4 /* Pods-Tropicalytics_Example-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BFAA8C7F4D04651847AEB37B750C163B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				950B9F547AD949C32ABE5F20C8FDDD2F /* contents in Sources */,
-				7E3542B8B4D6B017C763EA83D1FA9293 /* TPLAPIClient.m in Sources */,
-				DC702B3EA680EFEBC472A1E0AC8C07DD /* TPLAppUtilities.m in Sources */,
-				F6F9E850AF0799AEC46391604D5254E0 /* TPLBatchDetails.m in Sources */,
-				4ACEDCD4909C909CD15AACCC43A7B089 /* TPLConfiguration.m in Sources */,
-				3335B1AFA6CE35BCE9EA402F68C18A1B /* TPLDatabase.m in Sources */,
-				06071F3814A1707B85A8D74D95B96683 /* TPLDeviceInfo.m in Sources */,
-				0A86BDD666FEB55E3276435C816F8B1F /* TPLDeviceUtilities.m in Sources */,
-				A09327D92920BB0EDF8F2B97249FC997 /* TPLEvent.m in Sources */,
-				9D70C9E416B6F71AE612A42465CB6D39 /* TPLFieldGroup.m in Sources */,
-				FD9C6838BA7084DACC934D868AA0D388 /* TPLHeader.m in Sources */,
-				42483EECCC29200E3295EAFD4E1738E8 /* TPLRequestManager.m in Sources */,
-				A1D998E7B4EF6598D2163CC1BF72BF97 /* TPLUniqueIdentifier.m in Sources */,
-				5BFF41C4949CA8CB6BAA45B2754D96A6 /* TPLUtilities.m in Sources */,
-				770CAD284D566918F2623C2E034000B3 /* Tropicalytics-dummy.m in Sources */,
-				7C2D978E5E9C044BADB8BAFA2E30A3E6 /* Tropicalytics.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,94 +18,132 @@
 
 @implementation TPLFieldGroup
 
-- (instancetype)init {
+- (instancetype) init {
     self = [super init];
-    
+
     if (self) {
         _data = [[NSMutableDictionary alloc] init];
     }
-    
+
     return self;
 }
 
-- (instancetype)initWithEntries:(NSDictionary *)entries {
+- (instancetype) initWithKey:(NSString *)key {
     self = [self init];
-    
+    if (self) {
+        _dictionaryRepresentationKey = key;
+    }
+
+    return self;
+}
+
+- (instancetype) initWithEntries:(NSDictionary *)entries {
+    self = [self init];
+
     if (self) {
         [self addValues:entries];
     }
-    
+
     return self;
 }
 
-- (void)setValue:(id)value forKey:(NSString *)key {
+- (instancetype) initWithEntries:(NSDictionary *)entries forKey:(NSString *)key {
+    self = [self initWithEntries:entries];
+    if (self) {
+        _dictionaryRepresentationKey = key;
+    }
+
+    return self;
+}
+
+
+- (void) setValue:(id)value forKey:(NSString *)key {
     [_data setValue:value forKey:key];
 }
 
-- (void)addValues:(NSDictionary *)values {
+- (void) addValues:(NSDictionary *)values {
     [_data addEntriesFromDictionary:values];
 }
 
-- (NSDictionary *)dictionaryRepresentationWithUnderscoreKeys {
+- (void) addFieldGroup:(TPLFieldGroup *)fieldGroup {
+    [_data addEntriesFromDictionary:[fieldGroup dictionaryRepresentation]];
+}
+
+- (NSDictionary *) dictionaryRepresentationWithUnderscoreKeys {
+    if (self.dictionaryRepresentationKey) {
+        return @{ self.dictionaryRepresentationKey : [self dictionaryRepresentation:YES] };
+    }
+
     return [self dictionaryRepresentation:YES];
 }
 
-- (NSDictionary *)dictionaryRepresentation {
+- (NSDictionary *) dictionaryRepresentation {
+    if (self.dictionaryRepresentationKey) {
+        return @{ self.dictionaryRepresentationKey : [self dictionaryRepresentation:NO] };
+    }
+
     return [self dictionaryRepresentation:NO];
 }
 
-- (NSDictionary *)dictionaryRepresentation:(BOOL)underscoreKeys {
+- (NSDictionary *) dictionaryRepresentation:(BOOL)underscoreKeys {
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
-    
+
     NSArray *ivars = [[self class] rt_ivars];
+
     for (RTIvar *ivar in ivars) {
         // data is a dict of arbitrary key-values that's merged with ivar key-values below.
-        if (![ivar.name isEqual: @"_data"]) {
+        if (![ivar.name isEqual:@"_data"] && ![ivar.name isEqual:@"_dictionaryRepresentationKey"]) {
             // Remove leading underscore.
             NSString *propName = [ivar.name substringFromIndex:1];
+
             id value = [self valueForKey:propName];
-            
+
             if (value) {
                 if (underscoreKeys) {
                     propName = [self underscoreName:propName];
                 }
-                
+
                 id convertedValue = [self convertValue:value underscoreKeys:underscoreKeys];
-                
+
                 if (convertedValue != nil) {
-                    [dictionary setObject:convertedValue forKey:propName];
+
+                    if ([value isKindOfClass:[TPLFieldGroup class]] && ((TPLFieldGroup *)value).dictionaryRepresentationKey) {
+                        [dictionary setObject:convertedValue forKey:((TPLFieldGroup *)value).dictionaryRepresentationKey];
+                    } else {
+                        [dictionary setObject:convertedValue forKey:propName];
+                    }
                 }
             }
         }
     }
-    
+
     [dictionary addEntriesFromDictionary:[self convertValue:_data underscoreKeys:underscoreKeys]];
-    
+
     return dictionary;
 }
 
-- (id)convertValue:(id)value underscoreKeys:(BOOL)underscoreKeys {
-    if ([value isKindOfClass:[self class]]) {
+- (id) convertValue:(id)value underscoreKeys:(BOOL)underscoreKeys {
+    if ([value isKindOfClass:[TPLFieldGroup class]]) {
         return [value dictionaryRepresentation:underscoreKeys];
     } else if ([value isKindOfClass:[NSArray class]]) {
         NSMutableArray *array = [NSMutableArray arrayWithCapacity:[value count]];
-        
+
         for (id subValue in value) {
             [array addObject:[self convertValue:subValue underscoreKeys:underscoreKeys]];
         }
-        
+
         return array;
     } else if ([value isKindOfClass:[NSDictionary class]]) {
         NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithCapacity:[value count]];
-        
+
         for (NSString *key in [value allKeys]) {
             id convertedValue = [self convertValue:[value objectForKey:key] underscoreKeys:underscoreKeys];
-            
+
             if (convertedValue != nil) {
                 [dictionary setObject:convertedValue forKey:underscoreKeys ? [self underscoreName:key] : key];
             }
         }
-        
+
         return dictionary;
     } else {
         return value;
@@ -123,41 +161,42 @@
  *
  *  @return reasonably-converted camelCase → camel_case converted string
  */
-- (NSString *)underscoreName:(NSString *)name {
+- (NSString *) underscoreName:(NSString *)name {
     NSCharacterSet *underscore = [NSCharacterSet characterSetWithCharactersInString:@"_"];
     NSCharacterSet *uppercase = [NSCharacterSet uppercaseLetterCharacterSet];
     NSCharacterSet *lowercase = [NSCharacterSet lowercaseLetterCharacterSet];
     NSCharacterSet *digits = [NSCharacterSet decimalDigitCharacterSet];
     NSMutableCharacterSet *nonAlphaNumeric = [NSMutableCharacterSet alphanumericCharacterSet];
+
     [nonAlphaNumeric invert];
     [nonAlphaNumeric removeCharactersInString:@"_"];
 
     // Remove all non-alphanumeric characters except underscore (the scanner is configured to just
     // skip underscore).
     name = [[name componentsSeparatedByCharactersInSet:nonAlphaNumeric] componentsJoinedByString:@""];
-    
+
     NSScanner *scanner = [NSScanner scannerWithString:name];
     scanner.caseSensitive = YES;
     scanner.charactersToBeSkipped = underscore;
-    
+
     NSString *buffer = nil;
     NSMutableString *output = [NSMutableString string];
-    
+
     while (!scanner.isAtEnd) {
         if ([scanner scanCharactersFromSet:uppercase intoString:&buffer] ||
             [scanner scanCharactersFromSet:digits intoString:&buffer]) {
             [output appendString:[buffer lowercaseString]];
         }
-        
+
         if ([scanner scanCharactersFromSet:lowercase intoString:&buffer]) {
             [output appendString:buffer];
-            
+
             if (!scanner.isAtEnd) {
                 [output appendString:@"_"];
             }
         }
     }
-    
+
     return [NSString stringWithString:output];
 }
 

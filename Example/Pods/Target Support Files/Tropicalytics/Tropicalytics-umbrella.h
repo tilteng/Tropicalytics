@@ -10,6 +10,7 @@
 #import "TPLEvent.h"
 #import "TPLFieldGroup.h"
 #import "TPLHeader.h"
+#import "TPLRequestStructure.h"
 #import "Tropicalytics.h"
 #import "TPLUniqueIdentifier.h"
 #import "TPLAppUtilities.h"

@@ -12,6 +12,7 @@
 #import "TPLBatchDetails.h"
 #import "TPLEvent.h"
 #import "TPLConfiguration.h"
+#import "TPLRequestStructure.h"
 
 @interface TPLRequestManager ()
 
@@ -24,6 +25,8 @@
 @property (nonatomic, strong) NSURLSessionDataTask *outstandingDataTask;
 @property (nonatomic, strong) NSArray *batchEvents;
 
+@property (nonatomic, strong) TPLRequestStructure *requestStructure;
+
 @end
 
 @implementation TPLRequestManager
@@ -32,6 +35,7 @@
     self = [super init];
     if (self) {
         _configuration = configuration;
+        _requestStructure = configuration.requestStructure;
         _apiClient = configuration.apiClient;
         _database = [[TPLDatabase alloc] initWithAPIClientUniqueIdentifier:self.apiClient.uniqueIdentifier];
     }
@@ -64,20 +68,17 @@
     } else {
         self.batchEvents =  [self.database getEventsArray];
     }
-
-    // Ignore BatchDetails for now in Issue #12 as this will be modified later.
-    TPLBatchDetails *batchDetails = [[TPLBatchDetails alloc] init];
-    batchDetails.totalEvents = [self.batchEvents count];
-
-    // We should probably abstract this out into a larger request that will be a dictionary instead of setting random keys and values.
-    // Will leave that to another github issue.
-    NSMutableDictionary *payloadDictionary = [[NSMutableDictionary alloc] init];
-    [payloadDictionary setObject:[batchDetails dictionaryRepresentation] forKey:@"batch"];
-    [payloadDictionary setObject:[self.database getEventsAsJSONFromArray:self.batchEvents] forKey:@"events"];
-    [payloadDictionary addEntriesFromDictionary:[self.configuration dictionaryRepresentation]];
-
-    // Only allow one outbound task at a time.
-    self.outstandingDataTask = [self.apiClient postWithParameters:payloadDictionary completion:^(NSDictionary *response, NSError *error) {
+    
+    if(self.requestStructure.batchDetails) {
+        self.requestStructure.batchDetails.totalEvents = [self.batchEvents count];
+    }
+    
+    [self.requestStructure setEvents:[self.database getEventsAsJSONFromArray:self.batchEvents]];
+    
+    //For debugging.
+    NSLog(@"Post with Parameters:\n%@", [self.requestStructure dictionaryRepresentation]);
+    
+    self.outstandingDataTask = [self.apiClient postWithParameters:[self.requestStructure dictionaryRepresentation] completion:^(NSDictionary *response, NSError *error) {
         if (error) {
             NSLog(@"Error flushing payload");
         } else {

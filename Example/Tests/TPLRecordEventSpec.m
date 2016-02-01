@@ -108,6 +108,10 @@ describe(@"Record Event Life Cycle", ^{
             }];
         });
     });
+    
+    afterAll(^{
+        [database resetDatabase];
+    });
 });
 
 SpecEnd
