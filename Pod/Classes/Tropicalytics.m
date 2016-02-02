@@ -45,6 +45,10 @@ static Tropicalytics *_sharedInstance = nil;
         if (!configuration) {
             @throw [NSException exceptionWithName:NSInvalidArgumentException reason:@"TPLConfiguration object cannot be nil." userInfo:nil];
         }
+        
+        if(!configuration.requestStructure) {
+            @throw [NSException exceptionWithName:NSInvalidArgumentException reason:@"Configuration's request structure object cannot be nil." userInfo:nil];
+        }
 
         // Add observes so we know what's going on with the application so we can send analytics at appropriate times despite
         // the current batch status.
@@ -61,7 +65,7 @@ static Tropicalytics *_sharedInstance = nil;
                                                      name:UIApplicationWillTerminateNotification
                                                    object:nil];
 
-
+        
         self.requestManager = [[TPLRequestManager alloc] initWithConfiguration:configuration];
         self.requestManager.flushRate = configuration.flushRate;
     }

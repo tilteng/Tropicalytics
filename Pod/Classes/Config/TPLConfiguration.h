@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TPLFieldGroup.h"
 
-@class TPLHeader;
 @class TPLAPIClient;
+@class TPLRequestStructure;
 
 @interface TPLConfiguration : NSObject
 
@@ -24,23 +25,6 @@
 - (id) initWithBasePath:(NSURL *)basePath;
 
 /**
- *  Default Initializer that allows more flexibility and customization
- *
- *  @param basePath The URL to receive the event
- *  @param header   A TPLHeader to be sent.
- *
- *  @return An instance of TPLConfiguration
- */
-- (id) initWithBasePath:(NSURL *)basePath header:(TPLHeader *)header;
-
-/**
- *  Converts the underlying header into JSON
- *
- *  @return a dictionary representation of the underlying header to be sent.
- */
-- (NSDictionary *) dictionaryRepresentation;
-
-/**
  *  Number of events in the queue before a network request will be fired.
  */
 @property (nonatomic, assign)   NSUInteger flushRate;
@@ -50,10 +34,7 @@
  */
 @property (nonatomic, readonly) TPLAPIClient *apiClient;
 
-/**
- *  The header that is created and configured when the configuration is initialized
- */
-@property (nonatomic, readonly) TPLHeader *header;
+@property (nonatomic, strong) TPLRequestStructure *requestStructure;
 
 /**
  *  Optional: configure how requests are structured.
@@ -76,6 +57,5 @@
  *           @"environment": @{},
  *       };
  */
-@property (nonatomic)           NSDictionary *requestStructure; // TK I think we might be able to get rid of this for something else.
 
 @end

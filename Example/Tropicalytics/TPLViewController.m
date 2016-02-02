@@ -11,6 +11,8 @@
 #import <Tropicalytics/TPLConfiguration.h>
 #import <Tropicalytics/TPLHeader.h>
 #import <Tropicalytics/TPLEvent.h>
+#import <Tropicalytics/TPLRequestStructure.h>
+#import <Tropicalytics/TPLBatchDetails.h>
 
 //Leaving this for now because it will help us test things. We will update the ReadMe to explain how to use the Basic Server checked into this project and this
 //will be removed once we are nearly finished with this project.
@@ -33,49 +35,41 @@ static NSString *const otherBasePath = @"http://localhost:4567";
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
 
+    //Create the required structure that will be used to generate the payload dictionary.
+    TPLRequestStructure *structure = [[TPLRequestStructure alloc] init];
+    
     // Initialize the header payload that is sent as part of all outgoing tracking requests.
-
     // Use the defaults (includes things like app version, environment, etc)...
     TPLHeader *header = [[TPLHeader alloc] initDefaultHeaderWithAppId:@"tilt_ios" source:@"app"];
-
-    // ...Or skip the defaults and just do your own thing.
-    // TPLHeader *header = [[TPLHeader alloc] init];
-
-    // Adds any arbitrary key-values to the header payload.
-    [header addValues:@{
-         @"foo": @"bar",
-     }];
-
-    // Initialize the config. Passing in the header payload is optional.
-    TPLConfiguration *config = [[TPLConfiguration alloc] initWithBasePath:[NSURL URLWithString:urlBasePath] header:header];
+    [header setDictionaryRepresentationKey:@"header"];
+    
+    TPLBatchDetails *batchDetails = [[TPLBatchDetails alloc] initWithKey:@"batch_info"];
+    
+    [structure setBatchDetails:batchDetails];
+    
+    //Add unstrucuted values to the request structure. This means you don't actually have to subclass TPLRequestStructure to add
+    //additional fields to the structure.
+    [structure addValues:[header dictionaryRepresentation]];
+    [structure addValues:@{@"Something" : @"Else", @"YAY" : @{@"More nested" : @"YAY"}}];
+    
+    //Add a Field group to the request structure
+    TPLFieldGroup *fieldGroup = [[TPLFieldGroup alloc] initWithKey:@"field_group"];
+    [fieldGroup addValues:@{@"key" : @"value"}];
+    
+    [structure addFieldGroup:fieldGroup];
+    
+    // Initialize the config. This will take care of creating the underlying TPLAPIClient
+    TPLConfiguration *config = [[TPLConfiguration alloc] initWithBasePath:[NSURL URLWithString:urlBasePath]];
     config.flushRate = 2;
-    // Optional: configure how requests are structured.
-    // Uses the default structure:
-    // All requests have "header", "device_info", "user_info" field groupings
-    // in addition to the "event" structure:
-    // {
-    //    "header": {...},
-    //    "device_info": {...},
-    //    "user_info": {...},
-    //    "event": {...}
-    // }
-    config.requestStructure = [config dictionaryRepresentation];
-
-    // The request can also be configured however you desire:
-    // config.requeststructure = @{
-    //    // All requests will then consist of:
-    //    // {
-    //    //    "environment": {},
-    //    //    "event": {...}
-    //    // }
-    //   @"environment": @{},
-    // };
-
-    // Instance example:
+    
+    config.requestStructure = structure;
+    
     self.tropicalyticsInstance = [[Tropicalytics alloc] initWithConfiguration:config];
-
+    
+    //Singleton example.
     TPLConfiguration *otherConfig = [[TPLConfiguration alloc] initWithBasePath:[NSURL URLWithString:urlBasePath]];
     otherConfig.flushRate = 2;
+    otherConfig.requestStructure = structure;
     [Tropicalytics sharedInstanceWithConfiguration:otherConfig];
 
     self.sendEventInstanceButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 100, 100)];
@@ -100,7 +94,7 @@ static NSString *const otherBasePath = @"http://localhost:4567";
 
 - (void) instanceButtonTapped {
     [self.tropicalyticsInstance recordEvent:[[TPLEvent alloc] initWithLabel:@"app" category:@"view" context:@{
-                                                 @"foo": @"bar",
+                                                 @"new_context": @"context_stuffs",
                                              }]];
 }
 

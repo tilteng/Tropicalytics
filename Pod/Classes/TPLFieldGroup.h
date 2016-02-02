@@ -19,13 +19,37 @@
 @interface TPLFieldGroup : NSObject
 
 /**
+ *  Override the key that is normally set from the IVAR for the TPLFieldGroup.
+ */
+@property (nonatomic, copy) NSString *dictionaryRepresentationKey;
+
+/**
  *  Initializes with a set of key-value entries.
  *
  *  @param entries Initial set of entries
+ *  @param key The key to be used when dictionaryRepresentation is called.
  *
  *  @return a field group instance with entries
  */
-- (instancetype)initWithEntries:(NSDictionary *)entries;
+- (instancetype) initWithEntries:(NSDictionary *)entries forKey:(NSString *)key;
+
+/**
+ *  Initializes with a set of key-value entries.
+ *
+ *  @param entries entries Initial set of entries
+ *
+ *  @return a field group instance with entries
+ */
+- (instancetype) initWithEntries:(NSDictionary *)entries;
+
+/**
+ *  Initializes with a set of key-value entries.
+ *
+ *  @param key The key to be used when dictionaryRepresentation is called.
+ *
+ *  @return a field group instance with entries
+ */
+- (instancetype) initWithKey:(NSString *)key;
 
 /**
  *  Adds a key and value to the entry set. Overrides any
@@ -34,7 +58,7 @@
  *  @param value object to set
  *  @param key   index to reference the object
  */
-- (void)setValue:(id)value forKey:(NSString *)key;
+- (void) setValue:(id)value forKey:(NSString *)key;
 
 /**
  *  Adds a group of key-value entries. The values
@@ -42,7 +66,14 @@
  *
  *  @param values group of key-value entries
  */
-- (void)addValues:(NSDictionary *)values;
+- (void) addValues:(NSDictionary *)values;
+
+/**
+ *  Add a TPLFieldGroup to the structure
+ *
+ *  @param fieldGroup a TPLFieldGroup to be added.
+ */
+- (void) addFieldGroup:(TPLFieldGroup *)fieldGroup;
 
 /**
  *  Returns a dictionary representation of the object that's
@@ -51,7 +82,7 @@
  *  @return all keys of propery names and entry names are converted
  *  to underscore-case
  */
-- (NSDictionary *)dictionaryRepresentation;
+- (NSDictionary *) dictionaryRepresentation;
 
 /**
  *  Returns a dictionary representation of the object that's
@@ -59,6 +90,6 @@
  *
  *  @return all keys of property names and entry names are left alone
  */
-- (NSDictionary *)dictionaryRepresentationWithUnderscoreKeys;
+- (NSDictionary *) dictionaryRepresentationWithUnderscoreKeys;
 
 @end
