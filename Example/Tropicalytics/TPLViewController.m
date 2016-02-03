@@ -9,7 +9,6 @@
 #import "TPLViewController.h"
 #import "Tropicalytics.h"
 #import <Tropicalytics/TPLConfiguration.h>
-#import <Tropicalytics/TPLHeader.h>
 #import <Tropicalytics/TPLEvent.h>
 #import <Tropicalytics/TPLRequestStructure.h>
 
@@ -55,14 +54,8 @@ static NSString *const otherBasePath = @"http://localhost:4567";
     //       "total_events": 20
     //    }
     // }
-    TPLRequestStructure *structure = [[TPLRequestStructure alloc] initWithDefaultBatchInfo];
+    TPLRequestStructure *structure = [[TPLRequestStructure alloc] initWithDefaultsForAppId:@"example app"];
 
-    // Optional:
-    // Initialize the header payload that is sent as part of all outgoing tracking requests.
-    // Use the defaults (includes things like app version, environment, etc)...
-    TPLHeader *header = [[TPLHeader alloc] initDefaultHeaderWithAppId:@"example_ios_app" source:@"app"];
-    [header setDictionaryRepresentationKey:@"header"];
-    [structure addValues:[header dictionaryRepresentation]];
 
     // Optional:
     // Add unstrucuted values to the request structure. This means you don't actually have to subclass TPLRequestStructure to add

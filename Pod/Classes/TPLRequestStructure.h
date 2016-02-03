@@ -10,7 +10,9 @@
 #import "TPLFieldGroup.h"
 
 @class TPLBatchDetails;
+@class TPLDeviceInfo;
 @class TPLEvent;
+@class TPLHeader;
 
 @interface TPLRequestStructure : TPLFieldGroup
 
@@ -21,22 +23,23 @@
 @property (nonatomic, strong) TPLBatchDetails *batchDetails;
 
 /**
- *  Creates an instance, setting batchDetails by default to a new TPLBatchDetails 
- *  instance with a key of "batch_info".
- *
- *  @return TPLRequestStructure instance with batchDetails set
+ *  "device_info" values.
  */
-- (instancetype) initWithDefaultBatchInfo;
+@property (nonatomic, strong) TPLDeviceInfo *deviceInfo;
 
 /**
- *  Creates an instance, setting batchDetails to a new TPLBatchDetails instance with the
- *  specified dictionary key.
- *
- *  @param key NSString batchDetail's dictionaryKey
- *
- *  @return TPLRequestStructure instance with batchDetails set with the specified dictionary key
+ *  "header" values.
  */
-- (instancetype) initWithDefaultBatchInfoForKey:(NSString *)key;
+@property (nonatomic, strong) TPLHeader *header;
+
+/**
+ *  Returns an instance with all properties set to their defaults with
+ *  the header's app_id field set to the specified value.
+ *
+ *  @return TPLRequestStructure instance with all properties set to
+ *  their initialized instance values.
+ */
+- (instancetype) initWithDefaultsForAppId:(NSString *)appId;
 
 /**
  *  Sets the events array that is populated by calling `recordEvent`
