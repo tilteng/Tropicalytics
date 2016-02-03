@@ -100,8 +100,8 @@ static NSString *const otherBasePath = @"http://localhost:4567";
 
 - (void) instanceButtonTapped {
     [self.tropicalyticsInstance recordEvent:[[TPLEvent alloc] initWithLabel:@"app" category:@"view" context:@{
-                                                 @"new_context": @"context_stuffs",
-                                             }]];
+                                                                                                                  @"new_context": @"context_stuffs",
+                                                                                                                  }]];
 }
 
 - (void) sharedInstanceButtonTapped {
