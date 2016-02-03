@@ -11,6 +11,7 @@
 #import "TPLDatabase.h"
 #import "TPLBatchDetails.h"
 #import "TPLEvent.h"
+#import "TPLLogger.h"
 #import "TPLConfiguration.h"
 #import "TPLRequestStructure.h"
 
@@ -75,12 +76,11 @@
     
     [self.requestStructure setEvents:[self.database getEventsAsJSONFromArray:self.batchEvents]];
     
-    //For debugging.
-    NSLog(@"Post with Parameters:\n%@", [self.requestStructure dictionaryRepresentation]);
+    [TPLLogger log:@"Post with Parameters:\n%@", [self.requestStructure dictionaryRepresentation]];
     
     self.outstandingDataTask = [self.apiClient postWithParameters:[self.requestStructure dictionaryRepresentation] completion:^(NSDictionary *response, NSError *error) {
         if (error) {
-            NSLog(@"Error flushing payload");
+            [TPLLogger log:@"Error flushing payload"];
         } else {
             [self.database removeEventsFromQueue:self.batchEvents];
             self.outstandingDataTask = nil;

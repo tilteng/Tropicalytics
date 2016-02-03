@@ -11,8 +11,17 @@
 #import "TPLAPIClient.h"
 
 static NSUInteger const DefaultFlushRate = 20;
+static BOOL _debugMode = false;
 
 @implementation TPLConfiguration
+
++ (void) setDebug:(BOOL)debugFlag {
+    _debugMode = debugFlag;
+}
+
++ (BOOL) debug {
+    return _debugMode;
+}
 
 - (id) initWithBasePath:(NSURL *)basePath {
     NSParameterAssert(basePath);

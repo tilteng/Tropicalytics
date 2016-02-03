@@ -12,6 +12,7 @@
 #import "TPLConfiguration.h"
 #import "TPLUtilities.h"
 #import "TPLHeader.h"
+#import "TPLLogger.h"
 #import "TPLEvent.h"
 #import "TPLRequestManager.h"
 #import "TPLDatabase.h"
@@ -68,6 +69,8 @@ static Tropicalytics *_sharedInstance = nil;
         
         self.requestManager = [[TPLRequestManager alloc] initWithConfiguration:configuration];
         self.requestManager.flushRate = configuration.flushRate;
+        
+        [TPLLogger setEnabled:[TPLConfiguration debug]];
     }
 
     return self;
@@ -111,14 +114,14 @@ static Tropicalytics *_sharedInstance = nil;
 #pragma mark - Selectors
 
 - (void) didEnterBackgroundCallBack:(NSNotification *)notification {
-    NSLog(@"App didEnterBackground");
+    [TPLLogger log:@"App didEnterBackground"];
 
     // Start or finish sending the current batch. Then pause everything since are in the background.
     // We we can get more fancy and add some "didReceiveRemoteNotification" to send analytics for notifications outside of the batching
 }
 
 - (void) willEnterForegroundCallBack:(NSNotification *)notification {
-    NSLog(@"App willEnterForeground");
+    [TPLLogger log:@"App willEnterForeground"];
 
     [self.requestManager flushQueue];
 
@@ -126,7 +129,7 @@ static Tropicalytics *_sharedInstance = nil;
 }
 
 - (void) willTerminateCallBack:(NSNotification *)notification {
-    NSLog(@"App willTerminate");
+    [TPLLogger log:@"App willTerminate"];
     // We probably won't have enough time to kick off a network call so lets store
     // everything and then on the next open send everything off.
 }
