@@ -64,4 +64,5 @@
  *  @return A NSString of the devices UUID
  */
 + (NSString *)getUUID;
+
 @end

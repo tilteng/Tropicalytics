@@ -18,7 +18,7 @@
 //will be removed once we are nearly finished with this project.
 static NSString *const urlBasePath = @"http://tropicalyticsresponseserver.herokuapp.com";
 
-static NSString *const otherBasePath = @"http://localhost:4567";
+//static NSString *const urlBasePath = @"http://localhost:4567";
 
 @interface TPLViewController ()
 
@@ -93,9 +93,11 @@ static NSString *const otherBasePath = @"http://localhost:4567";
 }
 
 - (void) instanceButtonTapped {
-    [self.tropicalyticsInstance recordEvent:[[TPLEvent alloc] initWithLabel:@"app" category:@"view" context:@{
-                                                 @"new_context": @"context_stuffs",
-                                             }]];
+    for(int i = 0; i < 1000; i++) {
+        [self.tropicalyticsInstance recordEvent:[[TPLEvent alloc] initWithLabel:@"app" category:@"view" context:@{
+                                                                                                                  @"new_context": @"context_stuffs",
+                                                                                                                  }]];
+    }
 }
 
 - (void) sharedInstanceButtonTapped {

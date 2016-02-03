@@ -81,6 +81,10 @@ static NSUInteger const FetchBatchSize           = 50;
 
 - (void) removeEventsFromQueue:(NSArray *)arrayOfManagedObjectIDs {
     NSError *error;
+    if(![arrayOfManagedObjectIDs count]) {
+        NSLog(@"HEY THERES NO OBJECTS");
+    }
+    
     if([NSBatchDeleteRequest class]) {
         NSBatchDeleteRequest *request = [[NSBatchDeleteRequest alloc] initWithObjectIDs:arrayOfManagedObjectIDs];
         [self.backgroundManagedObjectContext executeRequest:request error:&error];
@@ -112,7 +116,7 @@ static NSUInteger const FetchBatchSize           = 50;
 
 - (NSArray *) getEventsAsJSONFromArray:(NSArray *)managedContextArray {
     NSMutableArray *events = [[NSMutableArray alloc] init];
-    NSArray *staticEvents = [managedContextArray copy];
+    NSArray *staticEvents = managedContextArray;
 
     for (id managedEventObject in staticEvents) {
         [events addObject:[TPLEvent objectWithManagedObject:managedEventObject]];
