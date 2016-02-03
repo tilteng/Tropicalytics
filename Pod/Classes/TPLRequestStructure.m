@@ -8,18 +8,21 @@
 
 #import "TPLRequestStructure.h"
 #import "TPLBatchDetails.h"
+#import "TPLDeviceInfo.h"
+#import "TPLHeader.h"
 
 @implementation TPLRequestStructure
 
-- (instancetype) initWithDefaultBatchInfo {
-    return [self initWithDefaultBatchInfoForKey:@"batch_info"];
-}
-
-- (instancetype) initWithDefaultBatchInfoForKey:(NSString *)key {
+- (instancetype) initWithDefaultsForAppId:(NSString *)appId {
     self = [self init];
     
     if (self) {
-        _batchDetails = [[TPLBatchDetails alloc] initWithKey:key];
+        _batchDetails = [[TPLBatchDetails alloc] initWithKey:@"batch_info"];
+        
+        _deviceInfo = [[TPLDeviceInfo alloc] initWithDefaults];
+        [_deviceInfo setDictionaryRepresentationKey:@"device_info"];
+        
+        _header = [[TPLHeader alloc] initDefaultHeaderWithAppId:appId source:@"app"];
     }
     
     return self;

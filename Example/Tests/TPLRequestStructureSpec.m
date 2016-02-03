@@ -10,6 +10,7 @@
 #import <Specta/Specta.h>
 #import <Expecta/Expecta.h>
 #import <Tropicalytics/TPLHeader.h>
+#import <Tropicalytics/TPLDeviceInfo.h>
 #import <Tropicalytics/TPLRequestStructure.h>
 #import <Tropicalytics/TPLBatchDetails.h>
 #import <Tropicalytics/TPLFieldGroup.h>
@@ -81,6 +82,15 @@ describe(@"TPLRequest Structure", ^{
         
         expect([structure dictionaryRepresentation]).to.equal(mutableDictionary);
 
+    });
+    
+    it(@"initializes header, batchDetails, deviceInfo by default", ^{
+        structure = [[TPLRequestStructure alloc] initWithDefaultsForAppId:@"foo"];
+        
+        expect(structure.batchDetails).to.beKindOf([TPLBatchDetails class]);
+        expect(structure.deviceInfo).to.beKindOf([TPLDeviceInfo class]);
+        expect(structure.header).to.beKindOf([TPLHeader class]);
+        expect(structure.header.appId).to.equal(@"foo");
     });
 });
 
