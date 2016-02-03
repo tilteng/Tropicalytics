@@ -14,10 +14,29 @@
 
 @interface TPLRequestStructure : TPLFieldGroup
 
+
 /**
  *  Necessary batch information to be sent.
  */
 @property (nonatomic, strong) TPLBatchDetails *batchDetails;
+
+/**
+ *  Creates an instance, setting batchDetails by default to a new TPLBatchDetails 
+ *  instance with a key of "batch_info".
+ *
+ *  @return TPLRequestStructure instance with batchDetails set
+ */
+- (instancetype) initWithDefaultBatchInfo;
+
+/**
+ *  Creates an instance, setting batchDetails to a new TPLBatchDetails instance with the
+ *  specified dictionary key.
+ *
+ *  @param key NSString batchDetail's dictionaryKey
+ *
+ *  @return TPLRequestStructure instance with batchDetails set with the specified dictionary key
+ */
+- (instancetype) initWithDefaultBatchInfoForKey:(NSString *)key;
 
 /**
  *  Sets the events array that is populated by calling `recordEvent`

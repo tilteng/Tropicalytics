@@ -19,7 +19,7 @@
 		0C6FF91EB1F0391ED75DC72D31D159EF /* EXPMatchers+beTruthy.m in Sources */ = {isa = PBXBuildFile; fileRef = 256B5A11C4915729454C710A46A58548 /* EXPMatchers+beTruthy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0D16B556212D317A0D4FEB71E102E207 /* EXPMatchers+beLessThan.h in Headers */ = {isa = PBXBuildFile; fileRef = D75C5F13F05AC74DFC0920CADD282ACB /* EXPMatchers+beLessThan.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0EBFA5FBE4953A83B677CE2A75746761 /* EXPMatchers+beLessThan.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F7B85AA0B5E89CE621FA5BC585E927 /* EXPMatchers+beLessThan.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		0EFAA42E7A44748AB9CE7F13C63F0EEF /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2135C321B7B564D475EF9B36791C88 /* Reachability.m */; };
+		0EFAA42E7A44748AB9CE7F13C63F0EEF /* TPLReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2135C321B7B564D475EF9B36791C88 /* TPLReachability.m */; };
 		0F94F5B0ABB3252B9275B7C129EC7A26 /* EXPMatchers+equal.h in Headers */ = {isa = PBXBuildFile; fileRef = 0474C4AD25D5DE1B48CDB2E13712FC23 /* EXPMatchers+equal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		11C1AEB289C1EB80089349B71F09D04B /* EXPMatchers+raiseWithReason.h in Headers */ = {isa = PBXBuildFile; fileRef = 7528B54E6DD3FAB91DE34FAA121B38CE /* EXPMatchers+raiseWithReason.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		128E39944E149E40DDDD72C8476FA5CA /* TPLBatchDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECBEDE25DBA8D1906BCCB993DA02E8B /* TPLBatchDetails.m */; };
@@ -131,7 +131,7 @@
 		B12D352E17048E5FEB3A01F4104E63BD /* TPLUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 5225CA5321D708B7B7DC768E6999FD7F /* TPLUtilities.m */; };
 		B28AA55A4B7B4EC6A8A768A93DC75E09 /* TPLConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 52C053A458315B9EAA50C7B1DC45DD3C /* TPLConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5DC4459096EC178FC6B507B91C9BA85 /* TPLRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D92210257765925EE5994D35F7968109 /* TPLRequestManager.m */; };
-		B6E0F34B2FEE0DC55F06EA2F732A47DD /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = C1F83B3A7FD42CAB5BDE1E3408DA9894 /* Reachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6E0F34B2FEE0DC55F06EA2F732A47DD /* TPLReachability.h in Headers */ = {isa = PBXBuildFile; fileRef = C1F83B3A7FD42CAB5BDE1E3408DA9894 /* TPLReachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B84431CF8C64F363A334AA7089F6C134 /* NSValue+Expecta.m in Sources */ = {isa = PBXBuildFile; fileRef = 11ED23B4C7785EC39DD84970E868AB63 /* NSValue+Expecta.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BA12B131F10BCE3BE6E9A02FC908FE9D /* EXPMatchers+beCloseTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 63906B72E9A7A0813B4561ACAF500DDE /* EXPMatchers+beCloseTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BC55C8365AEFF8217F6A567607754854 /* EXPDoubleTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = C3403680C3AFD40F292E2EAB5A33895A /* EXPDoubleTuple.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -257,7 +257,7 @@
 		0A75D6FDF12459A8A078A06368492208 /* MAObjCRuntime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MAObjCRuntime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BE4E658DE86DB1CC4EEFAD11B2ED4FC /* EXPMatcherHelpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPMatcherHelpers.h; path = Expecta/Matchers/EXPMatcherHelpers.h; sourceTree = "<group>"; };
 		0DD1BB684C071B0DFE60669EF398BBB1 /* EXPExpect.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPExpect.h; path = Expecta/EXPExpect.h; sourceTree = "<group>"; };
-		0E2135C321B7B564D475EF9B36791C88 /* Reachability.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		0E2135C321B7B564D475EF9B36791C88 /* TPLReachability.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TPLReachability.m; sourceTree = "<group>"; };
 		116379FC5C16701B5CCDEF5EEDE6605F /* EXPMatchers+postNotification.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+postNotification.m"; path = "Expecta/Matchers/EXPMatchers+postNotification.m"; sourceTree = "<group>"; };
 		11ED23B4C7785EC39DD84970E868AB63 /* NSValue+Expecta.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSValue+Expecta.m"; path = "Expecta/NSValue+Expecta.m"; sourceTree = "<group>"; };
 		1415E6307EB1C9AADFD0EE7FAC3B3076 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -390,7 +390,7 @@
 		BEE1984EFBFE94117D167FD830C09459 /* Expecta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Expecta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF8A5D5FD78116FFAE774939DB19CE7D /* Tropicalytics.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Tropicalytics.modulemap; sourceTree = "<group>"; };
 		C05A7E1F07B5C68B1B6597A4C5F0D137 /* EXPMatchers+beSupersetOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beSupersetOf.m"; path = "Expecta/Matchers/EXPMatchers+beSupersetOf.m"; sourceTree = "<group>"; };
-		C1F83B3A7FD42CAB5BDE1E3408DA9894 /* Reachability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		C1F83B3A7FD42CAB5BDE1E3408DA9894 /* TPLReachability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TPLReachability.h; sourceTree = "<group>"; };
 		C2251CFFE0AEB3F7789BCC2FA0429033 /* Tropicalytics.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Tropicalytics.xcconfig; sourceTree = "<group>"; };
 		C2948EAAF708B872AA56EE18516C1EA5 /* SPTCallSite.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTCallSite.m; path = Specta/Specta/SPTCallSite.m; sourceTree = "<group>"; };
 		C3403680C3AFD40F292E2EAB5A33895A /* EXPDoubleTuple.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPDoubleTuple.m; path = Expecta/EXPDoubleTuple.m; sourceTree = "<group>"; };
@@ -816,8 +816,8 @@
 		90676DC15AB886D97992EA43C7C55BA3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				C1F83B3A7FD42CAB5BDE1E3408DA9894 /* Reachability.h */,
-				0E2135C321B7B564D475EF9B36791C88 /* Reachability.m */,
+				C1F83B3A7FD42CAB5BDE1E3408DA9894 /* TPLReachability.h */,
+				0E2135C321B7B564D475EF9B36791C88 /* TPLReachability.m */,
 				6221091EB0B7C5D2137265127EE8BE08 /* TPLBatchDetails.h */,
 				1ECBEDE25DBA8D1906BCCB993DA02E8B /* TPLBatchDetails.m */,
 				52C053A458315B9EAA50C7B1DC45DD3C /* TPLConstants.h */,
@@ -1090,7 +1090,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6E0F34B2FEE0DC55F06EA2F732A47DD /* Reachability.h in Headers */,
+				B6E0F34B2FEE0DC55F06EA2F732A47DD /* TPLReachability.h in Headers */,
 				5288F004397F3761F79C5BC5CCB7E139 /* TPLAPIClient.h in Headers */,
 				142C3B7A66CE1E7F003531E9C34AE761 /* TPLAppUtilities.h in Headers */,
 				AE39975ECA49D00840B02DC4637CBCFB /* TPLBatchDetails.h in Headers */,
@@ -1302,7 +1302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AE294F8A759227D8A052762FF5D5C5F /* contents in Sources */,
-				0EFAA42E7A44748AB9CE7F13C63F0EEF /* Reachability.m in Sources */,
+				0EFAA42E7A44748AB9CE7F13C63F0EEF /* TPLReachability.m in Sources */,
 				D64FAF399A56B6C2B5149208F749739C /* TPLAPIClient.m in Sources */,
 				3111A366462C78707DE3C8ACA228F2D0 /* TPLAppUtilities.m in Sources */,
 				128E39944E149E40DDDD72C8476FA5CA /* TPLBatchDetails.m in Sources */,
