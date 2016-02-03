@@ -101,7 +101,7 @@ describe(@"Record Event Life Cycle", ^{
                 @"event" : [database getEventsAsJSONFromArray:outboundBatchArray]
             };
 
-            [configuration.apiClient postWithParameters:outboundBatchDictionary completion:^(NSDictionary *response, NSError *error) {
+            [configuration.apiClient postWithParameters:outboundBatchDictionary completion:^(NSData *response, NSError *error) {
                 [database removeEventsFromQueue:outboundBatchArray];
                 expect([database getEventsArrayCount]).to.equal(0);
                 done();

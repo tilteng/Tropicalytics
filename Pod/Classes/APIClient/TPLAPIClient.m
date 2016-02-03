@@ -22,7 +22,7 @@
 @implementation TPLAPIClient
 
 - (instancetype) initWithBaseURL:(NSURL *)basePath {
-    self = [self init];
+    self = [super init];
     if (self) {
         // We need a persistance layer for when the application resumes so we need to write the correct data
         // to the correct file path. If we save all data from multiple instances into one file we run the risk

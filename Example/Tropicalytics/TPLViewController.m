@@ -14,11 +14,17 @@
 #import <Tropicalytics/TPLRequestStructure.h>
 #import <Tropicalytics/TPLBatchDetails.h>
 
+#ifdef DEBUG
+#define DEBUG_MODE YES
+#else
+#define DEBUG_MODE NO
+#endif
+
 //Leaving this for now because it will help us test things. We will update the ReadMe to explain how to use the Basic Server checked into this project and this
 //will be removed once we are nearly finished with this project.
 static NSString *const urlBasePath = @"http://tropicalyticsresponseserver.herokuapp.com";
 
-//static NSString *const urlBasePath = @"http://localhost:4567";
+static NSString *const otherBasePath = @"http://localhost:4567";
 
 @interface TPLViewController ()
 
@@ -59,9 +65,9 @@ static NSString *const urlBasePath = @"http://tropicalyticsresponseserver.heroku
     [structure addFieldGroup:fieldGroup];
     
     // Initialize the config. This will take care of creating the underlying TPLAPIClient
+    [TPLConfiguration setDebug:DEBUG_MODE];
     TPLConfiguration *config = [[TPLConfiguration alloc] initWithBasePath:[NSURL URLWithString:urlBasePath]];
     config.flushRate = 2;
-    
     config.requestStructure = structure;
     
     self.tropicalyticsInstance = [[Tropicalytics alloc] initWithConfiguration:config];
@@ -93,11 +99,9 @@ static NSString *const urlBasePath = @"http://tropicalyticsresponseserver.heroku
 }
 
 - (void) instanceButtonTapped {
-    for(int i = 0; i < 1000; i++) {
-        [self.tropicalyticsInstance recordEvent:[[TPLEvent alloc] initWithLabel:@"app" category:@"view" context:@{
+    [self.tropicalyticsInstance recordEvent:[[TPLEvent alloc] initWithLabel:@"app" category:@"view" context:@{
                                                                                                                   @"new_context": @"context_stuffs",
                                                                                                                   }]];
-    }
 }
 
 - (void) sharedInstanceButtonTapped {

@@ -11,6 +11,7 @@
 #import "TPLDatabase.h"
 #import "TPLBatchDetails.h"
 #import "TPLEvent.h"
+#import "TPLLogger.h"
 #import "TPLConfiguration.h"
 #import "TPLRequestStructure.h"
 #import "Reachability.h"

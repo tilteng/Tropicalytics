@@ -37,9 +37,9 @@ describe(@"TPLDeviceUtilities", ^{
     });
     
     describe(@"getNetwork", ^{
-        it(@"returns Unknown when the network can't be detected", ^{
+        it(@"returns WiFi for the network", ^{
             NSString *result = [TPLDeviceUtilities getNetwork];
-            expect(result).to.equal(@"Unknown");
+            expect(result).to.equal(@"Reachable WiFi");
         });
     });
     

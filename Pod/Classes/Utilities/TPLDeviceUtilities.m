@@ -47,6 +47,8 @@
             break;
         }
     }
+    
+    return @"Unknown";
 }
 
 + (NSString *)getName {

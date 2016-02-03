@@ -18,6 +18,7 @@
 #import "TPLUniqueIdentifier.h"
 #import "TPLAppUtilities.h"
 #import "TPLDeviceUtilities.h"
+#import "TPLLogger.h"
 #import "TPLUtilities.h"
 
 FOUNDATION_EXPORT double TropicalyticsVersionNumber;

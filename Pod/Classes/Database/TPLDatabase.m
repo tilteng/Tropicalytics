@@ -10,6 +10,7 @@
 #import "TPLEvent.h"
 #import "TPLAPIClient.h"
 #import "TPLConstants.h"
+#import "TPLLogger.h"
 
 static NSString *const SQLiteStoreURL            = @"Tropicalytics.sqlite";
 static NSString *const ManagedObjectEntity       = @"Data";
@@ -82,8 +83,10 @@ static NSUInteger const FetchBatchSize           = 50;
 - (void) removeEventsFromQueue:(NSArray *)arrayOfManagedObjectIDs {
     NSError *error;
     if(![arrayOfManagedObjectIDs count]) {
-        NSLog(@"HEY THERES NO OBJECTS");
+        [TPLLogger log:@"No objects to remove from queue"];
+        return;
     }
+    
     
     if([NSBatchDeleteRequest class]) {
         NSBatchDeleteRequest *request = [[NSBatchDeleteRequest alloc] initWithObjectIDs:arrayOfManagedObjectIDs];
@@ -95,7 +98,7 @@ static NSUInteger const FetchBatchSize           = 50;
     }
     
     if (error) {
-        NSLog(@"Error removing events from queue");
+        [TPLLogger log:@"Error removing events from queue"];
     } else {
         [self saveContext];
     }
@@ -108,7 +111,7 @@ static NSUInteger const FetchBatchSize           = 50;
     NSArray *result = [self.backgroundManagedObjectContext executeFetchRequest:[self fetchRequest] error:&error];
 
     if (error) {
-        NSLog(@"CoreData error %@, %@", error, [error userInfo]);
+        [TPLLogger log:@"CoreData error %@, %@", error, [error userInfo]];
     }
 
     return result;
@@ -132,7 +135,7 @@ static NSUInteger const FetchBatchSize           = 50;
     count = [self.backgroundManagedObjectContext countForFetchRequest:[self fetchRequest] error:&error];
 
     if (error) {
-        NSLog(@"CoreData error %@, %@", error, [error userInfo]);
+        [TPLLogger log:@"CoreData error %@, %@", error, [error userInfo]];
     }
 
     return count;
@@ -161,7 +164,7 @@ static NSUInteger const FetchBatchSize           = 50;
 
     if (self.backgroundManagedObjectContext != nil) {
         if ([self.backgroundManagedObjectContext hasChanges] && ![self.backgroundManagedObjectContext save:&error]) {
-            NSLog(@"CoreData error %@, %@", error, [error userInfo]);
+            [TPLLogger log:@"CoreData error %@, %@", error, [error userInfo]];
         }
     }
 }
@@ -191,7 +194,7 @@ static NSUInteger const FetchBatchSize           = 50;
                                                                         options:nil
                                                                           error:&error];
     if (error) {
-        NSLog(@"error: %@", error.localizedDescription);
+        [TPLLogger log:@"error: %@", error.localizedDescription];
     }
     return managedObjectContext;
 }
@@ -222,7 +225,7 @@ static NSUInteger const FetchBatchSize           = 50;
     if (![fm fileExistsAtPath:[url absoluteString]]) {
         [fm createDirectoryAtURL:url withIntermediateDirectories:YES attributes:nil error:&error];
         if (error) {
-            NSLog(@"Can not create Application Support directory: %@", error);
+            [TPLLogger log:@"Can not create Application Support directory: %@", error];
         }
     }
 
