@@ -14,7 +14,7 @@
 #import "TPLLogger.h"
 #import "TPLConfiguration.h"
 #import "TPLRequestStructure.h"
-#import "Reachability.h"
+#import "TPLReachability.h"
 #import "TPLDeviceUtilities.h"
 
 @interface TPLRequestManager ()
@@ -30,7 +30,7 @@
 
 @property (nonatomic, strong) TPLRequestStructure *requestStructure;
 
-@property (nonatomic) NetworkStatus networkStatus;
+@property (nonatomic) TPLNetworkStatus networkStatus;
 
 @end
 
@@ -47,9 +47,9 @@
         _requestStructure = configuration.requestStructure;
         _apiClient = configuration.apiClient;
         _database = [[TPLDatabase alloc] initWithAPIClientUniqueIdentifier:self.apiClient.uniqueIdentifier];
-        Reachability *reachability = [Reachability reachabilityForInternetConnection];
+        TPLReachability *reachability = [TPLReachability reachabilityForInternetConnection];
         _networkStatus = [reachability currentReachabilityStatus];
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kTPLReachabilityChangedNotification object:nil];
     }
 
     return self;
@@ -121,7 +121,7 @@
 
 #pragma mark - Reachability Changed
 - (void)reachabilityChanged:(NSNotification *)note {
-    Reachability* curReach = [note object];
+    TPLReachability* curReach = [note object];
     self.networkStatus = [curReach currentReachabilityStatus];
 }
 

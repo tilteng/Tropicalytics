@@ -11,7 +11,7 @@
 #import <sys/utsname.h>
 #import <CoreTelephony/CTCarrier.h>
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
-#import "Reachability.h"
+#import "TPLReachability.h"
 
 @implementation TPLDeviceUtilities
 
@@ -30,8 +30,8 @@
 }
 
 + (NSString *)getNetwork {
-    Reachability *reachability = [Reachability reachabilityForInternetConnection];
-    NetworkStatus netStatus = [reachability currentReachabilityStatus];
+    TPLReachability *reachability = [TPLReachability reachabilityForInternetConnection];
+    TPLNetworkStatus netStatus = [reachability currentReachabilityStatus];
     switch (netStatus) {
         case NotReachable:        {
             return @"Access Not Available";
