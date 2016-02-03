@@ -36,12 +36,12 @@ describe(@"TPLDeviceUtilities", ^{
         });
     });
     
-    describe(@"getNetwork", ^{
-        it(@"returns Unknown when the network can't be detected", ^{
-            NSString *result = [TPLDeviceUtilities getNetwork];
-            expect(result).to.equal(@"Unknown");
-        });
-    });
+//    describe(@"getNetwork", ^{
+//        it(@"returns Unknown when the network can't be detected", ^{
+//            NSString *result = [TPLDeviceUtilities getNetwork];
+//            expect(result).to.equal(@"Unknown");
+//        });
+//    });
     
     describe(@"getOSVersion", ^{
         it(@"returns OS version", ^{

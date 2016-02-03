@@ -10,8 +10,6 @@
 
 @class TPLAPIClient;
 
-@import AFNetworking;
-
 /**
  *  A completion block used to handle API requests.
  *
@@ -20,7 +18,7 @@
  */
 typedef void (^TPLAPIClientCompletionBlock)(NSDictionary *response, NSError *error);
 
-@interface TPLAPIClient : AFHTTPSessionManager
+@interface TPLAPIClient : NSObject
 
 /**
  *  This property is used to tell our persistence layer which API Client the event was intended for so we can ensure events are sent to the correct API.
@@ -36,5 +34,7 @@ typedef void (^TPLAPIClientCompletionBlock)(NSDictionary *response, NSError *err
  *  @return the NSURLSessionDataTask object
  */
 - (NSURLSessionDataTask *) postWithParameters:(NSDictionary *)params completion:(TPLAPIClientCompletionBlock)completion;
+
+- (instancetype)initWithBaseURL:(NSURL *)basePath;
 
 @end

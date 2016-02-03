@@ -11,7 +11,6 @@
 #import <sys/utsname.h>
 #import <CoreTelephony/CTCarrier.h>
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
-#import "AFNetworkReachabilityManager.h"
 
 @implementation TPLDeviceUtilities
 
@@ -30,19 +29,7 @@
 }
 
 + (NSString *)getNetwork {
-    switch ([AFNetworkReachabilityManager sharedManager].networkReachabilityStatus) {
-        case AFNetworkReachabilityStatusReachableViaWiFi:
-            return @"WiFi";
-            break;
-        case AFNetworkReachabilityStatusReachableViaWWAN:
-            return @"Cellular";
-        case AFNetworkReachabilityStatusNotReachable:
-            return @"Not Reachable";
-            break;
-        default:
-            return @"Unknown";
-            break;
-    }
+    return nil;
 }
 
 + (NSString *)getName {

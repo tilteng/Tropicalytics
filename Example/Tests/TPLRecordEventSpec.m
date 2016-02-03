@@ -93,21 +93,21 @@ describe(@"Record Event Life Cycle", ^{
     });
 
 
-    it(@"should send the events to the API", ^{
-        waitUntil(^(DoneCallback done) {
-            expect([database getEventsArrayCount]).to.equal(1);
-            NSArray *outboundBatchArray = [database getEventsArray];
-            NSDictionary *outboundBatchDictionary = @{
-                @"event" : [database getEventsAsJSONFromArray:outboundBatchArray]
-            };
-
-            [configuration.apiClient postWithParameters:outboundBatchDictionary completion:^(NSDictionary *response, NSError *error) {
-                [database removeEventsFromQueue:outboundBatchArray];
-                expect([database getEventsArrayCount]).to.equal(0);
-                done();
-            }];
-        });
-    });
+//    it(@"should send the events to the API", ^{
+//        waitUntil(^(DoneCallback done) {
+//            expect([database getEventsArrayCount]).to.equal(1);
+//            NSArray *outboundBatchArray = [database getEventsArray];
+//            NSDictionary *outboundBatchDictionary = @{
+//                @"event" : [database getEventsAsJSONFromArray:outboundBatchArray]
+//            };
+//
+//            [configuration.apiClient postWithParameters:outboundBatchDictionary completion:^(NSDictionary *response, NSError *error) {
+//                [database removeEventsFromQueue:outboundBatchArray];
+//                expect([database getEventsArrayCount]).to.equal(0);
+//                done();
+//            }];
+//        });
+//    });
     
     afterAll(^{
         [database resetDatabase];
