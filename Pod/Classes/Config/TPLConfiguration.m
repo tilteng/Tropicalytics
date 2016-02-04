@@ -7,6 +7,7 @@
 //
 
 #import "TPLConfiguration.h"
+#import "TPLRequestStructure.h"
 #import "TPLAPIClient.h"
 
 static NSUInteger const DefaultFlushRate = 20;
@@ -22,7 +23,7 @@ static BOOL _debugMode = false;
     return _debugMode;
 }
 
-- (id) initWithBasePath:(NSURL *)basePath {
+- (instancetype) initWithBasePath:(NSURL *)basePath {
     NSParameterAssert(basePath);
     self = [self init];
     if (self) {

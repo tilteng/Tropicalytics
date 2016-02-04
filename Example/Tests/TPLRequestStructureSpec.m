@@ -65,9 +65,9 @@ describe(@"TPLRequest Structure", ^{
     
     it(@"can add values from a dictionary", ^{
         fieldGroup.dictionaryRepresentationKey = @"header";
-        [structure addValues:[fieldGroup dictionaryRepresentation]];
+        [structure addEntries:[fieldGroup dictionaryRepresentation]];
         expect([structure dictionaryRepresentation]).to.equal(headerReferenceDictionary);
-        [structure addValues:@{@"test" : @{@"sub" : @"level"}}];
+        [structure addEntries:@{@"test" : @{@"sub" : @"level"}}];
         expect([[structure dictionaryRepresentation] allKeys]).to.equal(@[@"test", @"header"]);
     });
     

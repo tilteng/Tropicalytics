@@ -29,7 +29,7 @@
 }
 
 - (void) setEvents:(NSArray<TPLEvent *> *)eventsArray {
-    [super setValue:eventsArray forKey:@"events"];
+    [super setEntry:eventsArray forKey:@"events"];
 }
 
 @end

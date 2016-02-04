@@ -10,6 +10,7 @@
 #import "TPLFieldGroup.h"
 
 @class TPLAPIClient;
+@class TPLRequestStructure;
 
 @interface TPLConfiguration : NSObject
 
@@ -21,7 +22,7 @@
  *
  *  @return An instance of TPLConfiguration
  */
-- (id) initWithBasePath:(NSURL *)basePath;
+- (instancetype) initWithBasePath:(NSURL *)basePath;
 
 /**
  *  Toggles the global debug state of the

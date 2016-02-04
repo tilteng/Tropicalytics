@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @class TPLConfiguration;
-@class TPLEvent;
 @class TPLFieldGroup;
 @class TPLRequestStructure;
 
@@ -24,6 +23,15 @@ NS_ASSUME_NONNULL_BEGIN
  *
  */
 + (void) sharedInstanceWithConfiguration:(TPLConfiguration *)configuration;
+
+/**
+ *  Initializer when creating a singleton that specifies the default request structure,
+ *  setting the specified app id in its header.
+ *
+ *  @param configuration TPLConfiguration object to be passed in to the singleton
+ *  @param appId         NSString app id to set in the header
+ */
++ (void) sharedInstanceWithDefaultRequestStructureWithConfiguration:(TPLConfiguration *)configuration appId:(NSString *)appId;
 
 /**
  *  A singleton used from the sharedInstanceWithConfiguration. You must create the singleton using sharedInstanceWithConfiguration:
@@ -41,6 +49,16 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return An instance of Tropicalytics based on the provided configuration.
  */
 - (instancetype) initWithConfiguration:(TPLConfiguration *)configuration NS_DESIGNATED_INITIALIZER;
+
+/**
+ *  Initializer that creates a default request structure, setting the specified app id in the header.
+ *
+ *  @param configuration A TPLConfiguration object to be passed in to the singleton
+ *  @param appId         NSString app id to set in the header
+ *
+ *  @return An instance of Tropicalytics based on the provided configuration with a default request structure
+ */
+- (instancetype) initWithDefaultRequestStructureWithConfiguration:(TPLConfiguration *)configuration appId:(NSString *)appId;
 
 #pragma mark - Set the request structure
 
@@ -106,9 +124,9 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Records an event wit the given event.
  *
- *  @param event TPLEvent event
+ *  @param event TPLFieldGroup event data
  */
-- (void) recordEvent:(TPLEvent *)event;
+- (void) recordEvent:(TPLFieldGroup *)event;
 
 /**
  *  Records an event with the given label and category.
