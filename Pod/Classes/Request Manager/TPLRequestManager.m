@@ -16,36 +16,33 @@
 #import "TPLRequestStructure.h"
 #import "TPLReachability.h"
 #import "TPLDeviceUtilities.h"
+#import "TPLConstants.h"
 
 @interface TPLRequestManager ()
 
-@property (nonatomic, strong) TPLAPIClient     *apiClient;
-@property (nonatomic, strong) TPLConfiguration *configuration;
-@property (nonatomic, strong) TPLBatchDetails  *batchDetails;
-
-@property (nonatomic, strong) TPLDatabase *database;
-
-@property (nonatomic)         BOOL outstandingDataTask;
-@property (nonatomic, strong) NSArray *batchEvents;
-
 @property (nonatomic, strong) TPLRequestStructure *requestStructure;
+@property (nonatomic, strong) TPLAPIClient        *apiClient;
+@property (nonatomic, strong) TPLBatchDetails     *batchDetails;
+@property (nonatomic, strong) TPLDatabase         *database;
+@property (nonatomic, strong) NSArray             *batchEvents;
 
-@property (nonatomic) TPLNetworkStatus networkStatus;
+@property (nonatomic) TPLNetworkStatus  networkStatus;
+@property (nonatomic) BOOL              outstandingDataTask;
 
 @end
 
 @implementation TPLRequestManager
 
-- (void)dealloc {
+- (void) dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (instancetype) initWithConfiguration:(TPLConfiguration *)configuration  {
     self = [super init];
     if (self) {
-        _configuration = configuration;
-        _requestStructure = configuration.requestStructure;
+        _requestStructure = [[TPLRequestStructure alloc] init];
         _apiClient = configuration.apiClient;
+        _flushRate = configuration.flushRate;
         _database = [[TPLDatabase alloc] initWithAPIClientUniqueIdentifier:self.apiClient.uniqueIdentifier];
         TPLReachability *reachability = [TPLReachability reachabilityForInternetConnection];
         _networkStatus = [reachability currentReachabilityStatus];
@@ -76,19 +73,19 @@
 
 - (void) flush {
     self.outstandingDataTask = YES;
-    
+
     if ([self.database getEventsArrayCount] >= self.maxBatchSize) {
         self.batchEvents = [[self.database getEventsArray] subarrayWithRange:NSMakeRange(0, self.maxBatchSize)];
     } else {
         self.batchEvents =  [self.database getEventsArray];
     }
-    
-    if(self.requestStructure.batchDetails) {
+
+    if (self.requestStructure.batchDetails) {
         self.requestStructure.batchDetails.totalEvents = [self.batchEvents count];
     }
-    
+
     [self.requestStructure setEvents:[self.database getEventsAsJSONFromArray:self.batchEvents]];
-    
+
     [self.apiClient postWithParameters:[self.requestStructure dictionaryRepresentation] completion:^(NSData *response, NSError *error) {
         if (error) {
             self.outstandingDataTask = NO;
@@ -120,9 +117,34 @@
 }
 
 #pragma mark - Reachability Changed
-- (void)reachabilityChanged:(NSNotification *)note {
-    TPLReachability* curReach = [note object];
+- (void) reachabilityChanged:(NSNotification *)note {
+    TPLReachability *curReach = [note object];
+
     self.networkStatus = [curReach currentReachabilityStatus];
+}
+
+- (void) addEntry:(NSDictionary *)entry forKey:(NSString *)key {
+    if (key.length) {
+        [self.requestStructure addValues:@{ key : entry }];
+    } else {
+        [self.requestStructure addValues:entry];
+    }
+}
+
+- (void) replaceRequestStructure:(TPLRequestStructure *)requestStructure {
+    self.requestStructure = requestStructure;
+}
+
+- (void) removeEntryForKey:(NSString *)key {
+    [self.requestStructure removeEntryForKey:key];
+}
+
+- (void) addEntryForFieldGroup:(TPLFieldGroup *)fieldGroup {
+    [self.requestStructure addFieldGroup:fieldGroup];
+}
+
+- (void) removeEntryForFieldGroup:(TPLFieldGroup *)fieldGroup {
+    [self.requestStructure removeEntryForFieldGroup:fieldGroup];
 }
 
 @end

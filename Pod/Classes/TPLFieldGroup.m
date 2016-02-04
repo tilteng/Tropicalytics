@@ -56,17 +56,34 @@
     return self;
 }
 
-
 - (void) setValue:(id)value forKey:(NSString *)key {
-    [_data setValue:value forKey:key];
+    if(key) {
+        [_data setValue:value forKey:key];
+    }
 }
 
 - (void) addValues:(NSDictionary *)values {
-    [_data addEntriesFromDictionary:values];
+    if(values) {
+        [_data addEntriesFromDictionary:values];
+    }
 }
 
 - (void) addFieldGroup:(TPLFieldGroup *)fieldGroup {
-    [_data addEntriesFromDictionary:[fieldGroup dictionaryRepresentation]];
+    NSDictionary *fieldGroupDictionary = [fieldGroup dictionaryRepresentation];
+    if(fieldGroupDictionary) {
+        [_data addEntriesFromDictionary:fieldGroupDictionary];
+    }
+}
+
+- (void) removeEntryForKey:(NSString *)key {
+    [_data removeObjectForKey:key];
+}
+
+- (void) removeEntryForFieldGroup:(TPLFieldGroup *)fieldGroup {
+    NSArray *fieldGroupKeys = [[fieldGroup dictionaryRepresentation] allKeys];
+    if([fieldGroupKeys count]) {
+        [_data removeObjectsForKeys:fieldGroupKeys];
+    }
 }
 
 - (NSDictionary *) dictionaryRepresentationWithUnderscoreKeys {

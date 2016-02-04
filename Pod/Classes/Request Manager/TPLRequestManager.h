@@ -10,6 +10,8 @@
 
 @class TPLConfiguration;
 @class TPLEvent;
+@class TPLFieldGroup;
+@class TPLRequestStructure;
 
 @interface TPLRequestManager : NSObject
 
@@ -33,11 +35,47 @@
 - (instancetype) initWithConfiguration:(TPLConfiguration *)configuration;
 
 /**
+ *  Replaces the current request structure with a new request structure
+ *
+ *  @param requestStructure a TPLRequestStructure passed into the Tropicalytics instance.
+ */
+- (void) replaceRequestStructure:(TPLRequestStructure *)requestStructure;
+
+/**
  *  Sample way to record an event. This will change as we build out the structure of this.
  *
  *  @param eventData NSDictionary containing the event data.
  */
 - (void) recordEvent:(TPLEvent *)event;
+
+/**
+ *  Adds the entry to the request for the key
+ *
+ *  @param entry NSDictionary representation of the entry to be added
+ *  @param key   NSString for the key to be added.
+ */
+- (void) addEntry:(NSDictionary *)entry forKey:(NSString *)key;
+
+/**
+ *  Removes the entry for a specific key
+ *
+ *  @param key The key used to remove the entry
+ */
+- (void) removeEntryForKey:(NSString *)key;
+
+/**
+ *  Adds an entry as a field group
+ *
+ *  @param fieldGroup The field group to be added to the request
+ */
+- (void) addEntryForFieldGroup:(TPLFieldGroup *)fieldGroup;
+
+/**
+ *  Removes an entry for a given field group
+ *
+ *  @param fieldGroup The field group to be removed
+ */
+- (void) removeEntryForFieldGroup:(TPLFieldGroup *)fieldGroup;
 
 /**
  *  Send events in queue to server
