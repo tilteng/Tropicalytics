@@ -80,8 +80,6 @@ static dispatch_once_t predicate = 0;
     return self;
 }
 
-//+ (void) initThis:(void (^)()
-
 + (void) sharedInstanceWithConfiguration:(TPLConfiguration *)configuration {
     dispatch_once(&predicate, ^() {
         _sharedInstance = [[self alloc] initWithConfiguration:configuration];
