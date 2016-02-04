@@ -25,16 +25,6 @@
 - (instancetype) initWithBasePath:(NSURL *)basePath;
 
 /**
- *  Creates an instance that specifies the default request structure.
- *
- *  @param basePath The server's API URL to receive events
- *  @param appId    App id to set in the request structure's header
- *
- *  @return An instance of TPLConfiguration
- */
-- (instancetype) initWithDefaultsForBasePath:(NSURL *)basePath appId:(NSString *)appId;
-
-/**
  *  Toggles the global debug state of the
  *  TPLConfiguration. This determines whether
  *  debug messages are logged.
@@ -60,10 +50,5 @@
  *  The underlying TPLAPIClient created from initWithBasePath:
  */
 @property (nonatomic, readonly) TPLAPIClient *apiClient;
-
-/**
- *  Default TPLRequestStructure to use.
- */
-@property (nonatomic, readonly, copy) TPLRequestStructure *defaultRequestStructure;
 
 @end

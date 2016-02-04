@@ -74,7 +74,7 @@ static NSString *const urlBasePath = @"http://localhost:4567";
     // Specify whether to log debug messages.
     [TPLConfiguration setDebug:DEBUG_MODE];
     // Specify the API endpoint URL.
-    TPLConfiguration *config = [[TPLConfiguration alloc] initWithDefaultsForBasePath:[NSURL URLWithString:urlBasePath] appId:@"app"];
+    TPLConfiguration *config = [[TPLConfiguration alloc] initWithBasePath:[NSURL URLWithString:urlBasePath]];
     // Specify the number of events that are batched in an HTTP request.
     config.flushRate = 2;
 
@@ -87,6 +87,7 @@ static NSString *const urlBasePath = @"http://localhost:4567";
     // Singleton example.
     TPLConfiguration *otherConfig = [[TPLConfiguration alloc] initWithBasePath:[NSURL URLWithString:urlBasePath]];
     otherConfig.flushRate = 2;
+    [Tropicalytics sharedInstanceWithConfiguration:otherConfig];
 
     // The resulting JSON for requests looks like:
     // {

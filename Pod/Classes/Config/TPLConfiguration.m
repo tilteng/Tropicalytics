@@ -33,15 +33,6 @@ static BOOL _debugMode = false;
     return self;
 }
 
-- (instancetype) initWithDefaultsForBasePath:(NSURL *)basePath appId:(NSString *)appId {
-    self = [self initWithBasePath:basePath];
-    if (self) {
-        _defaultRequestStructure = [[TPLRequestStructure alloc] initWithDefaultsForAppId:appId];
-    }
-    
-    return self;
-}
-
 - (NSUInteger) flushRate {
     if (!_flushRate) {
         _flushRate = DefaultFlushRate;

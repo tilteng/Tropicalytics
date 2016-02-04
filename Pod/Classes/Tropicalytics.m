@@ -14,6 +14,8 @@
 #import "TPLRequestStructure.h"
 
 static Tropicalytics *_sharedInstance = nil;
+static dispatch_once_t predicate = 0;
+
 
 @interface Tropicalytics ()
 
@@ -36,7 +38,7 @@ static Tropicalytics *_sharedInstance = nil;
 
 #pragma mark - Singleton Initializer
 
-- (id) initWithConfiguration:(TPLConfiguration *)configuration {
+- (instancetype) initWithConfiguration:(TPLConfiguration *)configuration {
     self = [super init];
     if (self) {
 
@@ -61,10 +63,6 @@ static Tropicalytics *_sharedInstance = nil;
 
 
         self.requestManager = [[TPLRequestManager alloc] initWithConfiguration:configuration];
-        
-        if (configuration.defaultRequestStructure) {
-            [self setRequestStructure:configuration.defaultRequestStructure];
-        }
 
         [TPLLogger setEnabled:[TPLConfiguration debug]];
     }
@@ -72,11 +70,27 @@ static Tropicalytics *_sharedInstance = nil;
     return self;
 }
 
-+ (void) sharedInstanceWithConfiguration:(TPLConfiguration *)configuration {
-    static dispatch_once_t predicate = 0;
+- (instancetype) initWithDefaultRequestStructureWithConfiguration:(TPLConfiguration *)configuration appId:(NSString *)appId {
+    self = [self initWithConfiguration:configuration];
+    
+    if (self) {
+        [self setRequestStructure:[[TPLRequestStructure alloc] initWithDefaultsForAppId:appId]];
+    }
+    
+    return self;
+}
 
+//+ (void) initThis:(void (^)()
+
++ (void) sharedInstanceWithConfiguration:(TPLConfiguration *)configuration {
     dispatch_once(&predicate, ^() {
         _sharedInstance = [[self alloc] initWithConfiguration:configuration];
+    });
+}
+
++ (void) sharedInstanceWithDefaultRequestStructureWithConfiguration:(TPLConfiguration *)configuration appId:(NSString *)appId {
+    dispatch_once(&predicate, ^() {
+        _sharedInstance = [[self alloc] initWithDefaultRequestStructureWithConfiguration:configuration appId:appId];
     });
 }
 

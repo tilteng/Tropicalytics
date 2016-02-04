@@ -62,11 +62,6 @@ describe(@"Record Event Life Cycle", ^{
         expect(configuration.flushRate).to.equal(2);
     });
     
-    it(@"can create a TPLConfiguration with default requestStructure", ^{
-        configuration = [[TPLConfiguration alloc] initWithDefaultsForBasePath:[NSURL URLWithString:DummyBaseURL] appId:@"app id"];
-        expect(configuration.defaultRequestStructure).to.beKindOf([TPLRequestStructure class]);
-    });
-
     it(@"can create a TPLRequestManager", ^{
         requestManager = [[TPLRequestManager alloc] initWithConfiguration:configuration];
         expect(requestManager).toNot.beNil;
