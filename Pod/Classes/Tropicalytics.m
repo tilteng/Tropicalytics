@@ -70,7 +70,7 @@ static dispatch_once_t predicate = 0;
     return self;
 }
 
-- (instancetype) initWithDefaultRequestStructureWithConfiguration:(TPLConfiguration *)configuration appId:(NSString *)appId {
+- (instancetype) initDefaultRequestStructureWithConfiguration:(TPLConfiguration *)configuration appId:(NSString *)appId {
     self = [self initWithConfiguration:configuration];
     
     if (self) {
@@ -86,9 +86,9 @@ static dispatch_once_t predicate = 0;
     });
 }
 
-+ (void) sharedInstanceWithDefaultRequestStructureWithConfiguration:(TPLConfiguration *)configuration appId:(NSString *)appId {
++ (void) defaultSharedInstanceWithConfiguration:(TPLConfiguration *)configuration appId:(NSString *)appId {
     dispatch_once(&predicate, ^() {
-        _sharedInstance = [[self alloc] initWithDefaultRequestStructureWithConfiguration:configuration appId:appId];
+        _sharedInstance = [[self alloc] initDefaultRequestStructureWithConfiguration:configuration appId:appId];
     });
 }
 

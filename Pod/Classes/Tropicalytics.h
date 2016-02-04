@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param configuration TPLConfiguration object to be passed in to the singleton
  *  @param appId         NSString app id to set in the header
  */
-+ (void) sharedInstanceWithDefaultRequestStructureWithConfiguration:(TPLConfiguration *)configuration appId:(NSString *)appId;
++ (void) defaultSharedInstanceWithConfiguration:(TPLConfiguration *)configuration appId:(NSString *)appId;
 
 /**
  *  A singleton used from the sharedInstanceWithConfiguration. You must create the singleton using sharedInstanceWithConfiguration:
@@ -58,7 +58,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  @return An instance of Tropicalytics based on the provided configuration with a default request structure
  */
-- (instancetype) initWithDefaultRequestStructureWithConfiguration:(TPLConfiguration *)configuration appId:(NSString *)appId;
+- (instancetype) initDefaultRequestStructureWithConfiguration:(TPLConfiguration *)configuration appId:(NSString *)appId;
 
 #pragma mark - Set the request structure
 
