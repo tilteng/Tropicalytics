@@ -7,7 +7,6 @@
 //
 
 #import "TPLEvent.h"
-#import "TPLDatabase.h"
 #import "TPLConstants.h"
 
 @implementation TPLEvent

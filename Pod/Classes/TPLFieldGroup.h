@@ -76,6 +76,20 @@
 - (void) addFieldGroup:(TPLFieldGroup *)fieldGroup;
 
 /**
+ *  Removes the entry for the desired key
+ *
+ *  @param key the key to be used to remove from the dictionary
+ */
+- (void) removeEntryForKey:(NSString *)key;
+
+/**
+ *  Removes the entry for a specific field group
+ *
+ *  @param fieldGroup
+ */
+- (void) removeEntryForFieldGroup:(TPLFieldGroup *)fieldGroup;
+
+/**
  *  Returns a dictionary representation of the object that's
  *  suitable for serializing / JSON-encoding etc.
  *

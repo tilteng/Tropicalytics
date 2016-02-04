@@ -16,6 +16,7 @@
 #import "TPLEvent.h"
 #import "TPLRequestManager.h"
 #import "TPLDatabase.h"
+#import "TPLRequestStructure.h"
 
 static Tropicalytics *_sharedInstance = nil;
 
@@ -33,8 +34,9 @@ static Tropicalytics *_sharedInstance = nil;
 
 #pragma mark - Initializers
 
-- (id) init {
-    return [self initWithConfiguration:nil];
+- (instancetype)init NS_UNAVAILABLE {
+    @throw [NSException exceptionWithName:NSInvalidArgumentException reason:@"Tropicalytics init is unavailable." userInfo:nil];
+    return nil;
 }
 
 #pragma mark - Singleton Initializer
@@ -45,10 +47,6 @@ static Tropicalytics *_sharedInstance = nil;
 
         if (!configuration) {
             @throw [NSException exceptionWithName:NSInvalidArgumentException reason:@"TPLConfiguration object cannot be nil." userInfo:nil];
-        }
-        
-        if(!configuration.requestStructure) {
-            @throw [NSException exceptionWithName:NSInvalidArgumentException reason:@"Configuration's request structure object cannot be nil." userInfo:nil];
         }
 
         // Add observes so we know what's going on with the application so we can send analytics at appropriate times despite
@@ -66,10 +64,9 @@ static Tropicalytics *_sharedInstance = nil;
                                                      name:UIApplicationWillTerminateNotification
                                                    object:nil];
 
-        
+
         self.requestManager = [[TPLRequestManager alloc] initWithConfiguration:configuration];
-        self.requestManager.flushRate = configuration.flushRate;
-        
+
         [TPLLogger setEnabled:[TPLConfiguration debug]];
     }
 
@@ -110,6 +107,26 @@ static Tropicalytics *_sharedInstance = nil;
     [self.requestManager resetDatabase];
 }
 
+- (void) setEntry:(NSDictionary *)entryDictionary forKey:(NSString *)key {
+    [self.requestManager addEntry:entryDictionary forKey:key];
+}
+
+- (void) removeEntryForKey:(NSString *)key {
+    [self.requestManager removeEntryForKey:key];
+}
+
+- (void) addEntryForFieldGroup:(TPLFieldGroup *)fieldGroup {
+    [self.requestManager addEntryForFieldGroup:fieldGroup];
+}
+
+- (void) removeEntryForFieldGroup:(TPLFieldGroup *)fieldGroup {
+    [self.requestManager removeEntryForFieldGroup:fieldGroup];
+}
+
+- (void) setRequestStructure:(TPLRequestStructure *)requestStructure {
+    [self.requestManager replaceRequestStructure:requestStructure];
+}
+
 // Important note: These selectors will NOT be called on the main thread.
 #pragma mark - Selectors
 
@@ -124,8 +141,6 @@ static Tropicalytics *_sharedInstance = nil;
     [TPLLogger log:@"App willEnterForeground"];
 
     [self.requestManager flushQueue];
-
-    // Start the metrics again.
 }
 
 - (void) willTerminateCallBack:(NSNotification *)notification {

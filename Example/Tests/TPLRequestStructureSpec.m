@@ -26,13 +26,24 @@ describe(@"TPLRequest Structure", ^{
     __block TPLFieldGroup *fieldGroup;
     __block TPLRequestStructure *structure;
     __block TPLBatchDetails *batchDetails;
+    __block TPLFieldGroup *addRemoveFieldGroup;
     
     //Init the structure
     it(@"can create a TPLRequestStructure", ^{
         structure = [[TPLRequestStructure alloc] init];
         expect(structure).toNot.beNil;
     });
-
+    
+    it(@"can add a field group to the structure", ^ {
+        addRemoveFieldGroup = [[TPLFieldGroup alloc] initWithEntries:@{@"top_level" : @{@"sub_level" : @"2", @"another_key" : @"3"}}];
+        [structure addFieldGroup:addRemoveFieldGroup];
+        expect([structure dictionaryRepresentation]).to.equal([addRemoveFieldGroup dictionaryRepresentation]);
+    });
+    
+    it(@"can remove a field group from the structure", ^ {
+        [structure removeEntryForFieldGroup:addRemoveFieldGroup];
+        expect([structure dictionaryRepresentation]).to.equal(@{});
+    });
     
     //Create the header
     it(@"can create a TPLFieldGroup with entries and a key", ^{
@@ -55,6 +66,14 @@ describe(@"TPLRequest Structure", ^{
     it(@"can add values from a dictionary", ^{
         fieldGroup.dictionaryRepresentationKey = @"header";
         [structure addValues:[fieldGroup dictionaryRepresentation]];
+        expect([structure dictionaryRepresentation]).to.equal(headerReferenceDictionary);
+        [structure addValues:@{@"test" : @{@"sub" : @"level"}}];
+        expect([[structure dictionaryRepresentation] allKeys]).to.equal(@[@"test", @"header"]);
+    });
+    
+    it(@"can remove an entry for a key", ^ {
+        [structure removeEntryForKey:@"test"];
+        expect([[structure dictionaryRepresentation] allKeys]).toNot.contain(@"test");
         expect([structure dictionaryRepresentation]).to.equal(headerReferenceDictionary);
     });
     

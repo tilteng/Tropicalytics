@@ -23,7 +23,7 @@ static NSUInteger const FetchBatchSize           = 50;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) NSManagedObjectContext *backgroundManagedObjectContext;
 
-@property (nonatomic, copy)   NSURL *storeURL;
+@property (nonatomic, copy)   NSURL    *storeURL;
 @property (nonatomic, copy)   NSString *apiClientUniqueIdentifier;
 
 @end
