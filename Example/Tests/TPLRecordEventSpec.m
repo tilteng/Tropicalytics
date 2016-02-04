@@ -14,6 +14,7 @@
 #import <Tropicalytics/TPLDatabase.h>
 #import <Tropicalytics/TPLConfiguration.h>
 #import <Tropicalytics/TPLRequestManager.h>
+#import <Tropicalytics/TPLRequestStructure.h>
 
 static NSString *const DummyBaseURL     = @"localhost";
 static NSUInteger const RequestFlushRate = 2;
@@ -58,7 +59,12 @@ describe(@"Record Event Life Cycle", ^{
     it(@"can create a TPLConfiguration", ^{
         configuration = [[TPLConfiguration alloc] initWithBasePath:[NSURL URLWithString:DummyBaseURL]];
         configuration.flushRate = 2;
-        expect(configuration).toNot.beNil;
+        expect(configuration.flushRate).to.equal(2);
+    });
+    
+    it(@"can create a TPLConfiguration with default requestStructure", ^{
+        configuration = [[TPLConfiguration alloc] initWithDefaultsForBasePath:[NSURL URLWithString:DummyBaseURL] appId:@"app id"];
+        expect(configuration.defaultRequestStructure).to.beKindOf([TPLRequestStructure class]);
     });
 
     it(@"can create a TPLRequestManager", ^{
@@ -91,7 +97,6 @@ describe(@"Record Event Life Cycle", ^{
         [database addEventToQueue:[event dictionaryRepresentation]];
         expect([database getEventsArrayCount]).to.equal(1);
     });
-
 
     it(@"should send the events to the API", ^{
         waitUntil(^(DoneCallback done) {

@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @class TPLConfiguration;
-@class TPLEvent;
 @class TPLFieldGroup;
 @class TPLRequestStructure;
 
@@ -106,9 +105,9 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *  Records an event wit the given event.
  *
- *  @param event TPLEvent event
+ *  @param event TPLFieldGroup event data
  */
-- (void) recordEvent:(TPLEvent *)event;
+- (void) recordEvent:(TPLFieldGroup *)event;
 
 /**
  *  Records an event with the given label and category.

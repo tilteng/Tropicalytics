@@ -62,19 +62,19 @@ static NSString *const urlBasePath = @"http://localhost:4567";
     // Optional:
     // Add unstrucuted values to the request structure. This means you don't actually have to subclass TPLRequestStructure to add
     // additional fields to the structure...
-    [structure addValues:@{ @"Something" : @"Else", @"YAY" : @{ @"More nested" : @"YAY" } }];
+    [structure addEntries:@{ @"Something" : @"Else", @"YAY" : @{ @"More nested" : @"YAY" } }];
 
     // Optional:
     // ...Or add a Field group to the request structure
     TPLFieldGroup *fieldGroup = [[TPLFieldGroup alloc] initWithKey:@"field_group"];
-    [fieldGroup addValues:@{ @"key" : @"value" }];
+    [fieldGroup addEntries:@{ @"key" : @"value" }];
     [structure addFieldGroup:fieldGroup];
 
     // 3) Initialize the config for the Tropicalytics instance or singleton.
     // Specify whether to log debug messages.
     [TPLConfiguration setDebug:DEBUG_MODE];
     // Specify the API endpoint URL.
-    TPLConfiguration *config = [[TPLConfiguration alloc] initWithBasePath:[NSURL URLWithString:urlBasePath]];
+    TPLConfiguration *config = [[TPLConfiguration alloc] initWithDefaultsForBasePath:[NSURL URLWithString:urlBasePath] appId:@"app"];
     // Specify the number of events that are batched in an HTTP request.
     config.flushRate = 2;
 

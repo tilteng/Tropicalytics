@@ -30,11 +30,11 @@ describe(@"TPLFieldGroup", ^{
         });
     });
     
-    describe(@"setValue", ^{
+    describe(@"setEntry", ^{
         it(@"sets the specified value", ^{
             TPLFieldGroup *bag = [[TPLFieldGroup alloc] init];
             
-            [bag setValue:@1 forKey:@"void"];
+            [bag setEntry:@1 forKey:@"void"];
             
             NSDictionary *values = [bag dictionaryRepresentation];
             
@@ -43,14 +43,14 @@ describe(@"TPLFieldGroup", ^{
         });
     });
     
-    describe(@"addValues", ^{
+    describe(@"addEntries", ^{
         it(@"sets the specified values", ^{
             TPLFieldGroup *bag = [[TPLFieldGroup alloc] initWithEntries:@{
                 @"foo": @"bar",
                 @"koo": @"koo",
             }];
             
-            [bag addValues:@{
+            [bag addEntries:@{
                 @"foo": @"love",
                 @"bar": @"song",
                 @"koo": @"home",
@@ -72,7 +72,7 @@ describe(@"TPLFieldGroup", ^{
                 @"foo": @1,
                 @"bar": @[@"a", @"b", @"c"],
             }];
-            [outer setValue:inner forKey:@"inner"];
+            [outer setEntry:inner forKey:@"inner"];
             
             NSDictionary *values = [outer dictionaryRepresentation];
             
@@ -94,8 +94,8 @@ describe(@"TPLFieldGroup", ^{
                              @"right": @"thing",
                              };
             
-            [bag setValue:@2 forKey:@"someNumber"];
-            [bag setValue:@2 forKey:@"some_number"];
+            [bag setEntry:@2 forKey:@"someNumber"];
+            [bag setEntry:@2 forKey:@"some_number"];
             
             NSDictionary *values = [bag dictionaryRepresentation];
             
@@ -117,8 +117,8 @@ describe(@"TPLFieldGroup", ^{
                              @"right": @"thing",
                              };
             
-            [bag setValue:@2 forKey:@"someNumber"];
-            [bag setValue:@2 forKey:@"some_number"];
+            [bag setEntry:@2 forKey:@"someNumber"];
+            [bag setEntry:@2 forKey:@"some_number"];
             
             NSDictionary *values = [bag dictionaryRepresentationWithUnderscoreKeys];
             

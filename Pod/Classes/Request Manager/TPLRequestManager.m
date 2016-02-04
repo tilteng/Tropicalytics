@@ -125,9 +125,9 @@
 
 - (void) addEntry:(NSDictionary *)entry forKey:(NSString *)key {
     if (key.length) {
-        [self.requestStructure addValues:@{ key : entry }];
+        [self.requestStructure addEntries:@{ key : entry }];
     } else {
-        [self.requestStructure addValues:entry];
+        [self.requestStructure addEntries:entry];
     }
 }
 

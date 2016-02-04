@@ -7,6 +7,7 @@
 //
 
 #import "TPLConfiguration.h"
+#import "TPLRequestStructure.h"
 #import "TPLAPIClient.h"
 
 static NSUInteger const DefaultFlushRate = 20;
@@ -22,13 +23,22 @@ static BOOL _debugMode = false;
     return _debugMode;
 }
 
-- (id) initWithBasePath:(NSURL *)basePath {
+- (instancetype) initWithBasePath:(NSURL *)basePath {
     NSParameterAssert(basePath);
     self = [self init];
     if (self) {
         _apiClient = [[TPLAPIClient alloc] initWithBaseURL:basePath];
     }
 
+    return self;
+}
+
+- (instancetype) initWithDefaultsForBasePath:(NSURL *)basePath appId:(NSString *)appId {
+    self = [self initWithBasePath:basePath];
+    if (self) {
+        _defaultRequestStructure = [[TPLRequestStructure alloc] initWithDefaultsForAppId:appId];
+    }
+    
     return self;
 }
 

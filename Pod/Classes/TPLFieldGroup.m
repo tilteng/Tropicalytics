@@ -41,7 +41,7 @@
     self = [self init];
 
     if (self) {
-        [self addValues:entries];
+        [self addEntries:entries];
     }
 
     return self;
@@ -56,15 +56,15 @@
     return self;
 }
 
-- (void) setValue:(id)value forKey:(NSString *)key {
+- (void) setEntry:(id)entry forKey:(NSString *)key {
     if(key) {
-        [_data setValue:value forKey:key];
+        [_data setValue:entry forKey:key];
     }
 }
 
-- (void) addValues:(NSDictionary *)values {
-    if(values) {
-        [_data addEntriesFromDictionary:values];
+- (void) addEntries:(NSDictionary *)entries {
+    if(entries) {
+        [_data addEntriesFromDictionary:entries];
     }
 }
 

@@ -55,18 +55,18 @@
  *  Adds a key and value to the entry set. Overrides any
  *  value previously set with key.
  *
- *  @param value object to set
+ *  @param entry object to set
  *  @param key   index to reference the object
  */
-- (void) setValue:(id)value forKey:(NSString *)key;
+- (void) setEntry:(id)entry forKey:(NSString *)key;
 
 /**
  *  Adds a group of key-value entries. The values
  *  specified override any previously-set values.
  *
- *  @param values group of key-value entries
+ *  @param entries group of key-value entries
  */
-- (void) addValues:(NSDictionary *)values;
+- (void) addEntries:(NSDictionary *)entries;
 
 /**
  *  Add a TPLFieldGroup to the structure

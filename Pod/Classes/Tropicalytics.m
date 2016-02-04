@@ -61,6 +61,10 @@ static Tropicalytics *_sharedInstance = nil;
 
 
         self.requestManager = [[TPLRequestManager alloc] initWithConfiguration:configuration];
+        
+        if (configuration.defaultRequestStructure) {
+            [self setRequestStructure:configuration.defaultRequestStructure];
+        }
 
         [TPLLogger setEnabled:[TPLConfiguration debug]];
     }
@@ -94,7 +98,8 @@ static Tropicalytics *_sharedInstance = nil;
     [self recordEvent:[[TPLEvent alloc] initWithLabel:label category:category context:context]];
 }
 
-- (void) recordEvent:(TPLEvent *)event {
+- (void) recordEvent:(TPLFieldGroup *)fieldGroup {
+    TPLEvent *event = [[TPLEvent alloc] initWithEntries:[fieldGroup dictionaryRepresentation]];
     [self.requestManager recordEvent:event];
 }
 
