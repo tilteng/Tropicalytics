@@ -1,8 +1,8 @@
 #import <UIKit/UIKit.h>
 
 #import "TPLAPIClient.h"
-#import "YYHJSONRequest.h"
-#import "YYHRequest.h"
+#import "TPLJSONRequest.h"
+#import "TPLRequest.h"
 #import "TPLConfiguration.h"
 #import "TPLDatabase.h"
 #import "TPLRequestManager.h"

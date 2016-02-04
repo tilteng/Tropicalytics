@@ -1,6 +1,6 @@
 //
-//  YYHRequest.h
-//  YYHRequest
+//  TPLRequest.h formerly YYHRequest.h
+//  TPLRequest
 //
 //  Created by Angelo Di Paolo on 3/8/14.
 //  Copyright (c) 2014 Yayuhh. All rights reserved.
@@ -34,7 +34,7 @@ Create request and load manually.
     [request loadRequest];
 
  */
-@interface YYHRequest : NSObject <NSURLConnectionDataDelegate>
+@interface TPLRequest : NSObject <NSURLConnectionDataDelegate>
 
 /// @name Getting the Shared Request Operation Queue
 

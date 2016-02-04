@@ -7,15 +7,10 @@
 //
 
 #import "Tropicalytics.h"
-#import "TPLConstants.h"
-#import "TPLAPIClient.h"
 #import "TPLConfiguration.h"
-#import "TPLUtilities.h"
-#import "TPLHeader.h"
 #import "TPLLogger.h"
 #import "TPLEvent.h"
 #import "TPLRequestManager.h"
-#import "TPLDatabase.h"
 #import "TPLRequestStructure.h"
 
 static Tropicalytics *_sharedInstance = nil;

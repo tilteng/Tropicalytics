@@ -1,21 +1,20 @@
 //
-//  YYHJSONRequest.m
-//  YYHRequest Example
+//  TPLJSONRequest formerly YYHJSONRequest.m
 //
 //  Created by Angelo Di Paolo on 3/12/14.
 //  Copyright (c) 2014 Yayuhh. All rights reserved.
 //
 
-#import "YYHJSONRequest.h"
+#import "TPLJSONRequest.h"
 
-@interface YYHJSONRequest ()
+@interface TPLJSONRequest ()
 
 @property (nonatomic, copy) void (^successCallback)(id json);
 @property (nonatomic, copy) void (^failureCallback)(NSError *error);
 
 @end
 
-@implementation YYHJSONRequest
+@implementation TPLJSONRequest
 
 - (instancetype)initWithURL:(NSURL *)url {
     self = [super initWithURL:url];
@@ -45,7 +44,7 @@
 }
 
 + (instancetype)loadJSONWithURL:(NSURL *)url success:(void (^)(id json))success failure:(void (^)(NSError *error))failure {
-    YYHJSONRequest *request = [YYHJSONRequest requestWithURL:url];
+    TPLJSONRequest *request = [TPLJSONRequest requestWithURL:url];
     [request loadJSONWithSuccess:success failure:failure];
     return request;
 }

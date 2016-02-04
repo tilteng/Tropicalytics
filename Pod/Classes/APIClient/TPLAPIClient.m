@@ -7,10 +7,8 @@
 //
 
 #import "TPLAPIClient.h"
-#import "TPLConfiguration.h"
 #import "TPLUniqueIdentifier.h"
-#import "YYHRequest.h"
-#import "YYHJSONRequest.h"
+#import "TPLJSONRequest.h"
 
 @interface TPLAPIClient ()
 
@@ -44,7 +42,7 @@
 // It may be worth considering using an NSOperationQueue for some of this stuff, however when I was working with operation queues + core data concurrency and the possibility of failed requests it raised a lot of issues and potential crashes. Open to suggestions and ideas on how
 // to improve this. Right now I've seen no issues when handling thousands of requests to be sent out in less than a humanly possibly time.
 - (void)postWithParameters:(NSDictionary *)dictionary completion:(TPLAPIClientCompletionBlock)completion {
-    YYHJSONRequest *request = [YYHJSONRequest requestWithURL:self.basePath];
+    TPLJSONRequest *request = [TPLJSONRequest requestWithURL:self.basePath];
     request.method = @"POST";
     request.parameters = [dictionary mutableCopy];
     

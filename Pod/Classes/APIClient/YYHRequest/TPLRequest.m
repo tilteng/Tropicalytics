@@ -1,14 +1,14 @@
 //
-//  YYHRequest.m
+//  TPLRequest formerly YYHRequest.m
 //  YYHRequest
 //
 //  Created by Angelo Di Paolo on 3/8/14.
 //  Copyright (c) 2014 Yayuhh. All rights reserved.
 //
 
-#import "YYHRequest.h"
+#import "TPLRequest.h"
 
-@interface YYHRequest ()
+@interface TPLRequest ()
 
 @property (nonatomic, strong) NSURLConnection *connection;
 @property (nonatomic, readwrite, copy) NSURLResponse *response;
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation YYHRequest
+@implementation TPLRequest
 
 #pragma mark - Accessors
 
@@ -37,7 +37,7 @@
 
 - (NSOperationQueue *)requestQueue {
     if (!_requestQueue) {
-        _requestQueue = [YYHRequest sharedRequestQueue];
+        _requestQueue = [TPLRequest sharedRequestQueue];
     }
     
     return _requestQueue;
@@ -104,7 +104,7 @@
 #pragma mark - Loading the Request
 
 + (instancetype)loadRequestWithURL:(NSURL *)url success:(void (^)(NSData *data))success failure:(void (^)(NSError *error))failure {
-    YYHRequest *request = [[YYHRequest alloc] initWithURL:url];
+    TPLRequest *request = [[TPLRequest alloc] initWithURL:url];
     [request loadRequestWithSuccess:success failure:failure];
     return request;
 }

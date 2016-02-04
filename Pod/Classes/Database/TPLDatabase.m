@@ -8,7 +8,6 @@
 
 #import "TPLDatabase.h"
 #import "TPLEvent.h"
-#import "TPLAPIClient.h"
 #import "TPLConstants.h"
 #import "TPLLogger.h"
 

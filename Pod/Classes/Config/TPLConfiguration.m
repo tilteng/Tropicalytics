@@ -7,7 +7,6 @@
 //
 
 #import "TPLConfiguration.h"
-#import "TPLHeader.h"
 #import "TPLAPIClient.h"
 
 static NSUInteger const DefaultFlushRate = 20;
