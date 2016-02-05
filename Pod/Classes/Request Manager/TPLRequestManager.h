@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @class TPLConfiguration;
-@class TPLEvent;
 @class TPLFieldGroup;
 @class TPLRequestStructure;
 
@@ -46,7 +45,14 @@
  *
  *  @param eventData NSDictionary containing the event data.
  */
-- (void) recordEvent:(TPLEvent *)event;
+- (void) recordEventWithFieldGroup:(TPLFieldGroup *)fieldGroup;
+
+/**
+ *  Records an event for a given dictionary
+ *
+ *  @param eventDictionary dictionary representation of the event to track
+ */
+- (void) recordEvent:(NSDictionary *) eventDictionary;
 
 /**
  *  Adds the entry to the request for the key

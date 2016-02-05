@@ -9,7 +9,6 @@
 #import "TPLViewController.h"
 #import "Tropicalytics.h"
 #import <Tropicalytics/TPLConfiguration.h>
-#import <Tropicalytics/TPLEvent.h>
 #import <Tropicalytics/TPLRequestStructure.h>
 
 #ifdef DEBUG
@@ -152,13 +151,17 @@ static NSString *const urlBasePath = @"http://localhost:4567";
 }
 
 - (void) instanceButtonTapped {
-    [self.tropicalyticsInstance recordEvent:[[TPLEvent alloc] initWithLabel:@"app" category:@"view" context:@{
+    [self.tropicalyticsInstance recordEvent:@{@"label" : @"app", @"category" : @"view", @"ctx" : @{
                                                  @"new_context": @"context_stuffs",
-                                             }]];
+                                                 }}];
+    
+    [self.tropicalyticsInstance recordEventWithFieldGroup:[[TPLFieldGroup alloc] initWithEntries:@{
+                                                                                                       @"foo": @"bar",
+                                                                                                       }]];
 }
 
 - (void) sharedInstanceButtonTapped {
-    [[Tropicalytics sharedInstance] recordEvent:[[TPLEvent alloc] initWithEntries:@{
+    [[Tropicalytics sharedInstance] recordEventWithFieldGroup:[[TPLFieldGroup alloc] initWithEntries:@{
                                                      @"foo": @"bar",
                                                  }]];
 }

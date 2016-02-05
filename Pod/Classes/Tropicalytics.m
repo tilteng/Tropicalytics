@@ -9,9 +9,9 @@
 #import "Tropicalytics.h"
 #import "TPLConfiguration.h"
 #import "TPLLogger.h"
-#import "TPLEvent.h"
 #import "TPLRequestManager.h"
 #import "TPLRequestStructure.h"
+#import "TPLFieldGroup.h"
 
 static Tropicalytics *_sharedInstance = nil;
 static dispatch_once_t predicate = 0;
@@ -102,17 +102,20 @@ static dispatch_once_t predicate = 0;
 
 #pragma mark - Functions
 
+- (void) recordEvent:(NSDictionary *)eventDictionary {
+    [self.requestManager recordEvent:eventDictionary];
+}
+
 - (void) recordEventWithLabel:(NSString *)label category:(NSString *)category {
-    [self recordEvent:[[TPLEvent alloc] initWithLabel:label category:category]];
+    [self.requestManager recordEvent:@{@"label" : label, @"category" : category}];
 }
 
 - (void) recordEventWithLabel:(NSString *)label category:(NSString *)category context:(NSDictionary *)context {
-    [self recordEvent:[[TPLEvent alloc] initWithLabel:label category:category context:context]];
+    [self.requestManager recordEvent:@{@"label" : label, @"category" : category, @"ctx" : context}];
 }
 
-- (void) recordEvent:(TPLFieldGroup *)fieldGroup {
-    TPLEvent *event = [[TPLEvent alloc] initWithEntries:[fieldGroup dictionaryRepresentation]];
-    [self.requestManager recordEvent:event];
+- (void) recordEventWithFieldGroup:(TPLFieldGroup *)fieldGroup {
+    [self.requestManager recordEventWithFieldGroup:fieldGroup];
 }
 
 - (void) resetDatabase {

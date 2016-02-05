@@ -18,6 +18,12 @@
 
 @implementation TPLFieldGroup
 
++ (TPLFieldGroup *) objectWithManagedObject:(NSManagedObject *)managedObject {
+    TPLFieldGroup *event = [managedObject valueForKey:ManagedObjectEventKey];
+    
+    return event;
+}
+
 - (instancetype) init {
     self = [super init];
 

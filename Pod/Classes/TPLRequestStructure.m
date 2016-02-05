@@ -28,7 +28,7 @@
     return self;
 }
 
-- (void) setEvents:(NSArray<TPLEvent *> *)eventsArray {
+- (void) setEvents:(NSArray<TPLFieldGroup *> *)eventsArray {
     [super setEntry:eventsArray forKey:@"events"];
 }
 

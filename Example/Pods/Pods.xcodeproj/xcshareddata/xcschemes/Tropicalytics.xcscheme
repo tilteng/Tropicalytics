@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'AF042681768105224F2BBA70'
+               BlueprintIdentifier = '544A6434162DA4E741753F19'
                BlueprintName = 'Tropicalytics'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Tropicalytics.framework'>
