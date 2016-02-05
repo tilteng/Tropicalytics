@@ -7,9 +7,9 @@
 //
 
 #import "TPLDatabase.h"
-#import "TPLEvent.h"
 #import "TPLConstants.h"
 #import "TPLLogger.h"
+#import "TPLFieldGroup.h"
 
 static NSString *const SQLiteStoreURL            = @"Tropicalytics.sqlite";
 static NSString *const ManagedObjectEntity       = @"Data";
@@ -121,7 +121,7 @@ static NSUInteger const FetchBatchSize           = 50;
     NSArray *staticEvents = managedContextArray;
 
     for (id managedEventObject in staticEvents) {
-        [events addObject:[TPLEvent objectWithManagedObject:managedEventObject]];
+        [events addObject:[TPLFieldGroup objectWithManagedObject:managedEventObject]];
     }
 
     return events;

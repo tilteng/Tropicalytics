@@ -10,11 +10,11 @@
 #import <Specta/Specta.h>
 #import <Expecta/Expecta.h>
 #import <Tropicalytics/TPLAPIClient.h>
-#import <Tropicalytics/TPLEvent.h>
 #import <Tropicalytics/TPLDatabase.h>
 #import <Tropicalytics/TPLConfiguration.h>
 #import <Tropicalytics/TPLRequestManager.h>
 #import <Tropicalytics/TPLRequestStructure.h>
+#import <Tropicalytics/TPLFieldGroup.h>
 
 static NSString *const DummyBaseURL     = @"localhost";
 static NSUInteger const RequestFlushRate = 2;
@@ -28,7 +28,7 @@ SpecBegin(TPLRecordEvent)
 describe(@"Record Event Life Cycle", ^{
     NSLog(@"STARTING");
     // Setup
-    __block TPLEvent *event;
+    __block TPLFieldGroup *fieldGroup;
     __block TPLDatabase *database;
     __block TPLConfiguration *configuration;
     __block TPLRequestManager *requestManager;
@@ -77,19 +77,19 @@ describe(@"Record Event Life Cycle", ^{
         expect([database getEventsArrayCount]).to.equal(0);
     });
 
-    it(@"can create a TPLEvent from a dictionary", ^{
-        event = [[TPLEvent alloc] initWithEntries:testEvent];
-        expect(event).toNot.beNil;
+    it(@"can create a TPLFieldGroup from a dictionary", ^{
+        fieldGroup = [[TPLFieldGroup alloc] initWithEntries:testEvent];
+        expect(fieldGroup).toNot.beNil;
     });
 
     it(@"should have the same number of keys as an event and as a dictionary", ^{
         NSUInteger testDictionaryCount = [testEvent count];
-        NSUInteger eventCount = [[event dictionaryRepresentation] count];
+        NSUInteger eventCount = [[fieldGroup dictionaryRepresentation] count];
         expect(testDictionaryCount).to.equal(eventCount);
     });
 
     it(@"should record an event to the database", ^{
-        [database addEventToQueue:[event dictionaryRepresentation]];
+        [database addEventToQueue:[fieldGroup dictionaryRepresentation]];
         expect([database getEventsArrayCount]).to.equal(1);
     });
 

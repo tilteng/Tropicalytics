@@ -122,11 +122,18 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Record Event
 
 /**
- *  Records an event wit the given event.
+ *  Records an event with the given field group.
  *
  *  @param event TPLFieldGroup event data
  */
-- (void) recordEvent:(TPLFieldGroup *)event;
+- (void) recordEventWithFieldGroup:(TPLFieldGroup *)fieldGroup;
+
+/**
+ *  Records an event with the given dictionary
+ *
+ *  @param eventDictionary A dictionary of the object to be recorded.
+ */
+- (void) recordEvent:(NSDictionary *)eventDictionary;
 
 /**
  *  Records an event with the given label and category.

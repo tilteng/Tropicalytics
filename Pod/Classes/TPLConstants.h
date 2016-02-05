@@ -7,7 +7,7 @@
 //
 
 /**
- *  The key for a TPLEvent object
+ *  The key for the queued event object
  */
 static NSString *const TPLEventKey  = @"events";
 /**

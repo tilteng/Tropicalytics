@@ -10,13 +10,13 @@
 #import "TPLAPIClient.h"
 #import "TPLDatabase.h"
 #import "TPLBatchDetails.h"
-#import "TPLEvent.h"
 #import "TPLLogger.h"
 #import "TPLConfiguration.h"
 #import "TPLRequestStructure.h"
 #import "TPLReachability.h"
 #import "TPLDeviceUtilities.h"
 #import "TPLConstants.h"
+#import "TPLFieldGroup.h"
 
 @interface TPLRequestManager ()
 
@@ -54,13 +54,13 @@
 
 #pragma mark - Add Events
 
-- (void) recordEvent:(TPLEvent *)event {
-    [self queueEventPayload:event];
+- (void) recordEvent:(NSDictionary *)eventDictionary {
+    [self.database addEventToQueue:eventDictionary];
+    [self flushQueue];
 }
 
-- (void) queueEventPayload:(TPLEvent *)event {
-    [self.database addEventToQueue:[event dictionaryRepresentation]];
-    [self flushQueue];
+- (void) recordEventWithFieldGroup:(TPLFieldGroup *)fieldGroup {
+    [self recordEvent:[fieldGroup dictionaryRepresentation]];
 }
 
 #pragma mark - Send Events

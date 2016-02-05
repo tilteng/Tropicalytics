@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+#import "TPLConstants.h"
 
 /**
  * Represents a grouping of key-value pairs that
@@ -17,6 +19,15 @@
  * in results returned by the dictionaryRepresentation method.
  */
 @interface TPLFieldGroup : NSObject
+
+/**
+ *  Convert a NSManagedObject into a TPLFieldGroup
+ *
+ *  @param managedObject The managed object to be converted into a TPLFieldGroup.
+ *
+ *  @return a TPLFieldGroup
+ */
++ (TPLFieldGroup *) objectWithManagedObject:(NSManagedObject *)managedObject;
 
 /**
  *  Override the key that is normally set from the IVAR for the TPLFieldGroup.

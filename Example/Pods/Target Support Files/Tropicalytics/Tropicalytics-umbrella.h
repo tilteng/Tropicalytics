@@ -9,7 +9,6 @@
 #import "TPLBatchDetails.h"
 #import "TPLConstants.h"
 #import "TPLDeviceInfo.h"
-#import "TPLEvent.h"
 #import "TPLFieldGroup.h"
 #import "TPLHeader.h"
 #import "TPLReachability.h"

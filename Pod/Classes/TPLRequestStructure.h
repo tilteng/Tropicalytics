@@ -11,7 +11,6 @@
 
 @class TPLBatchDetails;
 @class TPLDeviceInfo;
-@class TPLEvent;
 @class TPLHeader;
 
 @interface TPLRequestStructure : TPLFieldGroup
@@ -48,15 +47,15 @@
  *
  *  events =  (
  *              {
- *                 A TPLEvent subclass as a dictionary representation
+ *                 A TPLFieldGroup subclass as a dictionary representation
  *              },
  *              ...
  *           )
  *
  *
  *
- *  @param eventsArray An array of TPLEvents to be tracked.
+ *  @param eventsArray An array of TPLFieldGroup objects to be tracked.
  */
-- (void) setEvents:(NSArray<TPLEvent *> *)eventsArray;
+- (void) setEvents:(NSArray<TPLFieldGroup *> *)eventsArray;
 
 @end
