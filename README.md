@@ -20,7 +20,7 @@ Tropicalytics is a lightweight, flexible library made for analytics tracking in 
 $ gem install cocoapods
 ```
 
-> CocoaPods 0.39.0+ is required to build Tropicalytics 3.0.0+.
+> CocoaPods 0.39.0+ is required to build Tropicalytics 1.0.0+.
 
 #### Podfile
 
@@ -42,6 +42,38 @@ $ pod install
 ## Usage
 
 An example project that makes use of Tropicalytics is included in this repo.
+
+### Quick start
+
+Tropicalytics can be quickly configured to start tracking events!
+
+```objc
+TPLConfiguration *config = [[TPLConfiguration alloc] initWithBasePath:[NSURL URLWithString:@"https://my.analytics.api"]];
+Tropicalytics *tracker = [[Tropicalytics alloc] initWithConfiguration:config];
+[tracker recordEvent:@{ @"label": @"start", @"category": @"tap", @"value": 1  }];
+[tracker recordEvent:@{ @"label": @"edit", @"category": @"tap", @"value": 2  }];
+```
+
+Results in the JSON event being posted to the server endpoint:
+
+```json
+{
+  "events": [
+    {
+      "label": "start",
+      "category": "tap",
+      "value": 1
+    },
+    {
+      "label": "edit",
+      "category": "tap",
+      "value": 2
+    }
+  ]
+}
+```
+
+However, all aspects of tracking—including the JSON payload structure, event-batching, and event-recording can be flexibly customized:
 
 ### Configuration
 
@@ -74,8 +106,8 @@ TPLRequestStructure *structure = [[TPLRequestStructure alloc] initWithEntries:@{
     @"else": @"is cool",
   }
 }];
-[structure setValue:@57 forKey:@"someNumber"];
-[structure addValues:@{
+[structure setEntry:@57 forKey:@"someNumber"];
+[structure addEntries:@{
     @"sub": @"mariner",
 }];
 ```
@@ -94,67 +126,97 @@ Then on subsequent tracking calls, the specified data is sent in requests:
 }
 ```
 
+### Initialization
 
-#### events structure
+Tropicalytics supports the ability to create multiple instances or to use a single shared instance (singleton).
 
+A `TPLConfiguration` instance is required when creating a Tropicalytics instance or setting up the singleton. This configuration object contains the URL of the server that receives tracking requests and provides the ability to configure how many events are batched together in an HTTP request.
 
-TK ~~Let's say you want to post event JSON data to a server and wish to have the following JSON structure:~~
-
-```json
-{
-  "events": [
-    {
-      "type": "list_created",
-      "client_tstamp": 1454520067,
-      "ctx": {
-        "list_guid": "LI231AD...",
-        ...
-      }
-    },
-    {
-      "type": "list_viewed",
-      "client_tstamp": 1454520104,
-      "ctx": {
-        "list_guid": "LI231AD...",
-        ...
-      }
-    }
-  ],
-
-  "user_info": {
-    "guid": "A24DG...",
-    ...
-  },
-
-  "device_info": {
-    "platform": "ios",
-    "device": "iPhone",
-    "model": "iPhone6,2",
-    "os_version": "9.2.0",
-    "network_type": "wifi",
-    "timezone": "Pacific/Los Angeles"
-  }
-}
+```objc
+TPLConfiguration *config = [[TPLConfiguration alloc] initWithBasePath:[NSURL URLWithString:@"https://my.analytics.api"]];
+config.flushRate = 10; // 10 events are batched together.
 ```
 
+Creating an instance of Tropicalytics:
 
+```objc
+Tropicalytics *tracker = [[Tropicalytics alloc] initWithConfiguration:config];
+```
 
+Or setting up the singleton:
 
-##### Adding 'header' fields
-
-
-##### Adding 'device info' fields
-
-
-##### Adding additional data to each request
-
-You can also add additional fields 
-
-
-### Initialization
+```objc
+[Tropicalytics sharedInstanceWithConfiguration:config];
+```
 
 ### Tracking events
 
+Arbitrary dictionary data can be tracked:
+
+```objc
+[tracker recordEvent:@{ @"label": "add button", @"category": @"start" }];
+```
+
+Or more structured events can be represented by a `TPLFieldGroup` subclass and then recorded:
+
+```objc
+MyTPLFieldGroupSubclass *event = [[MyTPLFieldGroupSubclass alloc] initWithEntries:@{ @"event_name": @"foo" }];
+[tracker recordEventWithFieldGroup:event];
+```
+
+
+#### Adding additional data to each request
+
+Top-level key-values can be added to and removed from the request structure at any time.
+
+```objc
+[tracker setEntry:@"bar", forKey:@"foo"];
+```
+
+Results in future recording requests containing the added key-values:
+
+```json
+{
+  "foo": "bar",
+  "events": []
+}
+```
+
+These entries can also be removed.
+
+```objc
+[tracker removeEntryForKey:@"foo"];
+```
+
+### Working with Tropicalytics defaults
+
+Tropicalytics supports a default configuration that attaches info about the device and the app onto tracking request payloads.
+
+```objc
+Tropicalytics *tropicalytics = [[Tropicalytics alloc] initDefaultRequestStructureWithConfiguration:config];
+```
+
+By using these defaults, event tracking request payloads look like:
+
+```json
+{
+  "header": {
+    "app_id": "example app id",
+    "session_id": "38cdff6f3e104241bd42430d5e098e48",
+    "source": "app",
+    "app_version": "1.0"
+  },
+  "device_info": {
+    "os_version": "9.2",
+    "device": "iPhone",
+    "model": "iPhone 6,2",
+    "network_type": "Reachable WiFi",
+    "timezone": "America/Los_Angeles",
+    "platform": "ios"
+  },
+  "events": []
+}
+```
 
 
 
