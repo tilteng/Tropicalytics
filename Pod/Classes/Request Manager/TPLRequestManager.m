@@ -86,7 +86,7 @@
 
     [self.requestStructure setEvents:[self.database getEventsAsJSONFromArray:self.batchEvents]];
 
-    [self.apiClient postWithParameters:[self.requestStructure dictionaryRepresentation] completion:^(NSData *response, NSError *error) {
+    [self.apiClient postWithParameters:[self.requestStructure dictionaryRepresentationWithUnderscoreKeys] completion:^(NSData *response, NSError *error) {
         if (error) {
             self.outstandingDataTask = NO;
             self.batchEvents = nil;
