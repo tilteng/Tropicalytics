@@ -17,6 +17,7 @@
 @property (nonatomic) NSString * osVersion;
 @property (nonatomic) NSString * networkType;
 @property (nonatomic) NSString * timezone;
+@property (nonatomic) NSString * deviceUUID;
 
 - (instancetype)initWithDefaults;
 
