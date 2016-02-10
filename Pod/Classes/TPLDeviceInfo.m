@@ -21,6 +21,7 @@
         _osVersion = [TPLDeviceUtilities getOSVersion];
         _networkType = [TPLDeviceUtilities getNetwork];
         _timezone = [TPLDeviceUtilities getTimezone];
+        _deviceUUID = [TPLDeviceUtilities getUUID];
     }
     
     return self;
