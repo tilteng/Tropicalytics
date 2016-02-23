@@ -14,15 +14,20 @@
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
-		6003F59E195388D20070C39A /* TLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* TLAppDelegate.m */; };
-		6003F5A7195388D20070C39A /* TLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* TLViewController.m */; };
+		6003F59E195388D20070C39A /* TPLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* TPLAppDelegate.m */; };
+		6003F5A7195388D20070C39A /* TPLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* TPLViewController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
-		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
+		8B98DCDE1C52C6D2005D2F0E /* TPLHeaderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B98DCDC1C52C6C9005D2F0E /* TPLHeaderSpec.m */; };
+		8BBEB8301C59996E006C7AD1 /* TPLDeviceUtilitiesSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BBEB82F1C59996E006C7AD1 /* TPLDeviceUtilitiesSpec.m */; };
+		8BE3E00E1C56ADEE008213E8 /* TPLFieldGroupSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE3E00D1C56ADEE008213E8 /* TPLFieldGroupSpec.m */; };
+		8BE3E0111C56B680008213E8 /* TPLFieldGroupSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE3E0101C56B680008213E8 /* TPLFieldGroupSubclass.m */; };
+		BD29F6C71C5C067E00EC35A8 /* TPLRecordEventSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = BD29F6C61C5C067E00EC35A8 /* TPLRecordEventSpec.m */; };
 		BD2F6F301C4F3B5600EFF66A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD2F6F2F1C4F3B5600EFF66A /* Launch Screen.storyboard */; };
+		BD96AA421C616AD300B819AB /* TPLRequestStructureSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = BD96AA411C616AD300B819AB /* TPLRequestStructureSpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,22 +52,28 @@
 		6003F597195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F599195388D20070C39A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6003F59B195388D20070C39A /* Tropicalytics-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tropicalytics-Prefix.pch"; sourceTree = "<group>"; };
-		6003F59C195388D20070C39A /* TLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLAppDelegate.h; sourceTree = "<group>"; };
-		6003F59D195388D20070C39A /* TLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLAppDelegate.m; sourceTree = "<group>"; };
-		6003F5A5195388D20070C39A /* TLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLViewController.h; sourceTree = "<group>"; };
-		6003F5A6195388D20070C39A /* TLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLViewController.m; sourceTree = "<group>"; };
+		6003F59C195388D20070C39A /* TPLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPLAppDelegate.h; sourceTree = "<group>"; };
+		6003F59D195388D20070C39A /* TPLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPLAppDelegate.m; sourceTree = "<group>"; };
+		6003F5A5195388D20070C39A /* TPLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPLViewController.h; sourceTree = "<group>"; };
+		6003F5A6195388D20070C39A /* TPLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPLViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* Tropicalytics_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tropicalytics_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		6C178C02F6C4CF06FE6A4071 /* Pods_Tropicalytics_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tropicalytics_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7536E2A997C66A9FF90EFB4F /* Pods-Tropicalytics_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tropicalytics_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tropicalytics_Example/Pods-Tropicalytics_Example.release.xcconfig"; sourceTree = "<group>"; };
 		830899FB0D92A36E80C22EC9 /* Pods-Tropicalytics_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tropicalytics_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tropicalytics_Example/Pods-Tropicalytics_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		8B98DCDC1C52C6C9005D2F0E /* TPLHeaderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLHeaderSpec.m; sourceTree = "<group>"; };
+		8BBEB82F1C59996E006C7AD1 /* TPLDeviceUtilitiesSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLDeviceUtilitiesSpec.m; sourceTree = "<group>"; };
+		8BE3E00D1C56ADEE008213E8 /* TPLFieldGroupSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLFieldGroupSpec.m; sourceTree = "<group>"; };
+		8BE3E00F1C56B680008213E8 /* TPLFieldGroupSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPLFieldGroupSubclass.h; sourceTree = "<group>"; };
+		8BE3E0101C56B680008213E8 /* TPLFieldGroupSubclass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLFieldGroupSubclass.m; sourceTree = "<group>"; };
 		B95C6BDB732735F0DFD85CDC /* Tropicalytics.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Tropicalytics.podspec; path = ../Tropicalytics.podspec; sourceTree = "<group>"; };
+		BD29F6C61C5C067E00EC35A8 /* TPLRecordEventSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLRecordEventSpec.m; sourceTree = "<group>"; };
 		BD2F6F2F1C4F3B5600EFF66A /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		BD96AA411C616AD300B819AB /* TPLRequestStructureSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPLRequestStructureSpec.m; sourceTree = "<group>"; };
 		D991BB0D39020C8B20CB99F3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E490B426688630DD2AC776D8 /* Pods-Tropicalytics_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tropicalytics_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tropicalytics_Tests/Pods-Tropicalytics_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,10 +141,10 @@
 		6003F593195388D20070C39A /* Example for Tropicalytics */ = {
 			isa = PBXGroup;
 			children = (
-				6003F59C195388D20070C39A /* TLAppDelegate.h */,
-				6003F59D195388D20070C39A /* TLAppDelegate.m */,
-				6003F5A5195388D20070C39A /* TLViewController.h */,
-				6003F5A6195388D20070C39A /* TLViewController.m */,
+				6003F59C195388D20070C39A /* TPLAppDelegate.h */,
+				6003F59D195388D20070C39A /* TPLAppDelegate.m */,
+				6003F5A5195388D20070C39A /* TPLViewController.h */,
+				6003F5A6195388D20070C39A /* TPLViewController.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 				BD2F6F2F1C4F3B5600EFF66A /* Launch Screen.storyboard */,
@@ -156,8 +167,14 @@
 		6003F5B5195388D20070C39A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				6003F5BB195388D20070C39A /* Tests.m */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
+				8B98DCDC1C52C6C9005D2F0E /* TPLHeaderSpec.m */,
+				8BE3E00D1C56ADEE008213E8 /* TPLFieldGroupSpec.m */,
+				8BE3E00F1C56B680008213E8 /* TPLFieldGroupSubclass.h */,
+				8BE3E0101C56B680008213E8 /* TPLFieldGroupSubclass.m */,
+				8BBEB82F1C59996E006C7AD1 /* TPLDeviceUtilitiesSpec.m */,
+				BD29F6C61C5C067E00EC35A8 /* TPLRecordEventSpec.m */,
+				BD96AA411C616AD300B819AB /* TPLRequestStructureSpec.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -243,9 +260,9 @@
 		6003F582195388D10070C39A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = TL;
+				CLASSPREFIX = TPL;
 				LastUpgradeCheck = 0720;
-				ORGANIZATIONNAME = "Matt King";
+				ORGANIZATIONNAME = "Tilt.com Inc";
 				TargetAttributes = {
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -390,8 +407,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F59E195388D20070C39A /* TLAppDelegate.m in Sources */,
-				6003F5A7195388D20070C39A /* TLViewController.m in Sources */,
+				6003F59E195388D20070C39A /* TPLAppDelegate.m in Sources */,
+				6003F5A7195388D20070C39A /* TPLViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,7 +417,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F5BC195388D20070C39A /* Tests.m in Sources */,
+				8BE3E00E1C56ADEE008213E8 /* TPLFieldGroupSpec.m in Sources */,
+				8B98DCDE1C52C6D2005D2F0E /* TPLHeaderSpec.m in Sources */,
+				8BBEB8301C59996E006C7AD1 /* TPLDeviceUtilitiesSpec.m in Sources */,
+				BD96AA421C616AD300B819AB /* TPLRequestStructureSpec.m in Sources */,
+				8BE3E0111C56B680008213E8 /* TPLFieldGroupSubclass.m in Sources */,
+				BD29F6C71C5C067E00EC35A8 /* TPLRecordEventSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,7 +489,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -500,7 +522,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -548,11 +570,7 @@
 			baseConfigurationReference = E490B426688630DD2AC776D8 /* Pods-Tropicalytics_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -560,6 +578,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tropicalytics_Example.app/Tropicalytics_Example";
@@ -572,14 +591,11 @@
 			baseConfigurationReference = 0B2ECBF0AD7DE8AA589C3EB8 /* Pods-Tropicalytics_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tropicalytics_Example.app/Tropicalytics_Example";

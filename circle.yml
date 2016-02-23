@@ -1,0 +1,18 @@
+# Configuration documentation can be found at:
+# https://circleci.com/docs/configuration
+
+machine:
+    xcode:
+        version: "7.2"
+    environment:
+        XCODE_SCHEME: "Tropicalytics-Example"
+        CI_BUILD_NUMBER: $CIRCLE_BUILD_NUM
+        CI_DISPLAY_NAME: "Circle CI"
+        CI_REPORT_PATH: $CIRCLE_TEST_REPORTS/junit
+dependencies:
+    pre:
+        - brew uninstall xctool && brew install --HEAD xctool
+test:
+    override:
+        - pod install --project-directory=Example
+        - fastlane ios test

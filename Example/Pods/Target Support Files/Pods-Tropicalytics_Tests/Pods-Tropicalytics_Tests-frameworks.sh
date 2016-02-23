@@ -84,13 +84,13 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-Tropicalytics_Tests/AFNetworking.framework"
+  install_framework "Pods-Tropicalytics_Tests/MAObjCRuntime.framework"
   install_framework "Pods-Tropicalytics_Tests/Tropicalytics.framework"
   install_framework "Pods-Tropicalytics_Tests/Expecta.framework"
   install_framework "Pods-Tropicalytics_Tests/Specta.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-Tropicalytics_Tests/AFNetworking.framework"
+  install_framework "Pods-Tropicalytics_Tests/MAObjCRuntime.framework"
   install_framework "Pods-Tropicalytics_Tests/Tropicalytics.framework"
   install_framework "Pods-Tropicalytics_Tests/Expecta.framework"
   install_framework "Pods-Tropicalytics_Tests/Specta.framework"

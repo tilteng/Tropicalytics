@@ -1,208 +1,228 @@
 ![alt tag](Logo/Tropicalytics.png)
 
-[![CI Status](http://img.shields.io/travis/Matt King/Tropicalytics.svg?style=flat)](https://travis-ci.org/Matt King/Tropicalytics)
+[![Circle CI](https://circleci.com/gh/tilteng/Tropicalytics.svg?style=svg&circle-token=9191e56bdefa12b9309c2c8b569218d872c70da5)](https://circleci.com/gh/tilteng/Tropicalytics)
 [![Version](https://img.shields.io/cocoapods/v/Tropicalytics.svg?style=flat)](http://cocoapods.org/pods/Tropicalytics)
 [![License](https://img.shields.io/cocoapods/l/Tropicalytics.svg?style=flat)](http://cocoapods.org/pods/Tropicalytics)
 [![Platform](https://img.shields.io/cocoapods/p/Tropicalytics.svg?style=flat)](http://cocoapods.org/pods/Tropicalytics)
 
-## Usage
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+Tropicalytics is a lightweight, flexible library made for analytics tracking in your iOS app. At its core, it's essentially a way to post JSON to an API endpoint. Request batching is handled by default so that network requests are economical.
 
 ## Requirements
 
-## Installation
+**Minimum iOS Target:** iOS 8  
+**Minimum Xcode Version:** 7
 
-Tropicalytics is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+## Installation with CocoaPods
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C, which automates and simplifies the process of using 3rd-party libraries like Tropicalytics in your projects. You can install it with the following command:
+
+```bash
+$ gem install cocoapods
+```
+
+> CocoaPods 0.39.0+ is required to build Tropicalytics 1.0.0+.
+
+#### Podfile
+
+To integrate Tropicalytics into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-pod "Tropicalytics"
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+
+pod 'Tropicalytics', '~> 1.0'
 ```
 
-##Desired Behavior (Hopefully we can change this to acutal behavior)
+Then, run the following command:
 
-Send analytics as a self describing JSON blob to the desired endpoint. Maybe we can build our own custom endpoint to do stuff with self describing JSON.
-Anyways... The data engineering team did us a solid and put together a nice spec that is a nice generic solution for sending analytics which is below...
-
-#Log Format
+```bash
+$ pod install
 ```
+
+## Usage
+
+An example project that makes use of Tropicalytics is included in this repo.
+
+### Quick start
+
+Tropicalytics can be quickly configured to start tracking events!
+
+```objc
+TPLConfiguration *config = [[TPLConfiguration alloc] initWithBasePath:[NSURL URLWithString:@"https://my.analytics.api"]];
+Tropicalytics *tracker = [[Tropicalytics alloc] initWithConfiguration:config];
+[tracker recordEvent:@{ @"label": @"start", @"category": @"tap", @"value": 1  }];
+[tracker recordEvent:@{ @"label": @"edit", @"category": @"tap", @"value": 2  }];
+```
+
+Results in the JSON event being posted to the server endpoint:
+
+```json
 {
-"header": {
-... 
-},
-"batch_info": {
-    		...
-	},
-"user_info": {
-    		...
-	},
-	"device_info": {
-    		...
-	},
-	"events": [
-... 
-]
-}
-```
-
-#Header Fields
-
-```
-{
-  "source": "app",
-  "app_id": "tilt_web",
-  "env": "prod",  
-  "session_id": "619DF0CEF-8649-483A-AE4E-6191531866E2",
-  “request_id”: “xxx”,
-  "ip": "160.117.71.11",
-  "geolocation": {
-	"geo_country": "US",
-	"geo_region": "NJ",
-	"geo_city": "Absecon",
-	"geo_zipcode": "08205",
-	"geo_latitude": "39.49",
-	"geo_longitude": "-74.48",
-	"geo_region_name": "New Jersey"
-  },
-  "versions": {
-	"app_version": "1.1.0",
-	"server_version": "1.2.1",
-	"flash_version": "20.0"
-  }
-}
-```
-
-#Batch Info Fields
-```
-{
-  "batch_id": "xxx",
-  "total_events": 20,
-  "source": "client",
-  "server_time": 14583850383,
-  "last_update_time": 14583850383
-}
-```
-
-#User Info Fields
-
-```
-
-{
-  "domain_user_id": "4c42d8f37923dabe",
-  "network_user_id": "e34d31ea-5989-4424-9aba-dda1c59d24f0",
-  "tilt_user_id": "385928493",
-  "guid": "USRB4DC735D05CF4906BB254D2F8C42176F"
-  "user_fingerprint": "3153610022",
-  "mac_address": "12-34-56-78-9A-BC",
-  "idfa": "1E2DFA89-496A-47FD-9941-DF1FC4E6484A",
-  "idfv": "599F9C00-92DC-4B5C-9464-7971F01F8370",
-    "openudid": "0d943976b24c85900c764dd9f75ce054dc5986ff",
-  "android_id": "4906BB254D2F8C42",
-  "imei": "315361002211114"
-  "fb_id": "10010010",
-  "google_id": "4906BB254D2F8C42",
-  “country_code”: “US”,
-  “locale”: “xxx”,
-  “app_installed”: “true”, (if had)
-  "is_employee": “false”,
-  "tilts_created": 2,
-  "contributions": 6,
-  "registration_time": 1452291633,
-  "registered_platform": “ios”,
-  "experiment_info": [
-      {
-         "experiment_id" : 4069541102,
-         "experiment_state" : 2,
-         "variation_id" : 4071251470
-      },
-      {
-         "experiment_id" : 4070672813,
-         "experiment_state" : 2,
-         "variation_id" : 4102791555
-      },
-      ...
-    ]
-}
-```
-
-#Device Info Fields
-
-```
-{
-  "platform": "ios",
-  "device": "iPhone",
-  "cpu": "Apple A9",
-  "gpu": "PowerVR GX6450",
-  "os_version": "8.1.1",
-  “browser”: “Firefox”,
-  “browser_version”: “41.0.2227.1”,
-  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2227.1 Safari/537.36",
-  "model": "iPhone 6",
-  "network_type": "wi-fi",
-  "timezone": "America/Los_Angeles",
-  "hacked": "false"
-}
-```
-
-#Events Field
-
-```
-  {
-    “type”: “campaign_created”,
-    “client_tstamp”: 1452291633,
-    “ctx”: {
-      ...
+  "events": [
+    {
+      "label": "start",
+      "category": "tap",
+      "value": 1
+    },
+    {
+      "label": "edit",
+      "category": "tap",
+      "value": 2
     }
-  },
-  ...
-]
+  ]
+}
 ```
 
-#Context Example
+However, all aspects of tracking—including the JSON payload structure, event-batching, and event-recording can be flexibly customized:
 
+### Configuration
+
+Everything in Tropicalytics—specifically the way the JSON structure of event data that is sent to an API server is built—is designed to be easily configurable.
+
+#### TPLFieldGroup
+
+A big part of Tropicalytics is in representing data in a flexible, transparent structure that's easily convertible to JSON. 
+
+`TPLFieldGroup` is a data-wrapper class that encapsulates properties and arbitrary dictionary key-values and provides a `dictionaryRepresentation` method that combines properties and dictionary key-values into a single JSON-conversion-ready dictionary.
+
+All of the JSON-data-representing classes that Tropicalytics makes use of itself—and expect clients to make use of—subclass this class.
+
+#### Building a request structure
+
+Since every analytics-tracking API server is different and every app has its own specific tracking needs and business logic, the JSON payload request structure is expected to be configured by library users.
+
+When initializing Tropicalytics, clients are expected to define the JSON structure of every event-tracking request by using an instance of `TPLRequestStructure`.
+
+```objc
+TPLRequestStructure *structure = [[TPLRequestStructure alloc] init];
 ```
-  {
-    “type”: “Contribution_Success”,
-    “client_tstamp”: 1452291633,
-    “ctx”: {
-      “campaign_info”: {
-        “guid”: "xxyyxxyxyxyxyxx",
-        “title”: "Chainsmokers All Day",
-        “creation_date”: "2016-01-01 00:00:00",
-        “expiration_date”: "2016-03-01 00:00:00",
-        “tilt_timestamp”: "2016-01-01 00:00:00",
-        “currency”: "USD",
-        “to_date_amt”: 10.00,
-        “num_contributors”: 1,
-        “target_amt”: 10000.00,
-        “people_invited”: 10,
-        “total_comments”: 2,
-        “total_likes”: 3,
-        “campaign_type”: "collect",
-        “campaign_security”: "private",
-        “target_timestamp”: "2016-03-01 00:00:00",
-        “created_platform”: "ios"
-      },
-      “contribution_info”: {   
-        “quantity”: 10, //null if Tilt Collect or Fundraise
-        “contribution_total”: 20.00,
-        “quantity”: 10, //null if Tilt Collect or Fundraise
-        “answers”: {},
-        “shipping_country”: "USA",
-        “state”: “Texas”,
-        “city”: "Houston",
-        “zip”: "94117",
-        “card_id”: "Visa"
-    }
+
+This object represents the resulting JSON payload that's sent to the server for tracking events. Any number of key-values can be added to the structure.
+
+```objc
+TPLRequestStructure *structure = [[TPLRequestStructure alloc] initWithEntries:@{
+  @"beep": @"bop",
+  @"anything": @{
+    @"else": @"is cool",
   }
-  ```
+}];
+[structure setEntry:@57 forKey:@"someNumber"];
+[structure addEntries:@{
+    @"sub": @"mariner",
+}];
+```
+
+Then on subsequent tracking calls, the specified data is sent in requests:
+
+```json
+{
+  "beep": "bop",
+  "anything": {
+    "else": "is cool"
+  },
+  "someNumber": 57,
+  "sub": "mariner",
+  "events": [...]
+}
+```
+
+### Initialization
+
+Tropicalytics supports the ability to create multiple instances or to use a single shared instance (singleton).
+
+A `TPLConfiguration` instance is required when creating a Tropicalytics instance or setting up the singleton. This configuration object contains the URL of the server that receives tracking requests and provides the ability to configure how many events are batched together in an HTTP request.
+
+```objc
+TPLConfiguration *config = [[TPLConfiguration alloc] initWithBasePath:[NSURL URLWithString:@"https://my.analytics.api"]];
+config.flushRate = 10; // 10 events are batched together.
+```
+
+Creating an instance of Tropicalytics:
+
+```objc
+Tropicalytics *tracker = [[Tropicalytics alloc] initWithConfiguration:config];
+```
+
+Or setting up the singleton:
+
+```objc
+[Tropicalytics sharedInstanceWithConfiguration:config];
+```
+
+### Tracking events
+
+Arbitrary dictionary data can be tracked:
+
+```objc
+[tracker recordEvent:@{ @"label": "add button", @"category": @"start" }];
+```
+
+Or more structured events can be represented by a `TPLFieldGroup` subclass and then recorded:
+
+```objc
+MyTPLFieldGroupSubclass *event = [[MyTPLFieldGroupSubclass alloc] initWithEntries:@{ @"event_name": @"foo" }];
+[tracker recordEventWithFieldGroup:event];
+```
+
+
+#### Adding additional data to each request
+
+Top-level key-values can be added to and removed from the request structure at any time.
+
+```objc
+[tracker setEntry:@"bar", forKey:@"foo"];
+```
+
+Results in future recording requests containing the added key-values:
+
+```json
+{
+  "foo": "bar",
+  "events": []
+}
+```
+
+These entries can also be removed.
+
+```objc
+[tracker removeEntryForKey:@"foo"];
+```
+
+### Working with Tropicalytics defaults
+
+Tropicalytics supports a default configuration that attaches info about the device and the app onto tracking request payloads.
+
+```objc
+Tropicalytics *tropicalytics = [[Tropicalytics alloc] initDefaultRequestStructureWithConfiguration:config];
+```
+
+By using these defaults, event tracking request payloads look like:
+
+```json
+{
+  "header": {
+    "app_id": "example app id",
+    "session_id": "38cdff6f3e104241bd42430d5e098e48",
+    "source": "app",
+    "app_version": "1.0"
+  },
+  "device_info": {
+    "os_version": "9.2",
+    "device": "iPhone",
+    "model": "iPhone 6,2",
+    "network_type": "Reachable WiFi",
+    "timezone": "America/Los_Angeles",
+    "platform": "ios"
+  },
+  "events": []
+}
+```
 
 
 
-## Author
+## Authors
 
-Matt King, mattk@tilt.com
+Matt King, mattk@tilt.com | Brett Bukowski, brett@tilt.com
 
 ## License
 

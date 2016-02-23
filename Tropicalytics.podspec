@@ -15,16 +15,17 @@ Pod::Spec.new do |s|
 #   * Think: What does it do? Why did you write it? What is the focus?
 #   * Try to keep it short, snappy and to the point.
 #   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!  
+#   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description      = <<-DESC
+Tropicalytics is a lightweight, flexible library made for analytics tracking in your iOS app. At its core, it's essentially a way to post JSON to an API endpoint. Request batching is handled by default so that network requests are economical.
                        DESC
 
-  s.homepage         = "https://github.com/KattMingMing/Tropicalytics"
+  s.homepage         = "https://github.com/tilteng/Tropicalytics"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
-  s.author           = { "Matt King" => "mattk@tilt.com" }
-  s.source           = { :git => "https://github.com/KattMingMing/Tropicalytics.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/KingTheMatt'
+  s.author           = { "Tilt.com Inc" => "mattk@tilt.com" }
+  s.source           = { :git => "https://github.com/tilteng/Tropicalytics.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/tilteng'
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
@@ -34,7 +35,11 @@ Pod::Spec.new do |s|
     'Tropicalytics' => ['Pod/Assets/*.png']
   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+   s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+    s.dependency 'MAObjCRuntime', '~> 0.0.1'
+    s.resources = 'Pod/Classes/Tropicalytics.xcdatamodeld'
+    s.preserve_paths = 'Pod/Classes/Tropicalytics.xcdatamodeld'
+    s.framework = 'CoreData'
+    s.requires_arc = true
 end

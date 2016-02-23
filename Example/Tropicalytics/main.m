@@ -3,15 +3,15 @@
 //  Tropicalytics
 //
 //  Created by Matt King on 01/19/2016.
-//  Copyright (c) 2016 Matt King. All rights reserved.
+//  Copyright (c) 2016 Tilt.com Inc. All rights reserved.
 //
 
 @import UIKit;
-#import "TLAppDelegate.h"
+#import "TPLAppDelegate.h"
 
 int main(int argc, char * argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([TLAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([TPLAppDelegate class]));
     }
 }

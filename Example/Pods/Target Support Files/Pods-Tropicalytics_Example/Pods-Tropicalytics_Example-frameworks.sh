@@ -84,10 +84,10 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-Tropicalytics_Example/AFNetworking.framework"
+  install_framework "Pods-Tropicalytics_Example/MAObjCRuntime.framework"
   install_framework "Pods-Tropicalytics_Example/Tropicalytics.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-Tropicalytics_Example/AFNetworking.framework"
+  install_framework "Pods-Tropicalytics_Example/MAObjCRuntime.framework"
   install_framework "Pods-Tropicalytics_Example/Tropicalytics.framework"
 fi
