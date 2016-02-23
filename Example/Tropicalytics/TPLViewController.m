@@ -17,10 +17,6 @@
 #define DEBUG_MODE NO
 #endif
 
-// Leaving this for now because it will help us test things. We will update the ReadMe to explain how to use the Basic Server checked into this project and this
-// will be removed once we are nearly finished with this project.
-static NSString *const otherBasePath = @"http://tropicalyticsresponseserver.herokuapp.com";
-
 static NSString *const urlBasePath = @"http://localhost:4567";
 
 @interface TPLViewController ()
