@@ -24,7 +24,7 @@ Tropicalytics is a lightweight configurable analytics tool that allows you to se
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Tilt.com Inc" => "mattk@tilt.com" }
-  s.source           = { :git => "https://github.com/tilteng/Tropicalytics.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/tilteng/Tropicalytics.git", :tag => "0.0.1" }
   s.social_media_url = 'https://twitter.com/tilteng'
 
   s.platform     = :ios, '8.0'
