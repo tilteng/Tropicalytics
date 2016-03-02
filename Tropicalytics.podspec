@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description      = <<-DESC
-Tropicalytics is a lightweight, flexible library made for analytics tracking in your iOS app. At its core, it's essentially a way to post JSON to an API endpoint. Request batching is handled by default so that network requests are economical.
+    Tropicalytics is a lightweight, flexible library made for analytics tracking in your iOS app.
                        DESC
 
   s.homepage         = "https://github.com/tilteng/Tropicalytics"
