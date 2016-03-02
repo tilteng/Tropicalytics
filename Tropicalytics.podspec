@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "Tropicalytics"
-  s.version          = "0.1.0"
+  s.version          = "0.0.1"
   s.summary          = "Tropicalytics is a lightweight, flexible library made for analytics tracking in your iOS app."
 
 # This description is used to generate tags and improve search results.
