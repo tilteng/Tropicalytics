@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = "Tropicalytics"
-  s.version          = "0.1.0"
-  s.summary          = "Tropicalytics is a lightweight configurable analytics tool that allows you to send self describing JSON to your own server so you are in control of your data."
+  s.version          = "0.0.1"
+  s.summary          = "Tropicalytics is a lightweight, flexible library made for analytics tracking in your iOS app."
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,14 +17,14 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description      = <<-DESC
-Tropicalytics is a lightweight, flexible library made for analytics tracking in your iOS app. At its core, it's essentially a way to post JSON to an API endpoint. Request batching is handled by default so that network requests are economical.
+Tropicalytics is a lightweight configurable analytics tool that allows you to send self describing JSON to your own server so you are in control of your data.
                        DESC
 
   s.homepage         = "https://github.com/tilteng/Tropicalytics"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Tilt.com Inc" => "mattk@tilt.com" }
-  s.source           = { :git => "https://github.com/tilteng/Tropicalytics.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/tilteng/Tropicalytics.git", :tag => "0.0.1" }
   s.social_media_url = 'https://twitter.com/tilteng'
 
   s.platform     = :ios, '8.0'
