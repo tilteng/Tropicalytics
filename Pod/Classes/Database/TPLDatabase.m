@@ -45,13 +45,14 @@ static NSUInteger const FetchBatchSize           = 50;
         self.backgroundManagedObjectContext = [self setupManagedObjectContextWithConcurrencyType:NSPrivateQueueConcurrencyType];
 
         // Be notified when to merge back to main object context and merge the changes.
-        [[NSNotificationCenter defaultCenter] addObserverForName:NSManagedObjectContextDidSaveNotification object:nil queue:nil
+        __weak typeof (self) wself = self;
+        [[NSNotificationCenter defaultCenter] addObserverForName:NSManagedObjectContextDidSaveNotification object:self.backgroundManagedObjectContext queue:[NSOperationQueue mainQueue]
                                                       usingBlock:^(NSNotification *notification) {
-                                                          NSManagedObjectContext *moc = self.managedObjectContext;
+                                                          NSManagedObjectContext *moc = wself.managedObjectContext;
                                                           if (notification.object != moc) {
                                                               [moc performBlock:^(){
-                    [moc mergeChangesFromContextDidSaveNotification:notification];
-                }];
+                                                                  [moc mergeChangesFromContextDidSaveNotification:notification];
+                                                              }];
                                                           }
                                                       }];
     }
