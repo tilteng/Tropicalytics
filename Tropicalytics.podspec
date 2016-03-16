@@ -10,18 +10,11 @@ Pod::Spec.new do |s|
   s.name             = "Tropicalytics"
   s.version          = "0.0.1"
   s.summary          = "Tropicalytics is a lightweight, flexible library made for analytics tracking in your iOS app."
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description      = <<-DESC
 Tropicalytics is a lightweight configurable analytics tool that allows you to send self describing JSON to your own server so you are in control of your data.
                        DESC
 
   s.homepage         = "https://github.com/tilteng/Tropicalytics"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Tilt.com Inc" => "mattk@tilt.com" }
   s.source           = { :git => "https://github.com/tilteng/Tropicalytics.git", :tag => "0.0.1" }
@@ -36,7 +29,6 @@ Tropicalytics is a lightweight configurable analytics tool that allows you to se
   }
 
    s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
     s.dependency 'MAObjCRuntime', '~> 0.0.1'
     s.resources = 'Pod/Classes/Tropicalytics.xcdatamodeld'
     s.preserve_paths = 'Pod/Classes/Tropicalytics.xcdatamodeld'
