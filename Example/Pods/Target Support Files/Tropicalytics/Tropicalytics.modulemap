@@ -1,0 +1,6 @@
+framework module Tropicalytics {
+  umbrella header "Tropicalytics-umbrella.h"
+
+  export *
+  module * { export * }
+}
