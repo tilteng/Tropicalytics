@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "Tropicalytics"
-  s.version          = "0.0.1"
+  s.version          = "0.1.0"
   s.summary          = "Tropicalytics is a lightweight, flexible library made for analytics tracking in your iOS app."
   s.description      = <<-DESC
 Tropicalytics is a lightweight configurable analytics tool that allows you to send self describing JSON to your own server so you are in control of your data.
@@ -17,7 +17,7 @@ Tropicalytics is a lightweight configurable analytics tool that allows you to se
   s.homepage         = "https://github.com/tilteng/Tropicalytics"
   s.license          = 'MIT'
   s.author           = { "Tilt.com Inc" => "mattk@tilt.com" }
-  s.source           = { :git => "https://github.com/tilteng/Tropicalytics.git", :tag => "0.0.1" }
+  s.source           = { :git => "https://github.com/tilteng/Tropicalytics.git", :tag => "0.1.0" }
   s.social_media_url = 'https://twitter.com/tilteng'
 
   s.platform     = :ios, '8.0'
