@@ -156,6 +156,9 @@
         }
 
         return array;
+
+    } else if ([value isKindOfClass:[NSAttributedString class]]){
+        return ((NSAttributedString*) value).string;
     } else if ([value isKindOfClass:[NSDictionary class]]) {
         NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithCapacity:[value count]];
 

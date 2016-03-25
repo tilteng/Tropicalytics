@@ -84,6 +84,18 @@ describe(@"TPLFieldGroup", ^{
             expect([innerValues objectForKey:@"bar"]).to.equal(@[@"a", @"b", @"c"]);
         });
         
+        it(@"converts NSAttributes Strings to NSStrings", ^{
+            NSAttributedString *myNSAttributesString = [[NSAttributedString alloc] initWithString:@"string"];
+
+            TPLFieldGroup *fieldGroup = [[TPLFieldGroup alloc] initWithEntries:@{
+                @"foo": myNSAttributesString,
+            }];
+
+            NSDictionary *values = [fieldGroup dictionaryRepresentation];
+
+            expect([values objectForKey:@"foo"]).to.equal(@"string");
+        });
+
         it(@"merges ivars and data dictionary", ^{
             TPLFieldGroupSubclass *bag = [[TPLFieldGroupSubclass alloc] initWithEntries:@{
                                                                                     @"foo": @"bar",
