@@ -81,7 +81,7 @@ Everything in Tropicalytics—specifically the way the JSON structure of event d
 
 #### TPLFieldGroup
 
-A big part of Tropicalytics is in representing data in a flexible, transparent structure that's easily convertible to JSON. 
+A big part of Tropicalytics is in representing data in a flexible, transparent structure that's easily convertible to JSON.
 
 `TPLFieldGroup` is a data-wrapper class that encapsulates properties and arbitrary dictionary key-values and provides a `dictionaryRepresentation` method that combines properties and dictionary key-values into a single JSON-conversion-ready dictionary.
 
@@ -219,11 +219,6 @@ By using these defaults, event tracking request payloads look like:
 ```
 
 
-
-## Authors
-
-Matt King, mattk@tilt.com | Brett Bukowski, brett@tilt.com
-
 ## License
 
-Tropicalytics is available under the MIT license. See the LICENSE file for more info.
+Tropicalytics is maintained by [Tilt](http://engineering.tilt.com/) and is available under the MIT license. See the LICENSE file for more info.
