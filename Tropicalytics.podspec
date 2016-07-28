@@ -24,14 +24,15 @@ Tropicalytics is a lightweight configurable analytics tool that allows you to se
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
+  s.exclude_files = 'Pod/Classes/Tropicalytics.xcdatamodeld'
   s.resource_bundles = {
     'Tropicalytics' => ['Pod/Assets/*.png']
   }
 
   s.public_header_files = 'Pod/Classes/**/*.h'
   s.dependency 'MAObjCRuntime', '~> 0.0.1'
-  s.resources = 'Pod/Classes/Tropicalytics.xcdatamodeld/*'
-  s.preserve_paths = 'Pod/Classes/Tropicalytics.xcdatamodeld/*'
+  s.resources = 'Pod/Classes/Tropicalytics.xcdatamodeld'
+  s.preserve_paths = 'Pod/Classes/Tropicalytics.xcdatamodeld'
   s.framework = 'CoreData'
   s.requires_arc = true
 end
