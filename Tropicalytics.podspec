@@ -30,8 +30,6 @@ Tropicalytics is a lightweight configurable analytics tool that allows you to se
 
   s.public_header_files = 'Pod/Classes/**/*.h'
   s.dependency 'MAObjCRuntime', '~> 0.0.1'
-  s.resources = 'Pod/Tropicalytics.xcdatamodeld'
-  s.preserve_paths = 'Pod/Tropicalytics.xcdatamodeld'
   s.framework = 'CoreData'
   s.requires_arc = true
 end
